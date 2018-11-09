@@ -29,6 +29,11 @@ public class TestMenu
         try
         {
             PDirectory nPDir = new PDirectory();
+
+            nPDir.addProvider(nProvider);
+            System.out.println(nPDir);
+            nPDir.removeProvider(nProvider.number);
+            System.out.println(nPDir);
         }
         catch(IOException e)
         {

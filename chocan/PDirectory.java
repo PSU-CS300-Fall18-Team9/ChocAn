@@ -1,6 +1,15 @@
 /*
  * TODO:
- *
+ * Dependencies:
+ *  Need finished Provider class
+ * Add provider X
+ * Remove provider X
+ * Print provider directory
+ * Edit provider
+ * Verify provider
+ * Import data file into Map
+ * Export data from Map into data file
+ * Build reports
  */
 
 package chocan;
@@ -9,7 +18,8 @@ import java.io.*;
 
 public class PDirectory
 {
-    public Map<String, Provider> PDir = new HashMap<String, Provider>();
+    public Map<Integer, Provider> PDir = new HashMap<>();
+
     FileInputStream in = null;
     FileOutputStream out = null;
 
@@ -31,7 +41,7 @@ public class PDirectory
 
         if(debug == true)
         {
-            System.out.println("initializePDir");
+            System.out.println("PDirectory initializePDir");
         }
 
         try
@@ -51,7 +61,7 @@ public class PDirectory
         if(debug == true)
         {
 
-            System.out.println("verifyProvider");
+            System.out.println("PDirectory verifyProvider");
         }
 
         return 0;
@@ -64,20 +74,25 @@ public class PDirectory
         if(debug == true)
         {
 
-            System.out.println("addProvider");
+            System.out.println("PDirectory addProvider");
         }
+
+        PDir.put(nProvider.number, nProvider);
 
         return 0;
     };
 
-    public int removeProvider(Provider rProvider)
+    public int removeProvider(int pid)
     {
         boolean debug = true;
 
         if(debug == true)
         {
-            System.out.println("removeProvider");
+            System.out.println("PDirectory removeProvider");
+            System.out.println("pId = " + pid);
         }
+
+        PDir.remove(pid);
 
         return 0;
     };
@@ -88,7 +103,33 @@ public class PDirectory
 
         if(debug == true)
         {
-            System.out.println("buildReports");
+            System.out.println("PDirectory buildReports");
         }
     };
+
+    public String toString()
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory toString");
+        }
+
+/*        Set<Data> mSet = new Set<Data>;
+        mSet = PDir.entrySet();
+
+
+        Iterator itr = PDir.iterator();
+*/
+        String data = null;
+
+        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
+        {
+//            System.out.println(entry.getValue());
+//            data = entry.getValue();
+        }
+
+        return data;
+    }
 }
