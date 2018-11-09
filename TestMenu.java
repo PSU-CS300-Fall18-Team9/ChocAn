@@ -1,4 +1,5 @@
 //import java.io.PrintStream;
+import java.io.IOException;
 import java.util.*;
 import chocan.*;
 
@@ -18,14 +19,21 @@ public class TestMenu
         nProvider.name = "testing";
         nProvider.number = 123456789;
 
-        List<Data> testData = new LinkedList<Data>();
-        testData.add(nProvider);
+//        List<Data> testData = new LinkedList<Data>();
+//        testData.add(nProvider);
 //        testData.add(nProvider);
 //        testData.add(nService);
 
         System.out.println(nProvider);
 
-        PDirectory nPDir = new PDirectory();
+        try
+        {
+            PDirectory nPDir = new PDirectory();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Exception thrown: " + e);
+        }
 
         System.out.println("Welcome to ChocAn Data Processing System");
 

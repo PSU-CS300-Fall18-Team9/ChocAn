@@ -5,30 +5,42 @@
 
 package chocan;
 import java.util.*;
+import java.io.*;
 
 public class PDirectory
 {
     public Map<String, Provider> PDir = new HashMap<String, Provider>();
+    FileInputStream in = null;
+    FileOutputStream out = null;
 
-    public PDirectory()
+    public PDirectory() throws IOException
     {
         boolean debug = true;
-
-        initializePDir();
 
         if(debug == true)
         {
             System.out.println("PDirectory Constructor");
         }
+
+        initializePDir();
     }
 
-    protected void initializePDir()
+    protected void initializePDir() throws IOException
     {
         boolean debug = true;
 
         if(debug == true)
         {
             System.out.println("initializePDir");
+        }
+
+        try
+        {
+            in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
+        }
+        finally
+        {
+            in.close();
         }
     }
 
@@ -69,7 +81,8 @@ public class PDirectory
 
         return 0;
     };
-    public void buildReports(){};
+
+    public void buildReports()
     {
         boolean debug = true;
 
@@ -77,7 +90,5 @@ public class PDirectory
         {
             System.out.println("buildReports");
         }
-
-//        return 0;
     };
 }
