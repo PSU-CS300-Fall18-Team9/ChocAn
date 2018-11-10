@@ -73,7 +73,6 @@ public class PDirectory
 
         if(debug == true)
         {
-
             System.out.println("PDirectory addProvider");
         }
 
@@ -88,14 +87,14 @@ public class PDirectory
 
         if(debug == true)
         {
-
-            System.out.println("PDirectory addProvider");
+            System.out.println("PDirectory editProvider");
         }
 
-        PDir.put(nProvider.number, nProvider);
+//        PDir.put(nProvider.number, nProvider);
 
         return 0;
     };
+
     public int removeProvider(int pid)
     {
         boolean debug = true;
@@ -130,18 +129,11 @@ public class PDirectory
             System.out.println("PDirectory toString");
         }
 
-/*        Set<Data> mSet = new Set<Data>;
-        mSet = PDir.entrySet();
-
-
-        Iterator itr = PDir.iterator();
-*/
         String data = null;
 
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
-//            System.out.println(entry.getValue());
-//            data = entry.getValue();
+            data = entry.getValue().toString();
         }
 
         return data;
