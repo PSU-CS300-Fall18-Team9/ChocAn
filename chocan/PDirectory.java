@@ -2,14 +2,22 @@
  * TODO:
  * Dependencies:
  *  Need finished Provider class
- * Add provider X
+ * Add provider /
+ *  Enter data for new provider
+ *  Add new provider to map X
  * Remove provider X
- * Print provider directory
- * Edit provider
+ * Print provider directory X
+ * Edit provider /
+ *  Edit provider fields
+ *  Overwrite provider data in map X
  * Verify provider X
- * Import data file into Map
+ * Import data file into Map /
+ *  Open/close file X
+ *  Throw IO exception if invalid filename/file doesn't exist X
+ *  Load data into Map
  * Export data from Map into data file
  * Build reports
+ * Save directory file on exit
  */
 
 package chocan;
@@ -32,10 +40,10 @@ public class PDirectory
             System.out.println("PDirectory Constructor");
         }
 
-//        initializePDir();
+        initializePDir();
     }
 
-/*    protected void initializePDir() //throws IOException
+    protected void initializePDir() //throws IOException
     {
         boolean debug = true;
 
@@ -47,13 +55,25 @@ public class PDirectory
         try
         {
             in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
-        }
-        finally
-        {
+//            FileInputStream in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
+//            in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
+//            in = new FileInputStream("./data/DoesNotExist"); // Test exception
+
+/*            String sIn  = NULL;
+
+            while((sIn = in.read()) != '#')
+            {
+
+            }
+*/
             in.close();
         }
+        catch (IOException e1)
+        {
+           System.out.println("Exception thrown:" + e1);
+        }
     }
-*/
+
     public boolean verifyProvider(int pid)
     {
         boolean debug = true;
@@ -90,7 +110,7 @@ public class PDirectory
             System.out.println("PDirectory editProvider");
         }
 
-//        PDir.put(nProvider.number, nProvider);
+        PDir.put(nProvider.number, nProvider);
 
         return 0;
     };
