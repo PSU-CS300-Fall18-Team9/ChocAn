@@ -11,35 +11,36 @@ public class TestMenu
         int oid = -1;
         int menuNum = -1;
 
+        // Test data class' instantiation
 //        Data nMember = new Member();
 //        Member nMember = new Member();
         Provider nProvider = new Provider();
 //        Service nService = new Service();
 
+        // Test data class' fields
+//        nMember.name = "testing";
+//        nMember.number = 100000000;
         nProvider.name = "testing";
-        nProvider.number = 123456789;
+        nProvider.number = 100000000;
+        // Service fields
 
-//        List<Data> testData = new LinkedList<Data>();
-//        testData.add(nProvider);
-//        testData.add(nProvider);
-//        testData.add(nService);
-
+        // Test data class' toString
+//        System.out.println(nMember);
         System.out.println(nProvider);
+//        System.out.println(nService);
 
+        // Test directory class' instantiation
+//        MDirectory nMDir = new MDirectory();
         PDirectory nPDir = new PDirectory();
 
-//        try
-//        {
-            nPDir.addProvider(nProvider);
-            System.out.println(nPDir);
-//           nPDir.removeProvider(nProvider.number);
-//            System.out.println(nPDir);
-/*        }
-        catch(IOException e)
-        {
-            System.out.println("Exception thrown: " + e);
-        }
-*/
+        // Test directory class' methods
+        nPDir.addProvider(nProvider);
+        System.out.println(nPDir);
+//        nPDir.removeProvider(nProvider.number);
+//        System.out.println(nPDir);
+
+        // Start of menu prototype
+
         System.out.println("Welcome to ChocAn Data Processing System");
 
         // Operator Login
