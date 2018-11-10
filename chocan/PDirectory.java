@@ -6,7 +6,7 @@
  * Remove provider X
  * Print provider directory
  * Edit provider
- * Verify provider
+ * Verify provider X
  * Import data file into Map
  * Export data from Map into data file
  * Build reports
@@ -23,7 +23,7 @@ public class PDirectory
     FileInputStream in = null;
     FileOutputStream out = null;
 
-    public PDirectory() throws IOException
+    public PDirectory() //throws IOException
     {
         boolean debug = true;
 
@@ -32,10 +32,10 @@ public class PDirectory
             System.out.println("PDirectory Constructor");
         }
 
-        initializePDir();
+//        initializePDir();
     }
 
-    protected void initializePDir() throws IOException
+/*    protected void initializePDir() //throws IOException
     {
         boolean debug = true;
 
@@ -53,18 +53,18 @@ public class PDirectory
             in.close();
         }
     }
-
-    public int verifyProvider(int pid)
+*/
+    public boolean verifyProvider(int pid)
     {
         boolean debug = true;
 
         if(debug == true)
         {
-
             System.out.println("PDirectory verifyProvider");
+            System.out.println("pId = " + pid);
         }
 
-        return 0;
+        return PDir.containsKey(pid);
     };
 
     public int addProvider(Provider nProvider)
@@ -82,6 +82,20 @@ public class PDirectory
         return 0;
     };
 
+    public int editProvider(Provider nProvider)
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+
+            System.out.println("PDirectory addProvider");
+        }
+
+        PDir.put(nProvider.number, nProvider);
+
+        return 0;
+    };
     public int removeProvider(int pid)
     {
         boolean debug = true;

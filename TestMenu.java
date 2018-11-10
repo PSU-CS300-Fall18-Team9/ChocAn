@@ -8,7 +8,7 @@ public class TestMenu
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        int oid;
+        int oid = -1;
         int menuNum = -1;
 
 //        Data nMember = new Member();
@@ -26,26 +26,40 @@ public class TestMenu
 
         System.out.println(nProvider);
 
-        try
-        {
-            PDirectory nPDir = new PDirectory();
+        PDirectory nPDir = new PDirectory();
 
+//        try
+//        {
             nPDir.addProvider(nProvider);
             System.out.println(nPDir);
-            nPDir.removeProvider(nProvider.number);
-            System.out.println(nPDir);
-        }
+//           nPDir.removeProvider(nProvider.number);
+//            System.out.println(nPDir);
+/*        }
         catch(IOException e)
         {
             System.out.println("Exception thrown: " + e);
         }
-
+*/
         System.out.println("Welcome to ChocAn Data Processing System");
 
-        // Operator Login  
-        System.out.print("\nLogin to ChocAn Using Provider/Manager ID:");
-        oid = sc.nextInt();
-        System.out.println("Provider " + oid + " Verified...");
+        // Operator Login
+        boolean opVerified = false;
+
+        while(!opVerified)
+        {
+            System.out.print("\nLogin to ChocAn Using Provider/Manager ID:");
+            oid = sc.nextInt();
+
+            if (nPDir.verifyProvider(oid))
+            {
+                System.out.println("Provider " + oid + " Verified...");
+                opVerified = true;
+            }
+            else
+            {
+                System.out.println("Provider " + oid + " could not be verified, try again");
+            }
+        }
 
         // Provide menu functionns here:
         while(menuNum != 0)
