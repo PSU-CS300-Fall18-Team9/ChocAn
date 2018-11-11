@@ -51,7 +51,7 @@ public class TestMenu
             System.out.print("\nLogin to ChocAn Using Provider/Manager ID:");
             oid = sc.nextInt();
 
-            if (nPDir.verifyProvider(oid))
+            if (nPDir.verifyProvider(oid) == 1)
             {
                 System.out.println("Provider " + oid + " Verified...");
                 opVerified = true;
