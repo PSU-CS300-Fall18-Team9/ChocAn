@@ -14,4 +14,13 @@ public class Provider  extends Data
             System.out.println("Provider Constructor ");
         }
     }
+    public Provider(String fName, String lName, int num, String address, String city, String state, int zip/*, int id*/)
+    {
+        super();
+
+        if(debug == true)
+        {
+            System.out.println("Provider constructor");
+        }
+    }
 }

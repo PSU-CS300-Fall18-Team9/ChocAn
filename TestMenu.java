@@ -14,15 +14,18 @@ public class TestMenu
         // Test data class' instantiation
 //        Data nMember = new Member();
 //        Member nMember = new Member();
-        Provider nProvider = new Provider();
+        Provider nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
+//        Provider nProvider = new Provider();
 //        Service nService = new Service();
 
         // Test data class' fields
-//        nMember.name = "testing";
+/*        nMember.name = "testing";
 //        nMember.number = 100000000;
-        nProvider.name = "testing";
+        nProvider.firstName = "John";
+        nProvider.lastName = "Smith";
         nProvider.number = 100000000;
         // Service fields
+*/
 
         // Test data class' toString
 //        System.out.println(nMember);
@@ -72,9 +75,9 @@ public class TestMenu
             System.out.println("  2. Member Check-Out");
             // Add Service Provided
             System.out.println("  3. New Service Provided ");
-            // List Provider Directory        
+            // List Provider Directory
             System.out.println("  4. Display Provider Directory ");
-            // Generate Provider Directory File 
+            // Generate Provider Directory File
             System.out.println("  5. Save Provider Directory ");
             // Weekly Member Report
             System.out.println("  6. Generate Member's Report ");
@@ -86,11 +89,11 @@ public class TestMenu
 
             System.out.print("\nEnter Selection: ");
             menuNum = sc.nextInt();
-            
-               
-            // Manager menu functions:  
+
+
+            // Manager menu functions:
                 // Weekly Accoounting  Report
-            
+
             // Operator menu functions:
                 // Add New Member
                 // Remove Member
@@ -98,12 +101,12 @@ public class TestMenu
                 // Add New Provider
                 // Remove Provider
                 // Update Provider Records
-            
+
             if(menuNum == 0)
             {
                 System.out.println("\nThanks for using ChocAn Data Processing System. Good Bye!" );
             }
-             
+
         }
     }
 }
