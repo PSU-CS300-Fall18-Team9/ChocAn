@@ -74,7 +74,7 @@ public class PDirectory
         }
     }
 
-    public boolean verifyProvider(int pid)
+    public int verifyProvider(int pid)
     {
         boolean debug = true;
 
@@ -84,7 +84,14 @@ public class PDirectory
             System.out.println("pId = " + pid);
         }
 
-        return PDir.containsKey(pid);
+        int verPid = 0;
+
+        if (PDir.containsKey(pid))
+        {
+            verPid = 1;
+        }
+
+        return verPid;
     };
 
     public int addProvider(Provider nProvider)
