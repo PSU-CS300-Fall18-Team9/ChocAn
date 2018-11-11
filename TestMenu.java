@@ -14,7 +14,8 @@ public class TestMenu
         // Test data class' instantiation
 //        Data nMember = new Member();
 //        Member nMember = new Member();
-        Provider nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
+        Data nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
+//        Provider nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
 //        Provider nProvider = new Provider();
 //        Service nService = new Service();
 
