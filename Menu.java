@@ -1,11 +1,16 @@
+import java.util.*;
+import chocan.*;
+
 public class Menu {
     public static void main(String[] args)
     {
         System.out.println("Welcome to ChocAn Data Processing System");
     }
-    
-    public static int topMenu() {
+
+        public static int topMenu () {
         int menuOption = 0;
+
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -26,8 +31,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int mgrMainMenu() {
+        public static int mgrMainMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -50,8 +56,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int pvdrMainMenu() {
+        public static int pvdrMainMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -73,8 +80,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int pvdrMgmtMenu() {
+        public static int pvdrMgmtMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -96,8 +104,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int mbrMgmtMenu() {
+        public static int mbrMgmtMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -119,8 +128,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int svcMenu() {
+        public static int svcMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -141,8 +151,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int mgrReportsMenu() {
+        public static int mgrReportsMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
@@ -164,8 +175,9 @@ public class Menu {
         return menuOption;
     }
 
-    public static int pvdrReportsMenu() {
+        public static int pvdrReportsMenu () {
         int menuOption = 0;
+        Scanner input = new Scanner(System.in); // Fix for input errors
 
         do {
             System.out.print("\nPlease choose from the following options:\n");
