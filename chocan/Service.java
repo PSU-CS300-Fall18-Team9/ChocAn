@@ -9,7 +9,7 @@ public class Service
     {
         if(debug == true)
         {
-            System.out.println("Service constructor");
+            System.out.println("Service default constructor");
         }
     }
 

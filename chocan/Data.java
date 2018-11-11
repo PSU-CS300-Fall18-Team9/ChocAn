@@ -23,7 +23,7 @@ public abstract class Data
     {
         if(debug == true)
         {
-            System.out.println("Data constructor");
+            System.out.println("Data default constructor");
         }
 
 //        services = null;
