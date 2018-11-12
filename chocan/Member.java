@@ -6,6 +6,6 @@ public class Member extends Data
     public Member()
     {
         super();
-        System.out.println("Member Constructor ");
+        System.out.println("Member default constructor ");
     }
 }
