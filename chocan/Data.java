@@ -1,6 +1,6 @@
 package chocan;
 import java.util.*;
-// commit test 11/10/18
+
 //public class Data
 public abstract class Data
 {
@@ -55,17 +55,6 @@ public abstract class Data
     public abstract boolean addService(Service aService);
 
 
-    /*
-    public String toString()
-    {
-        if(debug == true)
-        {
-            System.out.println("Data toString");
-        }
 
-        String data = null;
-        data = "Name: " + this.name + "\nNumber: " + number;
-
-        return data;
-    }*/
+    public abstract String toString();
 }
