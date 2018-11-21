@@ -1,7 +1,7 @@
 package chocan;
 import java.util.*;
 
-public class Service 
+public class Service
 {
     boolean debug = true;
 
