@@ -26,7 +26,8 @@ import java.io.*;
 
 public class PDirectory
 {
-    public Map<Integer, Provider> PDir = new HashMap<>();
+    public Map<Integer, Data> PDir = new HashMap<>();
+//    public Map<Integer, Provider> PDir = new HashMap<>();
 
     FileInputStream in = null;
     FileOutputStream out = null;
@@ -74,7 +75,7 @@ public class PDirectory
         }
     }
 
-    public boolean verifyProvider(int pid)
+    public int verifyProvider(int pid)
     {
         boolean debug = true;
 
@@ -84,10 +85,18 @@ public class PDirectory
             System.out.println("pId = " + pid);
         }
 
-        return PDir.containsKey(pid);
+        int verPid = 0;
+
+        if (PDir.containsKey(pid))
+        {
+            verPid = 1;
+        }
+
+        return verPid;
     };
 
-    public int addProvider(Provider nProvider)
+    public int addProvider(Data nProvider)
+//    public int addProvider(Provider nProvider)
     {
         boolean debug = true;
 
@@ -151,7 +160,8 @@ public class PDirectory
 
         String data = null;
 
-        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
+        for(Map.Entry<Integer, Data> entry: PDir.entrySet())
+//        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
             data = entry.getValue().toString();
         }
