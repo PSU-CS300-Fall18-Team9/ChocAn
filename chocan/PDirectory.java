@@ -18,7 +18,8 @@
  *  Load service data into Map
  * Export data from Map into data file
  * Build reports
- * Save directory file on exit
+ * Save directory file on exit /
+ *  Needs service data
  */
 
 package chocan;
@@ -29,6 +30,7 @@ import java.io.*;
 public class PDirectory
 {
     public Map<Integer, Data> PDir = new HashMap<>();
+//    public Map<Integer, Data> SDir = new HashMap<>();
 //    public Map<Integer, Provider> PDir = new HashMap<>();
 
     public PDirectory() //throws IOException
@@ -40,10 +42,10 @@ public class PDirectory
             System.out.println("PDirectory Default Constructor");
         }
 
-        initializePDir();
+        initialize();
     }
 
-    protected void initializePDir() //throws IOException
+    protected void initialize() //throws IOException
     {
         boolean debug = !true;
 
