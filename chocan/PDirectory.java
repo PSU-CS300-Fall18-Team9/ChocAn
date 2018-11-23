@@ -37,7 +37,7 @@ public class PDirectory
 
         if(debug == true)
         {
-            System.out.println("PDirectory Constructor");
+            System.out.println("PDirectory Default Constructor");
         }
 
         initializePDir();
@@ -45,7 +45,7 @@ public class PDirectory
 
     protected void initializePDir() //throws IOException
     {
-        boolean debug = false;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -81,8 +81,9 @@ public class PDirectory
                     System.out.println(tData[6]);
                 }
 
-                Data nProvider = new Provider(tData[1], tData[0], Integer.parseInt(tData[2]), tData[3], tData[4], tData[5], Integer.parseInt(tData[6])) {
-                };
+//                Data nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
+                Data nProvider = new Provider(tData[1], tData[0], Integer.parseInt(tData[2]), tData[3], tData[4], tData[5], Integer.parseInt(tData[6]));
+                this.addProvider(nProvider);
             }
 
             fileIn.close();
@@ -200,6 +201,51 @@ public class PDirectory
         if(debug == true)
         {
             System.out.println("PDirectory saveFile");
+        }
+
+        FileOutputStream out = null;
+        String dataFile = "./data/OutputTest.txt";
+//        String dataFile = "./data/ProviderList.txt\"
+        try
+        {
+            File outFile = new File(dataFile);
+            PrintWriter pw = new PrintWriter(outFile);
+//            FileOutputStream fos = new FileOutputStream(outFile);
+
+            for (Map.Entry<Integer, Data> entry : PDir.entrySet())
+//            for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
+            {
+                String[] tData = entry.getValue().report();
+
+                if (debug == true)
+                {
+                    System.out.println(tData[0]);
+                    System.out.println(tData[1]);
+                    System.out.println(tData[2]);
+                    System.out.println(tData[3]);
+                    System.out.println(tData[4]);
+                    System.out.println(tData[5]);
+                    System.out.println(tData[6]);
+                }
+
+                StringBuilder nString = new StringBuilder();
+
+                nString.append(tData[0] + "#");
+                nString.append(tData[1] + "#");
+                nString.append(tData[2] + "#");
+                nString.append(tData[3] + "#");
+                nString.append(tData[4] + "#");
+                nString.append(tData[5] + "#");
+                nString.append(tData[6] + "#\n");
+
+                pw.write(nString.toString());
+            }
+
+            pw.close();
+        }
+        catch (FileNotFoundException e1)
+        {
+            System.out.println("Exception thrown:" + e1);
         }
     }
 }

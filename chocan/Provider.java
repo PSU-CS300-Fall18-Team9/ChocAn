@@ -22,7 +22,7 @@ public class Provider  extends Data
 
         if(debug == true)
         {
-            System.out.println("Data constructor");
+            System.out.println("Provider constructor");
             System.out.println("fName = " + fName);
             System.out.println("lName = " + lName);
             System.out.println("num = " + num);

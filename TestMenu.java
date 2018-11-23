@@ -11,6 +11,10 @@ public class TestMenu
         int oid = -1;
         int menuNum = -1;
 
+        // Test directory class' instantiation
+//        MDirectory nMDir = new MDirectory();
+        PDirectory nPDir = new PDirectory();
+
         // Test data class' instantiation
 //        Data nMember = new Member();
 //        Member nMember = new Member();
@@ -33,10 +37,6 @@ public class TestMenu
         System.out.println(nProvider);
 //        System.out.println(nService);
 
-        // Test directory class' instantiation
-//        MDirectory nMDir = new MDirectory();
-        PDirectory nPDir = new PDirectory();
-
         // Test directory class' methods
         nPDir.addProvider(nProvider);
         System.out.println(nPDir);
@@ -44,6 +44,8 @@ public class TestMenu
 //        System.out.println(nPDir);
 
         // Start of menu prototype
+
+       nPDir.saveFile();
 
         System.out.println("Welcome to ChocAn Data Processing System TESTMENU");
 
