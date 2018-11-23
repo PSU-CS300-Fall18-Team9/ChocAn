@@ -1,11 +1,15 @@
 import java.awt.*;
 import java.util.*;
+import chocan.*;
 
-public class Main {
+public class Menu{
+//    protected Scanner input;
     protected static Scanner input;
 
-    public static void main(String[] args) {
-        input = new Scanner(System.in);
+    public static void main(String[] args)
+    {
+        System.out.println("Welcome to ChocAn Data Processing System");
+/*        input = new Scanner(System.in);
         int PID = 0;
 
         //class objects
@@ -20,10 +24,10 @@ public class Main {
             input.nextLine();
 
             auth = PDir.verifyProvider(PID);
-            if(!auth)
+            if (!auth)
                 System.out.print("\n***Authorization failed***");
 
-        }while(!auth);
+        } while (!auth);
 
         int choice = topMenu();
 
@@ -32,20 +36,20 @@ public class Main {
             //if user chooses management privileges
             if (1 == choice) {
                 boolean mgrAuth = PDir.verifyPrivilege(PID);
-                if(!mgrAuth)
+                if (!mgrAuth)
                     System.out.print("***You are not authorized to view the Management Menu***\n");
                 else {
                     System.out.print("***Authorized***\n");
                     int mgrChoice = mgrMainMenu();
 
                     //while user chooses not to exit the menu
-                    while(5 != mgrChoice){
+                    while (5 != mgrChoice) {
                         //if user selects Member Management menu
-                        if(1 == mgrChoice){
+                        if (1 == mgrChoice) {
                             int mbrMgmtChoice = mbrMgmtMenu();
-                            while(5 != mbrMgmtChoice){
+                            while (5 != mbrMgmtChoice) {
                                 //if user chooses to add a member
-                                if(1 == mbrMgmtChoice){
+                                if (1 == mbrMgmtChoice) {
                                     String lastName = new String();
                                     String firstName = new String();
                                     int id = 0;
@@ -58,22 +62,24 @@ public class Main {
                                     getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
                                     Member nMember = new Member(lastName, firstName, id, address, city, state, zip, status);
 
-                                    int added = MDir.add(nMember);
-                                    if(1 == added)
+                                    int added = MDir.addMember(nMember);
+//                                    int added = MDir.add(nMember);
+                                    if (1 == added)
                                         System.out.print("\n***Member added***\n");
                                     else
                                         System.out.print("\n***Error adding member***\n");
                                 }
 
                                 //if user chooses to delete a member
-                                else if(2 == mbrMgmtChoice){
+                                else if (2 == mbrMgmtChoice) {
                                     System.out.print("\nEnter the 9-digit ID of the member you would like to delete: ");
                                     int MID = input.nextInt();
                                     input.nextLine();
 
-                                    boolean found = MDir.findMember(MID);
+                                    boolean found = MDir.verifyMember(MID);
+//                                    boolean found = MDir.findMember(MID);
 
-                                    if(!found)
+                                    if (!found)
                                         System.out.print("\n***Error: member not found***\n");
                                     else {
                                         int deleted = MDir.removeMember(MID);
@@ -85,17 +91,18 @@ public class Main {
                                 }
 
                                 //if user chooses to edit a member
-                                else if(3 == mbrMgmtChoice){
+                                else if (3 == mbrMgmtChoice) {
                                     //find the member
                                     System.out.print("\nPlease enter the 9-digit ID of the member you would like to edit: ");
                                     int MID = input.nextInt();
                                     input.nextLine();
 
-                                    boolean found = MDir.findMember(MID);
+                                    boolean found = MDir.verifyMember(MID);
+//                                    boolean found = MDir.findMember(MID);
 
-                                    if(!found)
+                                    if (!found)
                                         System.out.print("\n***Error: member not found***\n");
-                                    else{
+                                    else {
                                         int editOption = mbrPvdrEditMenu(mgrChoice);
 
                                         boolean edited = editMbr(editOption, mgrChoice, MID, MDir); //utility function
@@ -107,8 +114,9 @@ public class Main {
                                 }
 
                                 //if user chooses to display all members
-                                else if(4 == mbrMgmtChoice)
-                                    MDir.displayAll();
+                                else if (4 == mbrMgmtChoice)
+                                    System.out.println(MDir);
+//                                    MDir.displayAll();
 
                                 mbrMgmtChoice = mbrMgmtMenu();
                             }
@@ -116,12 +124,12 @@ public class Main {
                         }
 
                         //if user selects Provider Management menu
-                        else if(2 == mgrChoice){
+                        else if (2 == mgrChoice) {
                             int pvdrMgmtChoice = pvdrMgmtMenu();
                             //while user chooses not to exit the menu
-                            while(5 != pvdrMgmtChoice){
+                            while (5 != pvdrMgmtChoice) {
                                 //if user chooses to add a provider
-                                if(1 == pvdrMgmtChoice){
+                                if (1 == pvdrMgmtChoice) {
                                     String lastName = new String();
                                     String firstName = new String();
                                     int id = 0;
@@ -134,22 +142,22 @@ public class Main {
                                     getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
                                     Provider nProvider = new Provider(lastName, firstName, id, address, city, state, zip, status);
 
-                                    int added = PDir.add(nProvider);
-                                    if(1 == added)
+                                    int added = PDir.addProvider(nProvider);
+                                    if (1 == added)
                                         System.out.print("\n***Provider added***\n");
                                     else
                                         System.out.print("\n***Error adding provider***\n");
                                 }
 
                                 //if user chooses to delete a provider
-                                else if(2 == pvdrMgmtChoice){
+                                else if (2 == pvdrMgmtChoice) {
                                     System.out.print("\nEnter the 9-digit ID of the provider you would like to delete: ");
                                     int pid = input.nextInt();
                                     input.nextLine();
 
-                                    boolean found = PDir.findProvider(pid);
+                                    boolean found = PDir.verifyProvider(pid);
 
-                                    if(!found)
+                                    if (!found)
                                         System.out.print("\n***Error: provider not found***\n");
                                     else {
                                         int deleted = PDir.removeProvider(pid);
@@ -161,17 +169,17 @@ public class Main {
                                 }
 
                                 //if user chooses to edit a provider
-                                else if(3 == pvdrMgmtChoice){
+                                else if (3 == pvdrMgmtChoice) {
                                     //find the provider
                                     System.out.print("\nPlease enter the 9-digit ID of the provider you would like to edit: ");
                                     int pid = input.nextInt();
                                     input.nextLine();
 
-                                    boolean found = PDir.findProvider(pid);
+                                    boolean found = PDir.verifyProvider(pid);
 
-                                    if(!found)
+                                    if (!found)
                                         System.out.print("\n***Error: provider not found***\n");
-                                    else{
+                                    else {
                                         int editOption = mbrPvdrEditMenu(mgrChoice);
 
                                         boolean edited = editPvdr(editOption, mgrChoice, pid, PDir);  //utility function
@@ -183,8 +191,9 @@ public class Main {
                                 }
 
                                 //if user chooses to display all providers
-                                else if(4 == pvdrMgmtChoice)
-                                    PDir.displayAll();
+                                else if (4 == pvdrMgmtChoice)
+                                    System.out.println(PDir);
+//                                    PDir.displayAll();
 
                                 pvdrMgmtChoice = pvdrMgmtMenu();
                             }
@@ -192,19 +201,20 @@ public class Main {
                         }
 
                         //if user selects Bill Member for Service
-                        else if(3 == mgrChoice){
+                        else if (3 == mgrChoice) {
                             int svcChoice = svcMenu();
-                            while(3 != svcChoice){
+                            while (3 != svcChoice) {
                                 //if user chooses to display service codes
-                                if(1 == svcChoice)
-                                    svc.displayAll();
+                                if (1 == svcChoice)
+                                    System.out.println(svc);
+//                                    svc.displayAll();
 
 
-                                //if user chooses to create service record
-                                else if(2 == svcChoice){
+                                    //if user chooses to create service record
+                                else if (2 == svcChoice) {
                                     boolean added = newSvcRec(MDir, svc);  //utility function
 
-                                    if(added)
+                                    if (added)
                                         System.out.print("\n***Service record created***");
                                     else
                                         System.out.print("\n***Error creating service record");
@@ -215,22 +225,22 @@ public class Main {
                         }
 
                         //if user selects Reporting Menu
-                        else if(4 == mgrChoice){
+                        else if (4 == mgrChoice) {
                             int mgrReportsChoice = mgrReportsMenu();
-                            while(4 != mgrReportsChoice){
+                            while (4 != mgrReportsChoice) {
                                 //if user chooses to create member report
-                                if(1 == mgrReportsChoice)
+                                if (1 == mgrReportsChoice)
                                     MDir.buildReports();
 
-                                //if user chooses to create provider report
-                                else if(2 == mgrReportsChoice)
+                                    //if user chooses to create provider report
+                                else if (2 == mgrReportsChoice)
                                     PDir.buildReports();
 
-                                //if user chooses to create manager report
-                                else if(3 == mgrReportsChoice)
+                                    //if user chooses to create manager report
+                                else if (3 == mgrReportsChoice)
                                     //create manager report
 
-                                mgrReportsChoice = mgrReportsMenu();
+                                    mgrReportsChoice = mgrReportsMenu();
                             }
                             mgrChoice = mgrMainMenu();
                         }
@@ -252,13 +262,13 @@ public class Main {
                 }
 
                 //while user chooses not to exit the menu
-                while(4 != pvdrChoice){
+                while (4 != pvdrChoice) {
                     //if user selects Member Management menu
-                    if(1 == pvdrChoice){
+                    if (1 == pvdrChoice) {
                         int mbrMgmtChoice = mbrMgmtMenu();
-                        while(5 != mbrMgmtChoice){
+                        while (5 != mbrMgmtChoice) {
                             //if user chooses to add a member
-                            if(1 == mbrMgmtChoice){
+                            if (1 == mbrMgmtChoice) {
                                 String lastName = new String();
                                 String firstName = new String();
                                 int id = 0;
@@ -271,22 +281,24 @@ public class Main {
                                 getInfo(pvdrChoice, lastName, firstName, id, address, city, state, zip, status);
                                 Member nMember = new Member(lastName, firstName, id, address, city, state, zip, status);
 
-                                int added = MDir.add(nMember);
-                                if(1 == added)
+                                int added = MDir.addMember(nMember);
+//                                int added = MDir.add(nMember);
+                                if (1 == added)
                                     System.out.print("\n***Member added***\n");
                                 else
                                     System.out.print("\n***Error adding member***\n");
                             }
 
                             //if user chooses to delete a member
-                            else if(2 == mbrMgmtChoice){
+                            else if (2 == mbrMgmtChoice) {
                                 System.out.print("\nEnter the 9-digit ID of the member you would like to delete: ");
                                 int MID = input.nextInt();
                                 input.nextLine();
 
-                                boolean found = MDir.findMember(MID);
+                                boolean found = MDir.verifyMember(MID);
+//                                boolean found = MDir.findMember(MID);
 
-                                if(!found)
+                                if (!found)
                                     System.out.print("\n***Error: member not found***\n");
                                 else {
                                     int deleted = MDir.removeMember(MID);
@@ -298,17 +310,18 @@ public class Main {
                             }
 
                             //if user chooses to edit a member
-                            else if(3 == mbrMgmtChoice){
+                            else if (3 == mbrMgmtChoice) {
                                 //find the member
                                 System.out.print("\nPlease enter the 9-digit ID of the member you would like to edit: ");
                                 int mid = input.nextInt();
                                 input.nextLine();
 
-                                boolean found = MDir.findMember(mid);
+                                boolean found = MDir.verifyMember(mid);
+//                                boolean found = MDir.findMember(mid);
 
-                                if(!found)
+                                if (!found)
                                     System.out.print("\n***Error: member not found***\n");
-                                else{
+                                else {
                                     int editOption = mbrPvdrEditMenu(pvdrChoice);
 
                                     boolean edited = editMbr(editOption, pvdrChoice, mid, MDir);
@@ -320,8 +333,9 @@ public class Main {
                             }
 
                             //if user chooses to display all members
-                            else if(4 == mbrMgmtChoice)
-                                MDir.displayAll();
+                            else if (4 == mbrMgmtChoice)
+                                System.out.println(MDir);
+//                                MDir.displayAll();
 
                             mbrMgmtChoice = mbrMgmtMenu();
                         }
@@ -329,18 +343,18 @@ public class Main {
                     }
 
                     //if user selects Bill Member for Service
-                    else if(2 == pvdrChoice){
+                    else if (2 == pvdrChoice) {
                         int svcChoice = svcMenu();
-                        while(3 != svcChoice){
+                        while (3 != svcChoice) {
                             //if user chooses to display service codes
-                            if(1 == svcChoice)
-                                svc.displayAll();
-
-                            //if user chooses to create service record
-                            else if(2 == svcChoice){
+                            if (1 == svcChoice) {
+//                                svc.displayAll();
+                            }
+                                //if user chooses to create service record
+                            else if (2 == svcChoice) {
                                 boolean added = newSvcRec(MDir, svc);
 
-                                if(added)
+                                if (added)
                                     System.out.print("\n***Service record created***");
                                 else
                                     System.out.print("\n***Error creating service record");
@@ -351,15 +365,15 @@ public class Main {
                     }
 
                     //if user selects Reporting Menu
-                    else if(3 == pvdrChoice){
+                    else if (3 == pvdrChoice) {
                         int pvdrReportsChoice = pvdrReportsMenu();
-                        while(3 != pvdrReportsChoice){
+                        while (3 != pvdrReportsChoice) {
                             //if user chooses to create member report
-                            if(1 == pvdrReportsChoice)
+                            if (1 == pvdrReportsChoice)
                                 MDir.buildReports();
 
-                            //if user chooses to create provider report
-                            else if(2 == pvdrReportsChoice)
+                                //if user chooses to create provider report
+                            else if (2 == pvdrReportsChoice)
                                 PDir.buildReports();
 
                             pvdrReportsChoice = pvdrReportsMenu();
@@ -574,9 +588,9 @@ public class Main {
             System.out.print("\n6 - State");
             System.out.print("\n7 - Zip code");
 
-            if(1 == choice)
+            if (1 == choice)
                 System.out.print("\n8 - Payment status\n");
-            else if(2 == choice)
+            else if (2 == choice)
                 System.out.print("\n8 - Authorization level\n");
             System.out.print("\nEnter menu option here: ");
 
@@ -593,9 +607,9 @@ public class Main {
     }
 
     public static void getInfo(int choice, String lastName, String firstName, int id, String address, String city, String state, int zip, boolean status) {
-        if(1 == choice)
+        if (1 == choice)
             System.out.print("\n***Add new member***\n");
-        else if(2 == choice)
+        else if (2 == choice)
             System.out.print("\n***Add new provider***\n");
         else
             System.out.print("\n***Invalid entry***\n");
@@ -629,29 +643,27 @@ public class Main {
             System.out.print("Is member current? (Y/N): ");
             char current = input.next().charAt(0);
 
-            while (('Y' != current) && ('y' != current) && ('N' != current) && ('n' != current)){
+            while (('Y' != current) && ('y' != current) && ('N' != current) && ('n' != current)) {
                 System.out.print("\n***Option out of range***\n");
                 System.out.print("\nPlease enter Y/N: ");
                 current = input.next().charAt(0);
             }
 
-            if(('Y' == current) || ('y' == current))
+            if (('Y' == current) || ('y' == current))
                 status = true;
             else
                 status = false;
-        }
-
-        else if(2 == choice){
+        } else if (2 == choice) {
             System.out.print("\nIs the user a manager? (Y/N): ");
             char mgr = input.next().charAt(0);
 
-            while (('Y' != mgr) && ('y' != mgr) && ('N' != mgr) && ('n' != mgr)){
+            while (('Y' != mgr) && ('y' != mgr) && ('N' != mgr) && ('n' != mgr)) {
                 System.out.print("\n***Option out of range***\n");
                 System.out.print("\nPlease enter Y/N: ");
                 mgr = input.next().charAt(0);
             }
 
-            if(('Y' == mgr) || ('y' == mgr))
+            if (('Y' == mgr) || ('y' == mgr))
                 status = true;
             else
                 status = false;
@@ -664,7 +676,7 @@ public class Main {
         input.nextLine();
 
         boolean valid = MDir.verifyMember(id);  //should we make this an int so we can print "invalid, suspended, validated?"
-        if(valid) {
+        if (valid) {
             System.out.print("\n***Validated***\n");
             System.out.print("\nPlease enter the date of service in MM-DD-YYYY format.");
 
@@ -718,21 +730,21 @@ public class Main {
         return false;
     }
 
-    public static boolean editMbr(int editOption, int choice, int id, MDirectory mDir){
+    public static boolean editMbr(int editOption, int choice, int id, MDirectory mDir) {
         String st = new String(" ");
         int num = 0;
         boolean status = false;
 
         //if user chooses to edit boolean info
-        if(8 == editOption) {
+        if (8 == editOption) {
             do {
                 System.out.print("\nEnter 1 for current, 2 for delinquent: ");
                 num = input.nextInt();
                 input.nextLine();
 
-                if(1 != num && 2 != num)
+                if (1 != num && 2 != num)
                     System.out.print("\n***Input error***\n");
-            }while(1 != num && 2 != num);
+            } while (1 != num && 2 != num);
 
             if (1 == num)
                 status = true;
@@ -746,7 +758,7 @@ public class Main {
         }
 
         //if user chooses to edit string info
-        else{
+        else {
             System.out.print("\nEnter new information here: ");
             st = input.nextLine();
         }
@@ -756,21 +768,21 @@ public class Main {
         return edited;
     }
 
-    public static boolean editPvdr(int editOption, int choice, int id, PDirectory pDir){
+    public static boolean editPvdr(int editOption, int choice, int id, PDirectory pDir) {
         String st = new String(" ");
         int num = 0;
         boolean status = false;
 
         //if user chooses to edit boolean info
-        if(8 == editOption) {
+        if (8 == editOption) {
             do {
                 System.out.print("\nEnter 1 for manager, 2 for provider: ");
                 num = input.nextInt();
                 input.nextLine();
 
-                if(1 != num && 2 != num)
+                if (1 != num && 2 != num)
                     System.out.print("\n***Input error***\n");
-            }while(1 != num && 2 != num);
+            } while (1 != num && 2 != num);
 
             if (1 == num)
                 status = true;
@@ -784,7 +796,7 @@ public class Main {
         }
 
         //if user chooses to edit string info
-        else{
+        else {
             System.out.print("\nEnter new information here: ");
             st = input.nextLine();
         }
@@ -792,5 +804,6 @@ public class Main {
         boolean edited = pDir.editProvider(id, st, num, status);
 
         return edited;
+*/
     }
 }

@@ -45,7 +45,7 @@ public class TestMenu
 
         // Start of menu prototype
 
-        System.out.println("Welcome to ChocAn Data Processing System");
+        System.out.println("Welcome to ChocAn Data Processing System TESTMENU");
 
         // Operator Login
         boolean opVerified = false;
@@ -55,7 +55,7 @@ public class TestMenu
             System.out.print("\nLogin to ChocAn Using Provider/Manager ID:");
             oid = sc.nextInt();
 
-            if (nPDir.verifyProvider(oid) == 1)
+            if (nPDir.verifyProvider(oid))
             {
                 System.out.println("Provider " + oid + " Verified...");
                 opVerified = true;
