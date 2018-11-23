@@ -3,7 +3,7 @@
  * Dependencies:
  *  Need finished Provider class
  * Add provider /
- *  Enter data for new provider
+ *  Enter data for new provider (needs finished Provider class)
  *  Add new provider to map X
  * Remove provider X
  * Print provider directory X
@@ -14,13 +14,15 @@
  * Import data file into Map /
  *  Open/close file X
  *  Throw IO exception if invalid filename/file doesn't exist X
- *  Load data into Map
+ *  Load provider data into Map X
+ *  Load service data into Map
  * Export data from Map into data file
  * Build reports
  * Save directory file on exit
  */
 
 package chocan;
+import java.nio.Buffer;
 import java.util.*;
 import java.io.*;
 
@@ -28,9 +30,6 @@ public class PDirectory
 {
     public Map<Integer, Data> PDir = new HashMap<>();
 //    public Map<Integer, Provider> PDir = new HashMap<>();
-
-    FileInputStream in = null;
-    FileOutputStream out = null;
 
     public PDirectory() //throws IOException
     {
@@ -46,28 +45,47 @@ public class PDirectory
 
     protected void initializePDir() //throws IOException
     {
-        boolean debug = true;
+        boolean debug = false;
 
         if(debug == true)
         {
             System.out.println("PDirectory initializePDir");
         }
 
+        String dataFile = "./data/ProviderList.txt";
+        String line = "";
+        String sepChar = "#";
+
         try
         {
-            in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
-//            FileInputStream in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
-//            in = new FileInputStream("./data/ProviderListNameNumberOnly.txt");
-//            in = new FileInputStream("./data/DoesNotExist"); // Test exception
+            FileReader fileIn = new FileReader(dataFile);
+            BufferedReader buffIn = new BufferedReader(fileIn);
 
-/*            String sIn  = NULL;
-
-            while((sIn = in.read()) != '#')
+            while((line = buffIn.readLine()) != null)
             {
+                if(debug == true)
+                {
+                    System.out.println(line);
+                }
 
+                String[] tData = line.split(sepChar);
+
+                if(debug == true)
+                {
+                    System.out.println(tData[0]);
+                    System.out.println(tData[1]);
+                    System.out.println(tData[2]);
+                    System.out.println(tData[3]);
+                    System.out.println(tData[4]);
+                    System.out.println(tData[5]);
+                    System.out.println(tData[6]);
+                }
+
+                Data nProvider = new Provider(tData[1], tData[0], Integer.parseInt(tData[2]), tData[3], tData[4], tData[5], Integer.parseInt(tData[6])) {
+                };
             }
-*/
-            in.close();
+
+            fileIn.close();
         }
         catch (IOException e1)
         {
@@ -75,7 +93,20 @@ public class PDirectory
         }
     }
 
-    public int verifyProvider(int pid)
+    public boolean verifyPrivilege(int pid)
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory verifyPrivilege");
+            System.out.println("pId = " + pid);
+        }
+
+        return PDir.containsKey(pid);
+    };
+
+    public boolean verifyProvider(int pid)
     {
         boolean debug = true;
 
@@ -85,14 +116,7 @@ public class PDirectory
             System.out.println("pId = " + pid);
         }
 
-        int verPid = 0;
-
-        if (PDir.containsKey(pid))
-        {
-            verPid = 1;
-        }
-
-        return verPid;
+        return PDir.containsKey(pid);
     };
 
     public int addProvider(Data nProvider)
@@ -167,5 +191,15 @@ public class PDirectory
         }
 
         return data;
+    }
+
+    public void saveFile()
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory saveFile");
+        }
     }
 }
