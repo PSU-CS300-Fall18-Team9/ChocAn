@@ -1,7 +1,7 @@
 Provider name: Kinch Thomas
-Provider number: 246809753
 Provider address: 465 N Montana Ave.
 Provider city: Portland
 Provider state: OR
 Provider zip: 97227
 
+Provider ID: 246809753
