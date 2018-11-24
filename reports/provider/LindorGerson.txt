@@ -1,6 +1,7 @@
 Provider name: Lindor Gerson
 Provider number: 975312468
-Provider address: 975312468
-Provider city: 975312468
-Provider zip: 975312468
+Provider address: 964 Westwood Dr.
+Provider city: Portland
+Provider state: OR
+Provider zip: 97239
 
