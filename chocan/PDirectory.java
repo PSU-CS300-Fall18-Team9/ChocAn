@@ -8,7 +8,7 @@
  * Remove provider X
  * Print provider directory X
  * Edit provider /
- *  Edit provider fields
+ *  Edit provider fields (handled by menu?)
  *  Overwrite provider data in map X
  * Verify provider X
  * Import data file into Map /
@@ -17,7 +17,8 @@
  *  Load provider data into Map X
  *  Load service data into Map
  * Export data from Map into data file
- * Build reports
+ * Build reports /
+ *  Needs service data
  * Save directory file on exit /
  *  Needs service data
  */
@@ -44,6 +45,92 @@ public class PDirectory
 
         initialize();
     }
+
+    public int addProvider(Data nProvider)
+//    public int addProvider(Provider nProvider)
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory addProvider");
+        }
+
+        PDir.put(nProvider.number, nProvider);
+
+        return 0;
+    };
+
+    public void buildReports()
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory buildReports");
+        }
+
+        for (Map.Entry<Integer, Data> entry : PDir.entrySet())
+//        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
+        {
+            FileOutputStream out = null;
+//            String dataFile = "./data/ProviderList.txt\"
+
+
+            String[] tData = entry.getValue().report();
+
+            if (debug == true)
+            {
+                System.out.println(tData[0]);
+                System.out.println(tData[1]);
+                System.out.println(tData[2]);
+                System.out.println(tData[3]);
+                System.out.println(tData[4]);
+                System.out.println(tData[5]);
+                System.out.println(tData[6]);
+            }
+
+            StringBuilder nString = new StringBuilder();
+
+            nString.append("Provider name: " + tData[0] + " " + tData[1] + "\n");
+            nString.append("Provider number: " + tData[2] + "\n");
+            nString.append("Provider address: " + tData[2] + "\n");
+            nString.append("Provider city: " + tData[2] + "\n");
+            nString.append("Provider zip: " + tData[2] + "\n\n");
+
+            StringBuilder dataFile = new StringBuilder();
+
+            dataFile.append("./reports/provider/" + tData[0]+tData[1] + ".txt");
+
+            try
+            {
+                File outFile = new File(dataFile.toString());
+                PrintWriter pw = new PrintWriter(outFile);
+//              FileOutputStream fos = new FileOutputStream(outFile);
+                pw.write(nString.toString());
+
+                pw.close();
+            }
+            catch (FileNotFoundException e1)
+            {
+                System.out.println("Exception thrown:" + e1);
+            }
+        }
+    };
+
+    public int editProvider(Provider nProvider)
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory editProvider");
+        }
+
+        PDir.put(nProvider.number, nProvider);
+
+        return 0;
+    };
 
     protected void initialize() //throws IOException
     {
@@ -96,61 +183,6 @@ public class PDirectory
         }
     }
 
-    public boolean verifyPrivilege(int pid)
-    {
-        boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory verifyPrivilege");
-            System.out.println("pId = " + pid);
-        }
-
-        return PDir.containsKey(pid);
-    };
-
-    public boolean verifyProvider(int pid)
-    {
-        boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory verifyProvider");
-            System.out.println("pId = " + pid);
-        }
-
-        return PDir.containsKey(pid);
-    };
-
-    public int addProvider(Data nProvider)
-//    public int addProvider(Provider nProvider)
-    {
-        boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory addProvider");
-        }
-
-        PDir.put(nProvider.number, nProvider);
-
-        return 0;
-    };
-
-    public int editProvider(Provider nProvider)
-    {
-        boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory editProvider");
-        }
-
-        PDir.put(nProvider.number, nProvider);
-
-        return 0;
-    };
-
     public int removeProvider(int pid)
     {
         boolean debug = true;
@@ -165,36 +197,6 @@ public class PDirectory
 
         return 0;
     };
-
-    public void buildReports()
-    {
-        boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory buildReports");
-        }
-    };
-
-    public String toString()
-    {
-        boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory toString");
-        }
-
-        String data = null;
-
-        for(Map.Entry<Integer, Data> entry: PDir.entrySet())
-//        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
-        {
-            data = entry.getValue().toString();
-        }
-
-        return data;
-    }
 
     public void saveFile()
     {
@@ -250,4 +252,37 @@ public class PDirectory
             System.out.println("Exception thrown:" + e1);
         }
     }
+
+    public String toString()
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory toString");
+        }
+
+        String data = null;
+
+        for(Map.Entry<Integer, Data> entry: PDir.entrySet())
+//        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
+        {
+            data = entry.getValue().toString();
+        }
+
+        return data;
+    }
+
+    public boolean verifyProvider(int pid)
+    {
+        boolean debug = true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory verifyProvider");
+            System.out.println("pId = " + pid);
+        }
+
+        return PDir.containsKey(pid);
+    };
 }
