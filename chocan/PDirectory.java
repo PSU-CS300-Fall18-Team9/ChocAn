@@ -94,9 +94,9 @@ public class PDirectory
 
             nString.append("Provider name: " + tData[0] + " " + tData[1] + "\n");
             nString.append("Provider number: " + tData[2] + "\n");
-            nString.append("Provider address: " + tData[2] + "\n");
-            nString.append("Provider city: " + tData[2] + "\n");
-            nString.append("Provider zip: " + tData[2] + "\n\n");
+            nString.append("Provider address: " + tData[3] + "\n");
+            nString.append("Provider city: " + tData[4] + "\n");
+            nString.append("Provider zip: " + tData[4] + "\n\n");
 
             StringBuilder dataFile = new StringBuilder();
 
