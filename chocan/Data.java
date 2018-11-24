@@ -112,24 +112,24 @@ public abstract class Data
 
     public String toString()
     {
-/*        boolean debug = true;
+        boolean debug = !true;
+
         if(debug == true)
         {
             System.out.println("Data toString");
         }
 
-        String data = null;
+        String data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName+ "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip + "\nID: " + this.id + "\n" ;
 
-        data = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + id + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
-*/
-        String info;
+        return data;
+
+/*        String info;
         String location;
-
-//        data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + number + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
 
         info = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
         location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
         return info + "\n" + location;
+*/
     }
 
 
