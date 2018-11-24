@@ -83,7 +83,30 @@ public abstract class Data
     }
 
 
+
     // Outputs attributes to a screen or a file, depending on output stream
+
+    public String[] report()
+    {
+        if(debug == true)
+        {
+            System.out.println("Data report");
+        }
+
+        String[] data = new String[7];
+
+//        String data = null;
+        data[0] = this.lastName;
+        data[1] = this.firstName;
+        data[2] = Integer.toString(this.number);
+        data[3] = this.address;
+        data[4] = this.city;
+        data[5] = this.state;
+        data[6] = Integer.toString(this.zip);
+
+        return data;
+    }
+
     public String toString()
     {
     /*    if(debug == true)
@@ -92,10 +115,13 @@ public abstract class Data
         }
 
         String data = null;
+
         data = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + id + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
         */
         String info;
         String location;
+
+        data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + number + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip; 
 
         info = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
         location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;

@@ -1,0 +1,7 @@
+Provider name: Smith John
+Provider number: 100000000
+Provider address: 12345 SW Portland Ave
+Provider city: Portland
+Provider state: Oregon
+Provider zip: 97223
+

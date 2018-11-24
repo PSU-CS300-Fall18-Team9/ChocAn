@@ -11,6 +11,10 @@ public class TestMenu
         int oid = -1;
         int menuNum = -1;
 
+        // Test directory class' instantiation
+//        MDirectory nMDir = new MDirectory();
+        PDirectory nPDir = new PDirectory();
+
         // Test data class' instantiation
 //        Data nMember = new Member();
 //        Member nMember = new Member();
@@ -33,10 +37,6 @@ public class TestMenu
         System.out.println(nProvider);
 //        System.out.println(nService);
 
-        // Test directory class' instantiation
-//        MDirectory nMDir = new MDirectory();
-        PDirectory nPDir = new PDirectory();
-
         // Test directory class' methods
         nPDir.addProvider(nProvider);
         System.out.println(nPDir);
@@ -45,7 +45,10 @@ public class TestMenu
 
         // Start of menu prototype
 
-        System.out.println("Welcome to ChocAn Data Processing System");
+        nPDir.buildReports();
+        nPDir.saveFile();
+
+        System.out.println("Welcome to ChocAn Data Processing System TESTMENU");
 
         // Operator Login
         boolean opVerified = false;
@@ -55,7 +58,7 @@ public class TestMenu
             System.out.print("\nLogin to ChocAn Using Provider/Manager ID:");
             oid = sc.nextInt();
 
-            if (nPDir.verifyProvider(oid) == 1)
+            if (nPDir.verifyProvider(oid))
             {
                 System.out.println("Provider " + oid + " Verified...");
                 opVerified = true;
