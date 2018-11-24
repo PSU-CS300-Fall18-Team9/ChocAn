@@ -119,7 +119,7 @@ public abstract class Data
             System.out.println("Data toString");
         }
 
-        String data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName+ "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip + "\nID: " + this.id + "\n" ;
+        String data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName+ "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip + "ID: " + this.id + "\n" ;
 
         return data;
 

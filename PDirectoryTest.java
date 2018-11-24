@@ -41,8 +41,6 @@ public class PDirectoryTest
         System.out.println("\nPrinting Provider Directory after removal of new provider:");
         System.out.println(nPDir);
 
-        // Start of menu prototype
-
 //        nPDir.buildReports(); // NullPointerException on Provider.buildReport
         nPDir.saveFile();
     }
