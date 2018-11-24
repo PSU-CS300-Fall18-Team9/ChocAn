@@ -5,7 +5,7 @@ import java.util.*;
 //public class Data
 public abstract class Data
 {
-    //boolean debug = true;
+//    boolean debug = true;
 
  //   protected Set<Data> services;   This one may be adding the wrong class
     protected Set<Service> services;
@@ -28,11 +28,12 @@ public abstract class Data
     // Default constructor
     public Data()
     {
-      /*  if(debug == true)   // May not need this for this class
+/*        boolean debug = true;
+        if(debug == true)   // May not need this for this class
         {
             System.out.println("Data default constructor");
-        }*/
-
+        }
+*/
         services = null;
         toFile = null;
         firstName = null;
@@ -57,7 +58,8 @@ public abstract class Data
      */
     public Data(String fName, String lName, String address, String city, String state, int zip, int id)
     {
-        /*  // May not print the right info for member or provider
+/*        boolean debug = true;
+        // May not print the right info for member or provider
         if(debug == true)
         {
             System.out.println("Data constructor");
@@ -68,8 +70,8 @@ public abstract class Data
             System.out.println("city = " + city);
             System.out.println("state = " + state);
             System.out.println("zip = " + zip);
-        }*/
-
+        }
+*/
         services = null;
         toFile = null;
         this.firstName = fName;
@@ -88,17 +90,18 @@ public abstract class Data
 
     public String[] report()
     {
+/*        boolean debug = true;
         if(debug == true)
         {
             System.out.println("Data report");
         }
-
+*/
         String[] data = new String[7];
 
 //        String data = null;
         data[0] = this.lastName;
         data[1] = this.firstName;
-        data[2] = Integer.toString(this.number);
+        data[2] = Integer.toString(this.id);
         data[3] = this.address;
         data[4] = this.city;
         data[5] = this.state;
@@ -109,7 +112,8 @@ public abstract class Data
 
     public String toString()
     {
-    /*    if(debug == true)
+/*        boolean debug = true;
+        if(debug == true)
         {
             System.out.println("Data toString");
         }
@@ -117,11 +121,11 @@ public abstract class Data
         String data = null;
 
         data = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + id + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
-        */
+*/
         String info;
         String location;
 
-        data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + number + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip; 
+//        data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nNumber: " + number + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
 
         info = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
         location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
