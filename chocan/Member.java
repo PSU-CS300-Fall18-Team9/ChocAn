@@ -31,9 +31,12 @@ public class Member extends Data
      * @precondition:  If a file does not exist, this method creates a new file and writes to the file.
      * @postcondition:  A new file exist or a new member's info is appended to an existing file
      */
-    public void buildReport(String fileName)
+    /*public void buildReport(String fileName)
     {
 
+    }*/
+    public boolean buildReport(String fileName, boolean append) {
+        return false;
     }
 
 
