@@ -2,8 +2,10 @@
  * TODO:
  * Dependencies:
  *  Need finished Provider class
+ *  Need finished Service class
  * Add provider /
- *  Enter data for new provider (needs finished Provider class)
+ *  Enter data for new provider
+ *      Needs finished Provider class
  *  Add new provider to map X
  * Remove provider X
  * Print provider directory X
@@ -11,16 +13,25 @@
  *  Edit provider fields (handled by menu?)
  *  Overwrite provider data in map X
  * Verify provider X
+ * Verify privilege (can be done by verify provider?)
+ *  Needs finished provider class
  * Import data file into Map /
  *  Open/close file X
  *  Throw IO exception if invalid filename/file doesn't exist X
- *  Load provider data into Map X
+ *  Load provider data into Map /
+ *      Needs finished Provider class
  *  Load service data into Map
- * Export data from Map into data file
+ * Export data from Map into data file /
+ *  Export provider data /
+ *      Needs finished provider class
+ *  Export service data
+ *      Needs finished service class
  * Build reports /
  *  Needs service data
  * Save directory file on exit /
+ *  Needs finished provider class
  *  Needs service data
+ *      Needs finished service class
  */
 
 package chocan;
@@ -96,7 +107,8 @@ public class PDirectory
             nString.append("Provider number: " + tData[2] + "\n");
             nString.append("Provider address: " + tData[3] + "\n");
             nString.append("Provider city: " + tData[4] + "\n");
-            nString.append("Provider zip: " + tData[4] + "\n\n");
+            nString.append("Provider state: " + tData[5] + "\n");
+            nString.append("Provider zip: " + tData[6] + "\n\n");
 
             StringBuilder dataFile = new StringBuilder();
 

@@ -867,7 +867,8 @@ public class Menu
 
                 if (1 != num && 2 != num)
                     System.out.print("\n***Input error***\n");
-            } while (1 != num && 2 != num);
+            }
+            while (1 != num && 2 != num);
 
             if (1 == num)
                 status = true;
