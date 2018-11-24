@@ -45,7 +45,8 @@ public class TestMenu
 
         // Start of menu prototype
 
-       nPDir.saveFile();
+        nPDir.buildReports();
+        nPDir.saveFile();
 
         System.out.println("Welcome to ChocAn Data Processing System TESTMENU");
 
