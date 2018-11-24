@@ -187,6 +187,21 @@ public class Provider  extends Data
         return aMatch;
     }
 
+    public String toString()
+    {
+        boolean debug = !true;
+
+        if(debug == true)
+        {
+            System.out.println("Provider toString");
+        }
+
+//        String data = null;
+
+        String data = super.toString();
+
+        return data;
+    }
 
     // Displays the provider's information and all the services the provider provided
     public void displayAll()

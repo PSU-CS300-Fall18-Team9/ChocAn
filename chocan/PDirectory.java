@@ -60,7 +60,7 @@ public class PDirectory
 //    public int addProvider(Data nProvider)
     public int addProvider(Provider nProvider)
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -75,7 +75,7 @@ public class PDirectory
 
     public void buildReports()
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -136,7 +136,7 @@ public class PDirectory
 
     public int editProvider(Provider nProvider)
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -150,7 +150,7 @@ public class PDirectory
 
     protected void initialize() //throws IOException
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -202,7 +202,7 @@ public class PDirectory
 
     public int removeProvider(int pid)
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -217,7 +217,7 @@ public class PDirectory
 
     public void saveFile()
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -272,7 +272,7 @@ public class PDirectory
 
     public String toString()
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
@@ -284,7 +284,10 @@ public class PDirectory
 //        for(Map.Entry<Integer, Data> entry: PDir.entrySet())
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
-            data = entry.getValue().toString();
+            if(data != null) // Fix for null on toString
+                data += entry.getValue().toString();
+            else
+                data = entry.getValue().toString();
         }
 
         return data;
@@ -292,7 +295,7 @@ public class PDirectory
 
     public boolean verifyProvider(int pid)
     {
-        boolean debug = true;
+        boolean debug = !true;
 
         if(debug == true)
         {
