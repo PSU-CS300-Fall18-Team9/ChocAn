@@ -69,6 +69,7 @@ public class Provider  extends Data
 
     /** Writes provider's information, all the services the provider provided, the total number of consultations,
      * and the total service fees of the week
+     *
      * @param fileName: holds the name of a text file
      * @param append:   If append holds a true value and the text file already exist, this method will append to the
      *                  exiting file.
@@ -121,6 +122,7 @@ public class Provider  extends Data
 
     /** Inserts one service to a list of services. Does not allow duplicates, and appends new services to an existing
      * list of services
+     *
      * @precondition:
      *              Case 1: The list is empty, and the service is the first item on the list
      *              Case 2: There are services in the list, and inserting a new service
@@ -165,6 +167,7 @@ public class Provider  extends Data
 
 
     /**  Compares the parameter with the service code stored in the service class
+     *
      * @precondition:
      *              Case 1: List is empty
      *              Case 2: List is not empty, service code not found
@@ -192,6 +195,10 @@ public class Provider  extends Data
     }
 
 
+    /** Represent provider's info as a string.  Able to dislay on screen or write to a file
+     *
+     * @return data: Returns the super class' fields and the consult field as strings.
+     */
     public String toString()
     {
         boolean debug = !true;
