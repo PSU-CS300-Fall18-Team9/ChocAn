@@ -1,5 +1,4 @@
 package chocan;
-//import javafx.scene.chart.PieChart; // What is this? -Jaime
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -80,8 +79,6 @@ public class Provider  extends Data
      */
     public boolean buildReport(String fileName, boolean append)
     {
-        // I MAY NEED TO ADD A DATA OBJECT PARAMETER TO THIS METHOD, SO I CAN ACCESS MEMBER'S PUBLIC METHODS
-        // EX: public boolean buildReport(String fileName, boolean append, Data person)
         boolean isOpen = true;
 
         // open file
@@ -98,15 +95,21 @@ public class Provider  extends Data
             // write provider to file
             toFile.println(this);  // it will call the string method from the Data class
             // write all services to file
-            for(Service s: services)
+            if (services != null)
             {
-                // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST): ex:  member.getFName() member.getLName
-                // NEED TO WRITE MEMBER'S ID NUMBER ex: member.getID()
-                toFile.println(s);
-                // NEED TO CALCULATE THE TOTAL FEES OF ALL SERVICES IN THE LIST
-                // NEED TO WRITE TOTAL SERVICE FEES FOR THE WEEK
+                for (Service s : services) {
+                    // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST): ex:  member.getFName() member.getLName
+                    // NEED TO WRITE MEMBER'S ID NUMBER ex: member.getID()
+                    toFile.println(s);
+                    // NEED TO CALCULATE THE TOTAL FEES OF ALL SERVICES IN THE LIST
+                    // NEED TO WRITE TOTAL SERVICE FEES FOR THE WEEK
+                }
+                toFile.println("Total Number of consultation with members: " + consult);
             }
-            toFile.println("Total Number of consultation with members: " + consult);
+            else
+            {
+                toFile.println("No services provided.");
+            }
             // close file
             toFile.close();
         }
@@ -133,7 +136,7 @@ public class Provider  extends Data
         if (toAdd != null) {
             // if services is null, create a new list of services
             if (services == null) {
-                services = new HashSet<Service>();
+                services = new HashSet<>();
             }
             services.add(toAdd);  // insert toAdd to list
             ++ consult; // increment consultation with a member
@@ -144,10 +147,11 @@ public class Provider  extends Data
     }
 
 
+
     /** Returns the first name of a provider.  Use this method to write provider's name in member reports
      * @return  the firstName field of this class
      */
-    public String getFirstName()
+    public String getFirstName() // WE MAY NOT NEED THIS METHOD
     {
         return this.firstName;
     }
@@ -187,6 +191,7 @@ public class Provider  extends Data
         return aMatch;
     }
 
+
     public String toString()
     {
         boolean debug = !true;
@@ -198,7 +203,7 @@ public class Provider  extends Data
 
 //        String data = null;
 
-        String data = super.toString();
+        String data = super.toString() + "\n" + "Number of consultations with members: " + this.consult;
 
         return data;
     }
