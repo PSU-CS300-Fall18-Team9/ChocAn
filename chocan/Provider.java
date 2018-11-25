@@ -1,5 +1,4 @@
 package chocan;
-//import javafx.scene.chart.PieChart; // What is this? -Jaime
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -34,7 +33,7 @@ public class Provider  extends Data
      * @param state
      * @param zip
      * @param id: provider's identification number
-     * @param num: the number of consultations the provider provided to a member
+     * @param num: the number of consultations the provider provided to members
      */
     public Provider(String fName, String lName, String address, String city, String state, int zip, int id, int num)
     {
@@ -70,6 +69,7 @@ public class Provider  extends Data
 
     /** Writes provider's information, all the services the provider provided, the total number of consultations,
      * and the total service fees of the week
+     *
      * @param fileName: holds the name of a text file
      * @param append:   If append holds a true value and the text file already exist, this method will append to the
      *                  exiting file.
@@ -80,8 +80,6 @@ public class Provider  extends Data
      */
     public boolean buildReport(String fileName, boolean append)
     {
-        // I MAY NEED TO ADD A DATA OBJECT PARAMETER TO THIS METHOD, SO I CAN ACCESS MEMBER'S PUBLIC METHODS
-        // EX: public boolean buildReport(String fileName, boolean append, Data person)
         boolean isOpen = true;
 
         // open file
@@ -98,15 +96,21 @@ public class Provider  extends Data
             // write provider to file
             toFile.println(this);  // it will call the string method from the Data class
             // write all services to file
-            for(Service s: services)
+            if (services != null)
             {
-                // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST): ex:  member.getFName() member.getLName
-                // NEED TO WRITE MEMBER'S ID NUMBER ex: member.getID()
-                toFile.println(s);
+                for (Service s : services) {
+                    // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST) for each service
+                    // NEED TO WRITE MEMBER'S ID NUMBER for each service
+                    toFile.println(s);
+                }
                 // NEED TO CALCULATE THE TOTAL FEES OF ALL SERVICES IN THE LIST
                 // NEED TO WRITE TOTAL SERVICE FEES FOR THE WEEK
+                toFile.println("Total Number of consultation with members: " + consult);
             }
-            toFile.println("Total Number of consultation with members: " + consult);
+            else
+            {
+                toFile.println("No services provided.");
+            }
             // close file
             toFile.close();
         }
@@ -118,6 +122,7 @@ public class Provider  extends Data
 
     /** Inserts one service to a list of services. Does not allow duplicates, and appends new services to an existing
      * list of services
+     *
      * @precondition:
      *              Case 1: The list is empty, and the service is the first item on the list
      *              Case 2: There are services in the list, and inserting a new service
@@ -133,7 +138,7 @@ public class Provider  extends Data
         if (toAdd != null) {
             // if services is null, create a new list of services
             if (services == null) {
-                services = new HashSet<Service>();
+                services = new LinkedHashSet<>();
             }
             services.add(toAdd);  // insert toAdd to list
             ++ consult; // increment consultation with a member
@@ -144,10 +149,11 @@ public class Provider  extends Data
     }
 
 
+
     /** Returns the first name of a provider.  Use this method to write provider's name in member reports
      * @return  the firstName field of this class
      */
-    public String getFirstName()
+    public String getFirstName() // WE MAY NOT NEED THIS METHOD
     {
         return this.firstName;
     }
@@ -161,6 +167,7 @@ public class Provider  extends Data
 
 
     /**  Compares the parameter with the service code stored in the service class
+     *
      * @precondition:
      *              Case 1: List is empty
      *              Case 2: List is not empty, service code not found
@@ -187,6 +194,11 @@ public class Provider  extends Data
         return aMatch;
     }
 
+
+    /** Represent provider's info as a string.  Able to dislay on screen or write to a file
+     *
+     * @return data: Returns the super class' fields and the consult field as strings.
+     */
     public String toString()
     {
         boolean debug = !true;
@@ -198,7 +210,7 @@ public class Provider  extends Data
 
 //        String data = null;
 
-        String data = super.toString();
+        String data = super.toString() + "\n" + "Number of consultations with members: " + this.consult;
 
         return data;
     }
