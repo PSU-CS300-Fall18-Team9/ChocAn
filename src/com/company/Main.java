@@ -4,12 +4,15 @@ package com.company;
 public class Main {
 
     public static void main(System[] args) {
+
+
+
     }
 
     //service is a LLL of services
-    public class service() {
+    public class service{
 
-       protected service next;
+        protected service next;
 
         protected int currentData;
         protected int currentTime;
@@ -57,34 +60,29 @@ public class Main {
         }
 
         //change date
-        public changeDate(int serviceDate){
+        public int changeDate(int serviceDate){
 
         }
 
-        //wrapper for display
+        //wrapper for display TODO we need a display function??
         public int displayName(){
             if(this.head == null) return 0;
 
             return displayName(this.head.goNext())+1;
         }
 
-        //display name
-        private int displayName()
+        //display name TODO what do we need to do with this...
+        protected int displayName(node * head){
                 System.out.println(("Name: " + Name));
-
-        // which name, name is in other classes TODO
-
         }
 
         //add comments
-        public addComments(String comment){
-
-
+        public String addComments(String comment){
         }
 
         //make provider report
-        public static int makeProReport("ProviderList.txt"){
-            try{
+        protected int makeProReport("ProviderList.txt"){
+            try {
                 File toRead = new File("ProviderList.txt");
                 Scanner IN = new Scanner(toRead);
                 String buffer = null;
@@ -99,13 +97,11 @@ public class Main {
                 this.comments = comments;
 
                 //TODO work on this
-
-
+            }
         }
 
         //make member report
-        public makeMemReport(){
-
+        protected int makeMemReport(){
         }
     }
 }
