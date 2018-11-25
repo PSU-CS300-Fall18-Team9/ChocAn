@@ -113,23 +113,23 @@ public abstract class Data
     public String toString()
     {
         boolean debug = !true;
+        String person;
+        String location;
 
         if(debug == true)
         {
             System.out.println("Data toString");
         }
 
-        String data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName+ "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip + "ID: " + this.id + "\n" ;
+//        String data = "\nFirst Name: " + this.firstName + "\nLast Name: " + this.lastName+ "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip + "ID: " + this.id + "\n" ;
 
-        return data;
+//        return data;
 
-/*        String info;
-        String location;
 
-        info = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
+        person = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
         location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
-        return info + "\n" + location;
-*/
+        return person + "\n" + location;
+
     }
 
 

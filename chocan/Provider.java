@@ -33,7 +33,7 @@ public class Provider  extends Data
      * @param state
      * @param zip
      * @param id: provider's identification number
-     * @param num: the number of consultations the provider provided to a member
+     * @param num: the number of consultations the provider provided to members
      */
     public Provider(String fName, String lName, String address, String city, String state, int zip, int id, int num)
     {
@@ -98,12 +98,12 @@ public class Provider  extends Data
             if (services != null)
             {
                 for (Service s : services) {
-                    // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST): ex:  member.getFName() member.getLName
-                    // NEED TO WRITE MEMBER'S ID NUMBER ex: member.getID()
+                    // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST) for each service
+                    // NEED TO WRITE MEMBER'S ID NUMBER for each service
                     toFile.println(s);
-                    // NEED TO CALCULATE THE TOTAL FEES OF ALL SERVICES IN THE LIST
-                    // NEED TO WRITE TOTAL SERVICE FEES FOR THE WEEK
                 }
+                // NEED TO CALCULATE THE TOTAL FEES OF ALL SERVICES IN THE LIST
+                // NEED TO WRITE TOTAL SERVICE FEES FOR THE WEEK
                 toFile.println("Total Number of consultation with members: " + consult);
             }
             else
@@ -136,7 +136,7 @@ public class Provider  extends Data
         if (toAdd != null) {
             // if services is null, create a new list of services
             if (services == null) {
-                services = new HashSet<>();
+                services = new LinkedHashSet<>();
             }
             services.add(toAdd);  // insert toAdd to list
             ++ consult; // increment consultation with a member
