@@ -210,7 +210,7 @@ public class Provider  extends Data
 
 //        String data = null;
 
-        String data = super.toString() + "\n" + "Number of consultations with members: " + this.consult;
+        String data = super.toString() + "\n" + "Number of consultations with members: " + this.consult + "\n\n";
 
         return data;
     }
@@ -226,4 +226,28 @@ public class Provider  extends Data
             System.out.println(s);
         }
     }
+
+    public String[] report()
+    {
+/*        boolean debug = true;
+        if(debug == true)
+        {
+            System.out.println("Data report");
+        }
+*/
+        String[] data = new String[8];
+
+//        String data = null;
+        data[0] = this.lastName;
+        data[1] = this.firstName;
+        data[2] = Integer.toString(this.id);
+        data[3] = this.address;
+        data[4] = this.city;
+        data[5] = this.state;
+        data[6] = Integer.toString(this.zip);
+        data[7] = Integer.toString(this.consult);
+
+        return data;
+    }
+
 }

@@ -88,14 +88,14 @@ public abstract class Data
 
     // Outputs attributes to a screen or a file, depending on output stream
 
-    public String[] report()
+/*    public String[] report()
     {
-/*        boolean debug = true;
+        boolean debug = true;
         if(debug == true)
         {
             System.out.println("Data report");
         }
-*/
+
         String[] data = new String[7];
 
 //        String data = null;
@@ -109,7 +109,7 @@ public abstract class Data
 
         return data;
     }
-
+*/
     public String toString()
     {
         boolean debug = !true;
@@ -132,7 +132,8 @@ public abstract class Data
 
     }
 
-
+    public abstract String[] report();
+//    public abstract String[][] reportService();
 
     //  Allow subclasses to write and append their data to a file
     //public abstract void buildReport(String fileName);   // Old version,  can delete after testing
