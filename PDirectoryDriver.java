@@ -3,11 +3,11 @@ import java.io.IOException;
 import java.util.*;
 import chocan.*;
 
-public class PDirectoryTest
+public class PDirectoryDriver
 {
     public static void main(String[] args)
     {
-        System.out.println("Welcome to ChocAn Data Processing System Provider Directory Testing");
+        System.out.println("Welcome to ChocAn Data Processing System Provider Directory Driver");
 
         // Test directory class' instantiation
         PDirectory nPDir = new PDirectory();
