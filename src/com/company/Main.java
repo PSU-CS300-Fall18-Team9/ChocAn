@@ -1,18 +1,23 @@
+//Service is created as node of a LLL, where provider/member
+//are are the head of a LLL of services
 
 package com.company;
+import java.util.StringTokenizer;
+import java.io.File;
+import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
 
+    Scanner input = new Scanner(System.in);
     public static void main(System[] args) {
-
-
 
     }
 
-    //service is a LLL of services
+    //service is an obj of a LLL of services of a Provider or member
     public class service{
 
-        protected service next;
+        protected service next; //TODO next here???
 
         protected int currentData;
         protected int currentTime;
@@ -72,7 +77,7 @@ public class Main {
         }
 
         //display name TODO what do we need to do with this...
-        protected int displayName(node * head){
+        protected int displayName(node head){
                 System.out.println(("Name: " + Name));
         }
 
@@ -81,23 +86,44 @@ public class Main {
         }
 
         //make provider report
-        protected int makeProReport("ProviderList.txt"){
+        protected int makeProReport(PDirectory PDir){
             try {
                 File toRead = new File("ProviderList.txt");
                 Scanner IN = new Scanner(toRead);
                 String buffer = null;
 
-                currentData = currentData;
-                this.currentTime = currentTime;
-                this.serviceData = serviceData;
-                this.pid = pid;
-                this.mid = mid;
-                this.serviceCode = serviceCode;
-                this.fee = fee;
-                this.comments = comments;
+                String currentData = null;
+                String currentTime = null;
+                String serviceData = null;
+                String pid = null;
+                String mid = null;
+                String serviceCode = null;
+                String fee = null;
+                String comments = null;
 
-                //TODO work on this
+                while(IN.hasNextLine()){
+                    buffer = IN.nextLine();
+                    StringTokenizer tokenizer = new StringTokenizer(buffer, "#");
+                    currentData = tokenizer.nextToken();
+                    currentTime = tokenizer.nextToken();
+                    serviceData = tokenizer.nextToken();
+                    pid = tokenizer.nextToken();
+                    mid = tokenizer.nextToken();
+                    serviceCode = tokenizer.nextToken();
+                    fee = tokenizer.nextToken();
+                    comments = tokenizer.nextToken();
+
+                    //TODO call a function to create an obj of type service
+                    service temp = new service(currentData, currentTime, serviceData, pid, mid, serviceCode, fee, comments)
+                    //TODO or retrive an obj???
+
+                }
+                IN.close();
             }
+            catch (IOException noFile) {
+                noFile.printStackTrace();
+            }
+            return -1;
         }
 
         //make member report
