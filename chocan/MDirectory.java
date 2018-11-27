@@ -4,13 +4,13 @@ import java.io*;
 
 public class MDirectory
 {
-    public Map<Integer, Data> MDir = new HashMap();
+    public Map<Integer, Member> MDir = new HashMap();
 
-    public int verifyMember(int mid){
+    public boolean verifyMember(int mid){
         if (MDir.containsKey){
-            return 1;
+            return true;
         }
-        else return 0;
+        else return false;
     }
 
     public int addMember(Member nMember){
@@ -52,7 +52,7 @@ public class MDirectory
     public String buildReport(){
         String strArray;
 
-        for(Map.Entry<Integer, Provider> entry: MDir.entrySet()){
+        for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
             strArray = entry.getValue().report();
             StringBuilder nString = new StringBuilder();
             nString.append("Member Name: " + strArray[0] + " " strArray[1] + "\n");
@@ -106,7 +106,7 @@ public class MDirectory
             File outFile = new File(dataFile);
             PrintWriter pw = new PrintWriter(outFile);
 
-            for(Map.Entry<Integer, Provider> entry: MDir.entrySet())
+            for(Map.Entry<Integer, Member> entry: MDir.entrySet())
             {
                 String[] tData = entry.getValue().report();
 
@@ -129,6 +129,28 @@ public class MDirectory
         {
             System.out.println("Exception thrown:" + e1);
         }
+    }
+
+    public String toString()
+    {
+        boolean debug = !true;
+
+        if(debug == true)
+        {
+            System.out.println("MDirectory toString");
+        }
+
+        String data = null;
+
+        for(Map.Entry<Integer, Member> entry: MDir.entrySet())
+        {
+            if(data != null)
+                data += entry.getValue().toString();
+            else
+                data = entry.getValue().toString();
+        }
+
+        return data;
     }
 
 
