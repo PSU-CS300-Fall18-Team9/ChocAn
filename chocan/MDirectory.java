@@ -99,7 +99,37 @@ public class MDirectory
         }
     }
 
-    public saveFile(){
+    public void saveFile()
+    {
+        try
+        {
+            File outFile = new File(dataFile);
+            PrintWriter pw = new PrintWriter(outFile);
 
+            for(Map.Entry<Integer, Provider> entry: MDir.entrySet())
+            {
+                String[] tData = entry.getValue().report();
+
+                StringBuilder nString = new StringBuilder();
+
+                nString.append(tData[0] + "#");
+                nString.append(tData[1] + "#");
+                nString.append(tData[2] + "#");
+                nString.append(tData[3] + "#");
+                nString.append(tData[4] + "#");
+                nString.append(tData[5] + "#");
+                nString.append(tData[6] + "#\n");
+
+                pw.write(nString.toString());
+            }
+
+            pw.close();
+        }
+        catch (FileNotFoundException e1)
+        {
+            System.out.println("Exception thrown:" + e1);
+        }
     }
+
+
 }
