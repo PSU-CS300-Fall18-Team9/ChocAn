@@ -72,7 +72,7 @@ public class Main {
         }
 
         //used as copy constructor
-        public service(service toAdd){
+        public service(service toAdd)
             this.currentDate = toAdd.currentDate;
             this.currentTime = toAdd.currentTime;
             this.serviceDate = toAdd.serviceDate;
