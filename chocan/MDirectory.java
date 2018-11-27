@@ -49,7 +49,7 @@ public class MDirectory
         zip = members.nextInt();
     }
 
-    public String toString(){
+    public String buildReport(){
         String strArray;
 
         for(Map.Entry<Integer, Provider> entry: MDir.entrySet()){
