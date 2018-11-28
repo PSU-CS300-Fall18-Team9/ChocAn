@@ -88,8 +88,6 @@ public abstract class Data
 
 
     // Outputs attributes to a screen or a file, depending on output stream
-
-
     public String toString()
     {
         boolean debug = !true;
@@ -112,6 +110,58 @@ public abstract class Data
 
     }
 
+
+
+    /** Edits provider or member's information
+     *
+     * @param info - all string type data: first name, last name, address, city, and state
+     * @param number - all integer type data:  id and zip code
+     * @param choice - selects the data to edit
+     * @return
+     */
+    public boolean edit (String info, int number, int choice)
+    {
+        boolean flag = true;
+        if (info != null)
+        {
+            switch (choice)
+            {
+                case 1:
+                    lastName = new String(info);
+                    break;
+                case 2:
+                    firstName = new String(info);
+                    break;
+                case 4:
+                    address = new String(info);
+                    break;
+                case 5:
+                    city = new String(info);
+                    break;
+                case 6:
+                    state = new String(info);
+                    break;
+                default:
+                    flag = false;
+                    break;
+            }
+        }
+        if (number > 0) {
+
+            switch (choice) {
+                case 3:
+                    id = number;
+                    break;
+                case 7:
+                    zip = number;
+                    break;
+                default:
+                    flag = false;
+                    break;
+            }
+        }
+       return flag;
+    }
 
 
     //  Allow subclasses to write and append their data to a file

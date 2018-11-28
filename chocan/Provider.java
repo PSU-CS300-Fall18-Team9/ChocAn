@@ -8,8 +8,10 @@ import java.util.*;
 public class Provider  extends Data
 {
     protected int consult; // number of consultations with members
+    protected boolean privilege;  // the value is true if provider has manager privileges
     protected ArrayList <String> memberNames; // stores the name of member for each service provided
     protected ArrayList<Integer> memberId;
+    private int totalFees;
     public Provider()
     {
 //        boolean debug = true;
@@ -18,6 +20,8 @@ public class Provider  extends Data
         consult = 0;
         memberNames = null;
         memberId = null;
+        privilege = false;
+        totalFees = 0;
 
     /*    if(debug == true)
         {
@@ -39,12 +43,14 @@ public class Provider  extends Data
      * @param id: provider's identification number
      * @param num: the number of consultations the provider provided to members
      */
-    public Provider(String fName, String lName, String address, String city, String state, int zip, int id, int num)
+    public Provider(String fName, String lName, String address, String city, String state, int zip, int id, int num, boolean isManager)
     {
         super(fName, lName, address, city, state, zip, id);
         consult = num;
         memberNames = null;
         memberId = null;
+        privilege = isManager;
+        totalFees = 0;
 
     /*    boolean debug = false;
 
@@ -154,9 +160,9 @@ public class Provider  extends Data
             memberNames.add(name);
             memberId.add(id);
             ++ consult; // increment consultation with a member
+            totalFees += toAdd.fee;
             return true;
         }
-        // if toAdd object is null return false
         return false;
     }
 
@@ -276,7 +282,7 @@ public class Provider  extends Data
             System.out.println("Data report");
         }
 */
-        String[] data = new String[8];
+        String[] data = new String[9];
 
 //        String data = null;
         data[0] = this.lastName;
@@ -287,6 +293,7 @@ public class Provider  extends Data
         data[5] = this.state;
         data[6] = Integer.toString(this.zip);
         data[7] = Integer.toString(this.consult);
+        data[8] = Integer.toString(this.totalFees);
         return data;
     }
 
@@ -310,8 +317,7 @@ public class Provider  extends Data
         int serviceCategories = 4; // The number of fields in services that will be in the report
         String [] servReport = null;
 
-//----------  REMOVE COMMENT SYMBOLS BELOW WHEN SERVICE CLASS FIELDS ARE COMPLETE, AND DELETE THIS LINE, DO NOT DELETE CODE -------------
- /*      if (isEmpty() == false)
+      if (isEmpty() == false)
        {
             arraySize = (services.size() * serviceCategories) + memberNames.size() + memberId.size();
             servReport = new String[arraySize];
@@ -327,7 +333,7 @@ public class Provider  extends Data
                 servReport[i] = "Fee to be paid: " + services.get(count).fee + "\n";
                 ++count;  // move to the next service and member
             }
-        }*/
+        }
         return servReport;
     }
 }
