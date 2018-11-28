@@ -1,5 +1,4 @@
 package chocan;
-import java.io.PrintWriter;
 import java.util.*;
 
 //public class Data
@@ -18,7 +17,6 @@ public abstract class Data
 
 
 
-    // Default constructor
     public Data()
     {
         services = null;
@@ -33,16 +31,6 @@ public abstract class Data
 
 
 
-    /**
-     *
-     * @param fName
-     * @param lName
-     * @param address
-     * @param city
-     * @param state
-     * @param zip
-     * @param id
-     */
     public Data(String fName, String lName, String address, String city, String state, int zip, int id)
     {
         services = null;
