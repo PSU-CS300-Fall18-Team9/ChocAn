@@ -849,7 +849,7 @@ public class Menu
             st = input.nextLine();
         }
 
-        boolean edited = mDir.editMember(id, st, num, status);
+        boolean edited = mDir.editMember(id, st, num, status, editOption);
 
         return edited;
     }
@@ -893,7 +893,7 @@ public class Menu
             st = input.nextLine();
         }
 
-        boolean edited = pDir.editProvider(id, st, num, status);
+        boolean edited = pDir.editProvider(id, st, num, status, editOption);
 
         return edited;
 */
