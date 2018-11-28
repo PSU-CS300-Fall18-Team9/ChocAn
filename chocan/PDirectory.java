@@ -86,10 +86,10 @@ public class PDirectory
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
             //If reporting handled by Provider class
-            entry.getValue().buildReport(entry.getValue().getFirstName(), true);
+//            entry.getValue().buildReport(entry.getValue().getFirstName(), true);
 
             //If reporting handled by PDirctory:
-/*            FileOutputStream out = null;
+            FileOutputStream out = null;
 //            String dataFile = "./data/ProviderList.txt\"
 
             String[] tData = entry.getValue().report();
@@ -113,6 +113,7 @@ public class PDirectory
             nString.append("Provider state: " + tData[5] + "\n");
             nString.append("Provider zip: " + tData[6] + "\n\n");
             nString.append("Provider ID: " + tData[2] + "\n");
+            nString.append("Provider Consultations: " + tData[7] + "\n");
 
             StringBuilder dataFile = new StringBuilder();
 
@@ -131,7 +132,7 @@ public class PDirectory
             {
                 System.out.println("Exception thrown:" + e1);
             }
-*/        }
+        }
     };
 
     public int editProvider(Provider nProvider)
