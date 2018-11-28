@@ -35,9 +35,9 @@ public class Member extends Data
     {
 
     }*/
-    public boolean buildReport(String fileName, boolean append) {
+  /*  public boolean buildReport(String fileName, boolean append) {
         return false;
-    }
+    }*/
 
 
     /**  Adds one service to a list of services that a member receives
@@ -49,7 +49,7 @@ public class Member extends Data
      * @return true: new service successfully appended to the list of services
      * @return false: new service did not append to the list
      */
-    public boolean addService(Service aService)
+    public boolean addService(Service aService, String name, int id)
     {
         return false;
     }
@@ -60,10 +60,10 @@ public class Member extends Data
      * @precondition:
      * @postcondition:
      */
-    public void displayPerson()
+ /*   public void displayPerson()
     {
-
-    }
+        DONT NEED THIS, CAN DELETE
+    }*
 
 
     /** Display's a member's information and all services provided to the member
@@ -83,7 +83,7 @@ public class Member extends Data
             System.out.println("Data report");
         }
 */
-        String[] data = new String[7];
+        String[] data = new String[8];
 
 //        String data = null;
         data[0] = this.lastName;
@@ -96,4 +96,5 @@ public class Member extends Data
 
         return data;
     }
+
 }
