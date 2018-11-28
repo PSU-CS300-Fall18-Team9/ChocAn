@@ -1,62 +1,13 @@
 package chocan;
 import java.util.*;
+import java.io.*;
 
-/*
-public class Service 
-{
-
-
-    boolean debug = true;
-
-    public Service()
-    {
-        if(debug == true)
-        {
-            System.out.println("Service default constructor");
-        }
-    }
-
-    public String toString()
-    {
-        if(debug == true)
-        {
-            System.out.println("Service toString");
-        }
-
-        String data = null;
-
-        return data;
-    }
-}
-
-*/
 
 //Service is created as node of a LLL, where provider/member
-//are are the head of a LLL of services
-
-//package com.company;
-import java.util.StringTokenizer;
-import java.io.File;
-import java.util.Scanner;
-import java.io.IOException;
-
-package com.company;
-import java.util.StringTokenizer;
-import java.io.File;
-import java.util.Scanner;
-import java.io.IOException;
-
-public class Main {
-
-    Scanner input = new Scanner(System.in);
-    public static void main(System[] args) {
-
-    }
+//are the head of a LLL of services
 
     //service is an obj of a LLL of services of a Provider or member
-    public class service{
-
-        protected service next; //TODO next here???
+    public class Service{
 
         protected int currentDate;
         protected int currentTime;
@@ -68,13 +19,23 @@ public class Main {
         protected String comments;
 
         //TODO check on this, used to support main
+        //if not needed nedd to be deleted
         protected int month;
         protected int day;
         protected int year;
 
-        //default constructor
-        public service(){
-            this.currentDate = 0;
+
+        //------------------------------------------------------------//
+        //Below there are different types of contructurs. THese are
+        //provided to fulfill the needs of of the other classes. The
+        //constructors and and methods that are not used can be dleted
+        //------------------------------------------------------------//
+
+
+        //------------------------------------------------------------//
+        //default constructor with every arguments
+        public Service(){
+            this.currentDate = 0; //look a tht slack for translation
             this.currentTime = 0;
             this.serviceDate = 0;
             this.pid = 0;
@@ -82,15 +43,42 @@ public class Main {
             this.serviceCode = 0;
             this.fee = 0;
             this.comments = null;
-
-            //TODO check on this, used to support main
+            //check on this, used to support main
             this.month = 0;
             this.day = 0;
             this.year = 0;
         }
+        //default constructor without month, day, year
+        public Service(){
+            this.currentDate = 0; //look a tht slack for translation
+            this.currentTime = 0;
+            this.serviceDate = 0;
+            this.pid = 0;
+            this.mid = 0;
+            this.serviceCode = 0;
+            this.fee = 0;
+            this.comments = null;
+        }
+        //------------------------------------------------------------//
 
-        //constructor with args
-        public service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments){
+
+        //------------------------------------------------------------//
+        //constructor with every arguments
+        public Service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments){
+            this.currentDate = currentDate;
+            this.currentTime = currentTime;
+            this.serviceDate = serviceDate;
+            this.pid = pid;
+            this.mid = mid;
+            this.serviceCode = serviceCode;
+            this.fee = fee;
+            this.comments = comments;
+            this.month;
+            this.day;
+            this.year;
+        }
+        //constructor with args without month, day, year
+        public Service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments){
             this.currentDate = currentDate;
             this.currentTime = currentTime;
             this.serviceDate = serviceDate;
@@ -100,9 +88,11 @@ public class Main {
             this.fee = fee;
             this.comments = comments;
         }
+        //------------------------------------------------------------//
 
-        //TODO constructor with limited args to support the menu functionality TODO check on this
-        public service(int month, int day, int year, int serviceCode, String comments){
+
+        //constructor with limited args to support the menu functionality
+        public Service(int month, int day, int year, int serviceCode, String comments){
             this.month = month;
             this.day = day;
             this.year = year;
@@ -110,8 +100,8 @@ public class Main {
             this.comments = comments;
         }
 
-        //used as copy constructor
-        public service(service toAdd)
+        //used as copy constructor passing in an obj
+        public Service(Service toAdd){
             this.currentDate = toAdd.currentDate;
             this.currentTime = toAdd.currentTime;
             this.serviceDate = toAdd.serviceDate;
@@ -140,7 +130,7 @@ public class Main {
         return info;
     }
 
-    //compare svcCode to Service code
+    //compare svcCode to Service code, used in menu
     protected boolean find(int svcCode)
     {
         if(serviceCode == svcCode) return true;
@@ -148,72 +138,44 @@ public class Main {
         return false;
     }
 
-    //wrapper for constructor to et called in main
+    //wrapper for constructor to be used in the manu
     public boolean createServiceRec(int month, int day, int year, int svcCode, String comment)
     {
         new service(month, day, year, svcCode, comment);
         return true;
     }
 
-    //change date TODO do we need this???
-    public int changeDate(int serviceDate){
+/*
+   //this is handle in the provider class we don't need it anymode.
+   //I left it here just in case we will figure out we need it when puttin all code togheter
+   //make provider report
+   public String[] makeProReport()
+   {
+       String[] data = new String[7];
 
-        return 1;
-    }
+       data[0] = this.currentTime;
+       data[1] = this.serviceDate;
+       data[2] = this.serviceCode;
+       data[3] = this.pid;
+       data[5] = this.fee;
+       data[6] = this.comments;
 
-    //add comments TODO doe we need this ???
-    public int addComments(String comment){
-
-        return 1;
-    }
-
-    /*
-    //TODO I don't think we need this also get everything as string and constructor expects int
-    //make provider report
-    protected int makeProReport(PDirectory PDir){
-        try {
-            File toRead = new File("ProviderList.txt");
-            Scanner IN = new Scanner(toRead);
-            String buffer = null;
-
-            String currentData = null;
-            String currentTime = null;
-            String serviceData = null;
-            String pid = null;
-            String mid = null;
-            String serviceCode = null;
-            String fee = null;
-            String comments = null;
-
-            while(IN.hasNextLine()){
-                buffer = IN.nextLine();
-                StringTokenizer tokenizer = new StringTokenizer(buffer, "#");
-                currentData = tokenizer.nextToken();
-                currentTime = tokenizer.nextToken();
-                serviceData = tokenizer.nextToken();
-                pid = tokenizer.nextToken();
-                mid = tokenizer.nextToken();
-                serviceCode = tokenizer.nextToken();
-                fee = tokenizer.nextToken();
-                comments = tokenizer.nextToken();
-
-                //TODO call a function to create an obj of type service
-             //   service temp = new service(currentData, currentTime, serviceData, pid, mid, serviceCode, fee, comments) //TODO takes int String passed
-                //TODO or retrive an obj???
-
-            }
-            IN.close();
-        }
-        catch (IOException noFile) {
-            noFile.printStackTrace();
-        }
-        return -1;
-    }
+       return data;
+   }
 */
-    //TODO to implement this??? need it???
     //make member report
-    protected int makeMemReport(){
-        return 1;
+    public String[] makeMemReport()
+        {
+            String[] data = new String[7];
+
+            data[0] = this.currentTime;
+            data[1] = this.serviceDate;
+            data[2] = this.serviceCode;
+            data[3] = this.mid;
+            data[5] = this.fee;
+            data[6] = this.comments;
+
+            return data;
+        }
     }
-}
 }
