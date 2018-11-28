@@ -5,3 +5,4 @@ Provider state: OR
 Provider zip: 97212
 
 Provider ID: 589230956
+Provider Consultations: 0
