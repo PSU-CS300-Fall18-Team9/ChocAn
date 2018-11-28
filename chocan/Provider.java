@@ -1,8 +1,5 @@
 package chocan;
 
-//import java.io.FileNotFoundException;
-//import java.io.PrintWriter;
-//import java.io.FileOutputStream;
 import java.util.*;
 
 public class Provider  extends Data
@@ -14,20 +11,12 @@ public class Provider  extends Data
     private int totalFees;
     public Provider()
     {
-//        boolean debug = true;
-
         super();
         consult = 0;
         memberNames = null;
         memberId = null;
         privilege = false;
         totalFees = 0;
-
-    /*    if(debug == true)
-        {
-            System.out.println("Provider default constructor ");
-        }*/
-
     }
 
 
@@ -51,84 +40,7 @@ public class Provider  extends Data
         memberId = null;
         privilege = isManager;
         totalFees = 0;
-
-    /*    boolean debug = false;
-
-        if(debug == true)
-        {
-            System.out.println("Provider constructor");
-            System.out.println("fName = " + fName);
-            System.out.println("lName = " + lName);
-            System.out.println("num = " + num);
-            System.out.println("address = " + address);
-            System.out.println("city = " + city);
-            System.out.println("state = " + state);
-            System.out.println("zip = " + zip);
-        }
-
-//        services = null;
-        this.firstName = fName;
-        this.lastName = lName;
-//        this.number = num;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-//        this.id = id;
-*/
     }
-
-
-    /** Writes provider's information, all the services the provider provided, the total number of consultations,
-     * and the total service fees of the week
-     *
-     * @param fileName: holds the name of a text file
-     * @param append:   If append holds a true value and the text file already exist, this method will append to the
-     *                  exiting file.
-     *                  If append is false and the text file already exist, this method will overwrite the existing file.
-     * @precondition:  If a file does not exist, this method creates a new file and writes to the file regardless of
-     *                 the value of append.
-     * @postcondition:  A new file exist or a new member's info is appended to an existing file
-     */
- /*   public boolean buildReport(String fileName, boolean append)
-    {
-        boolean isOpen = true;
-
-        // open file
-        try
-        {
-            toFile = new PrintWriter(new FileOutputStream(fileName, append));
-        }
-        catch (FileNotFoundException e)
-        {
-            isOpen = false;
-        }
-        if (isOpen)
-        {
-            // write provider to file
-            toFile.println(this);  // it will call the string method from the Data class
-            // write all services to file
-            if (isEmpty() == false)
-            {
-                for (Service s : services) {
-                    // NEED TO WRITE MEMBER'S FULL NAME (FIRST AND LAST) for each service
-                    // NEED TO WRITE MEMBER'S ID NUMBER for each service
-                    toFile.println(s);
-                }
-                // NEED TO CALCULATE THE TOTAL FEES OF ALL SERVICES IN THE LIST
-                // NEED TO WRITE TOTAL SERVICE FEES FOR THE WEEK
-                toFile.println("Total Number of consultation with members: " + consult);
-            }
-            else
-            {
-                toFile.println("No services provided.");
-            }
-            // close file
-            toFile.close();
-        }
-        return isOpen;
-
-    }*/
 
 
 
@@ -151,7 +63,6 @@ public class Provider  extends Data
         if (toAdd != null) {
             // if services is null, create a new list of services
             if (isEmpty() == true) {
- //               services = new LinkedList<>();
                 services = new ArrayList<>();
                 memberNames = new ArrayList<>();
                 memberId = new ArrayList<>();
@@ -168,69 +79,13 @@ public class Provider  extends Data
 
 
 
-    /** Returns the first name of a provider.  Use this method to write provider's name in member reports
-     * @return  the firstName field of this class
-     */
- /*   public String getFirstName() // WE MAY NOT NEED THIS METHOD
-    {
-        return this.firstName;
-    }*/
-
-
-     /** Returns the last name of a provider.  Use this method to write provider's name in member reports
-      * @return  the lastName field of this class
-     */
-//    public String getLastName() { return this.lastName; }
-
-
-
-    /**  Compares the parameter with the service code stored in the service class
-     *
-     * @precondition:
-     *              Case 1: List is empty
-     *              Case 2: List is not empty, service code not found
-     *              Case 3: List is not empty, service code found
-     * @postcondition:
-     *              This method does not search for service code if the list is empty
-     *              This method returns true if the service code in Service class matches the parameter.
-     *              This method searches all items in the list until it finds a match or reaches the end of the list
-     * @param serviceCode: integer value
-     * @return  true: Service class's service code matches the parameter
-     * @return  false: If the list is not empty, then there are no matching service code. Otherwise the list is empty
-     */
-    public boolean checkServiceCode(int serviceCode)
-    {
-        boolean aMatch = false;
-
-        for (Service s: services) {
-   //         aMatch = s.compareCode(serviceCode); // NEED A METHOD IN SERVICE CLASS THAT COMPARES SERVICE CODE AND
-                                                // RETURNS TRUE IF IT MATCHES
-            if (aMatch == true) {
-                return aMatch;
-            }
-        }
-        return aMatch;
-    }
-
-
-
     /** Represent provider's info as a string.  Able to dislay on screen or write to a file
      *
      * @return data: Returns the super class' fields and the consult field as strings.
      */
     public String toString()
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("Provider toString");
-        }
-
-//        String data = null;
-
         String data = super.toString() + "\n" + "Number of consultations with members: " + this.consult;
-
         return data;
     }
 
@@ -276,12 +131,6 @@ public class Provider  extends Data
      */
     public String[] report()
     {
-/*        boolean debug = true;
-        if(debug == true)
-        {
-            System.out.println("Data report");
-        }
-*/
         String[] data = new String[9];
 
 //        String data = null;
