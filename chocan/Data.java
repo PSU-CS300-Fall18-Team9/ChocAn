@@ -8,7 +8,8 @@ public abstract class Data
 //    boolean debug = true;
 
  //   protected Set<Data> services;   This one may be adding the wrong class
-    protected Set<Service> services;
+   // protected List<Service> services;
+    protected ArrayList<Service> services;
     protected PrintWriter toFile;
 
 /*    public String firstName;
@@ -88,27 +89,6 @@ public abstract class Data
 
     // Outputs attributes to a screen or a file, depending on output stream
 
-    public String[] report()
-    {
-/*        boolean debug = true;
-        if(debug == true)
-        {
-            System.out.println("Data report");
-        }
-*/
-        String[] data = new String[7];
-
-//        String data = null;
-        data[0] = this.lastName;
-        data[1] = this.firstName;
-        data[2] = Integer.toString(this.id);
-        data[3] = this.address;
-        data[4] = this.city;
-        data[5] = this.state;
-        data[6] = Integer.toString(this.zip);
-
-        return data;
-    }
 
     public String toString()
     {
@@ -136,11 +116,12 @@ public abstract class Data
 
     //  Allow subclasses to write and append their data to a file
     //public abstract void buildReport(String fileName);   // Old version,  can delete after testing
-    public abstract boolean buildReport(String fileName, boolean append);
+    //public abstract boolean buildReport(String fileName, boolean append);  // old version, can delete
+    public abstract String[] report();
 
 
     // Allow subclasses to add services to their own list of services
-    public abstract boolean addService(Service aService);
+    public abstract boolean addService(Service aService, String name, int id);
 
     // Allows members and providers to display their data only, excluding their services.
  //   public abstract void displayPerson();   // Don't need this method b/c of toString method
