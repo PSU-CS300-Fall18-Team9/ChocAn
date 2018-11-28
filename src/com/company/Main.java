@@ -70,7 +70,7 @@ public class Main {
             this.serviceCode = serviceCode;
             this.comments = comments;
         }
-
+/*
         //used as copy constructor
         public service(service toAdd)
             this.currentDate = toAdd.currentDate;
@@ -82,7 +82,7 @@ public class Main {
             this.fee = toAdd.fee;
             this.comments = toAdd.comments;
         }
-
+*/
         //display is implemented using toString with System.out.println(srv);
         //anytime we want to display a service fields
         public String toString()
@@ -101,7 +101,7 @@ public class Main {
             return info;
         }
 
-        //compare svcCode to Service code
+        //TODO compare svcCode to Service code this should be in the class that manage the LLL
         protected boolean find(int svcCode)
         {
             if(serviceCode == svcCode) return true;
