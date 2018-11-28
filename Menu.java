@@ -16,6 +16,7 @@ public class Menu
         //class objects
         MDirectory MDir = new MDirectory();
         PDirectory PDir = new PDirectory();
+        SDirectory SDir = new SDirectory();
         Service svc = new Service();
 
         boolean auth = false;
@@ -230,11 +231,12 @@ public class Menu
                                 //if user chooses to display service codes
                                 if (1 == svcChoice)
                                     System.out.println(svc);
+                                    //System.out.println(SDir);  // Print each entry in SDirectory?
 //                                    svc.displayAll();
                                     //if user chooses to create service record
                                 else if (2 == svcChoice)
                                 {
-                                    boolean added = newSvcRec(MDir, svc);  //utility function
+                                    boolean added = newSvcRec(MDir, svc, SDir);  //utility function
 
                                     if (added)
                                         System.out.print("\n***Service record created***");
@@ -385,12 +387,13 @@ public class Menu
                             //if user chooses to display service codes
                             if (1 == svcChoice)
                             {
+                                  System.out.println(SDir);
 //                                svc.displayAll();
                             }
                                 //if user chooses to create service record
                             else if (2 == svcChoice)
                             {
-                                boolean added = newSvcRec(MDir, svc);
+                                boolean added = newSvcRec(MDir, svc, SDir);
 
                                 if (added)
                                     System.out.print("\n***Service record created***");
@@ -740,7 +743,7 @@ public class Menu
         }
     }
 
-    public static boolean newSvcRec(MDirectory MDir, Service svc)
+    public static boolean newSvcRec(MDirectory MDir, Service svc, SDirectory SDir)
     {
         System.out.print("\nPlease enter the 9-digit Member ID: ");
         int id = input.nextInt();
@@ -764,7 +767,8 @@ public class Menu
             int year = input.nextInt();
             input.nextLine();
 
-            svc.displayAll();
+            System.out.println(SDir);
+            //svc.displayAll();
 
             char correct = 'N';
             int svcCode;
