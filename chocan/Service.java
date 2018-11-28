@@ -19,7 +19,7 @@ import java.io.*;
         protected String comments;
 
         //TODO check on this, used to support main
-        //if not needed nedd to be deleted 
+        //if not needed nedd to be deleted
         protected int month;
         protected int day;
         protected int year;
