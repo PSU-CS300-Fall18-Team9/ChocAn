@@ -3,15 +3,19 @@ import java.util.*;
 
 public class Member extends Data
 {
+    protected ArrayList<String> providers; //Holds Providers of services
+
+    /**
+     * Calls Default Constructor
+     */
     public Member()
     {
         super();
-       // System.out.println("Member default constructor ");
+        providers = null;
     }
 
-
     /**
-     *
+     * Constructor : Initialize Member Info
      * @param fName
      * @param lName
      * @param address
@@ -23,22 +27,17 @@ public class Member extends Data
     public Member(String fName, String lName, String address, String city, String state, int zip, int id)
     {
         super(fName, lName, address, city, state, zip, id);
+        providers = null;
     }
 
-
-    /** Writes member's information, services attended, and the name of providers of each service to a file
-     *
-     * @precondition:  If a file does not exist, this method creates a new file and writes to the file.
-     * @postcondition:  A new file exist or a new member's info is appended to an existing file
+    /**
+     * Returns Member ID
      */
-    /*public void buildReport(String fileName)
+    //May not need this
+    public int getID()
     {
-
-    }*/
-  /*  public boolean buildReport(String fileName, boolean append) {
-        return false;
-    }*/
-
+        return this.id;
+    }
 
     /**  Adds one service to a list of services that a member receives
      *
@@ -49,9 +48,20 @@ public class Member extends Data
      * @return true: new service successfully appended to the list of services
      * @return false: new service did not append to the list
      */
-    public boolean addService(Service aService, String name, int id)
+    public boolean addService(Service aService, String prov_name, int id)
     {
-        return false;
+        if (aService != null) {  //Check if aService is null
+            if (services == null) { //Ceck if services list exists
+                services = new ArrayList<>();
+            }
+            if (providers == null) { //Check if providers exists
+                providers = new ArrayList<>();
+            }
+            services.add(aService); //Adding service
+            providers.add(prov_name); //Adding provider name
+            return true;
+        }
+        return false; //Error
     }
 
 
@@ -60,34 +70,36 @@ public class Member extends Data
      * @precondition:
      * @postcondition:
      */
- /*   public void displayPerson()
+    public void displayPerson()
     {
-        DONT NEED THIS, CAN DELETE
-    }*
+        System.out.println(this);
+    }
 
 
     /** Display's a member's information and all services provided to the member
      * @precondition:
      * @postcondition:
      */
-    public void displayAll()
-    {
-
+    public void displayAll() {
+        System.out.println(this);
+        if (services != null) {
+            System.out.println("Services:\n\n");
+            for (int i = 0; i < services.size(); i++) {
+                System.out.println("Provider: " + providers.get(i) + "\n");
+                System.out.println(services.get(i));
+            }
+        } else {
+            System.out.rpintln("No services on record\n");
+        }
     }
 
     public String[] report()
     {
-/*        boolean debug = true;
-        if(debug == true)
-        {
-            System.out.println("Data report");
-        }
-*/
-        String[] data = new String[8];
+        String[] data = new String[7];
 
-//        String data = null;
+        // String data = null;
         data[0] = this.lastName;
-        data[1] = this.firstName;
+        dat1a[1] = this.firstName;
         data[2] = Integer.toString(this.id);
         data[3] = this.address;
         data[4] = this.city;
@@ -96,5 +108,4 @@ public class Member extends Data
 
         return data;
     }
-
 }
