@@ -1,7 +1,8 @@
 package chocan;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.io.*;
-
+import java.time.LocalDateTime;
 
 //Service is created as node of a LLL, where provider/member
 //are the head of a LLL of services
@@ -52,6 +53,7 @@ public class Service
         this.day = 0;
         this.year = 0;
     }
+    /*
     //default constructor without month, day, year
     public Service()
     {
@@ -64,6 +66,7 @@ public class Service
         this.fee = 0;
         this.comments = null;
     }
+    */
     //------------------------------------------------------------//
 
 
@@ -150,7 +153,7 @@ public class Service
     //wrapper for constructor to be used in the manu
     public boolean createServiceRec(int month, int day, int year, int svcCode, String comment)
     {
-        new service(month, day, year, svcCode, comment);
+        new Service(month, day, year, svcCode, comment);
         return true;
     }
 
@@ -172,6 +175,7 @@ public class Service
            return data;
        }
     */
+    /*
     //make member report
     public String[] makeMemReport()
     {
@@ -185,6 +189,13 @@ public class Service
         data[6] = this.comments;
 
         return data;
+    }
+    */
+
+    //sorting date/time
+    public void timeForm()
+    {
+        System.out.printf("now: %s%n", LocalDateTime.now());
     }
 }
 
