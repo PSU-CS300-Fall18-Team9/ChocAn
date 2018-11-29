@@ -1,4 +1,5 @@
 package chocan;
+import java.io.IOException;
 import java.util.*;
 
 //public class Data
@@ -48,14 +49,9 @@ public abstract class Data
     // Outputs attributes to a screen or a file, depending on output stream
     public String toString()
     {
-        boolean debug = !true;
         String person;
         String location;
 
-        if(debug == true)
-        {
-            System.out.println("Data toString");
-        }
         person = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
         location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
         return person + "\n" + location;
@@ -69,7 +65,7 @@ public abstract class Data
      * @param info - all string type data: first name, last name, address, city, and state
      * @param number - all integer type data:  id and zip code
      * @param choice - selects the data to edit
-     * @return
+     * @return true - editing desired field is successful otherwise returns false
      */
     public boolean edit (String info, int number, int choice)
     {
@@ -79,19 +75,19 @@ public abstract class Data
             switch (choice)
             {
                 case 1:
-                    lastName = new String(info);
+                    lastName = info;
                     break;
                 case 2:
-                    firstName = new String(info);
+                    firstName = info;
                     break;
                 case 4:
-                    address = new String(info);
+                    address = info;
                     break;
                 case 5:
-                    city = new String(info);
+                    city = info;
                     break;
                 case 6:
-                    state = new String(info);
+                    state = info;
                     break;
                 default:
                     flag = false;
