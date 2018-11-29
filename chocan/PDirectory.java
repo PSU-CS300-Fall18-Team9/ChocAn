@@ -144,7 +144,7 @@ public class PDirectory
             System.out.println("PDirectory editProvider");
         }
 
-        PDir.put(nProvider.number, nProvider);
+        PDir.put(nProvider.id, nProvider);
 
         return 0;
     };
@@ -185,10 +185,11 @@ public class PDirectory
                     System.out.println(tData[4]);
                     System.out.println(tData[5]);
                     System.out.println(tData[6]);
+                    System.out.println(tData[7]);
                 }
 
 //                Data nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
-                Provider nProvider = new Provider(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),0);
+                Provider nProvider = new Provider(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]), Integer.parseInt(tData[7]), false);
 //                Data nProvider = new Provider(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),0);
                 this.addProvider(nProvider);
             }

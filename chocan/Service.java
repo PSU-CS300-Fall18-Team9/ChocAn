@@ -7,7 +7,8 @@ import java.io.*;
 //are the head of a LLL of services
 
     //service is an obj of a LLL of services of a Provider or member
-    public class Service{
+    public class Service
+    {
 
         protected int currentDate;
         protected int currentTime;
@@ -34,6 +35,7 @@ import java.io.*;
 
         //------------------------------------------------------------//
         //default constructor with every arguments
+
         public Service(){
             this.currentDate = 0; //look a tht slack for translation
             this.currentTime = 0;
@@ -48,6 +50,8 @@ import java.io.*;
             this.day = 0;
             this.year = 0;
         }
+
+        /*
         //default constructor without month, day, year
         public Service(){
             this.currentDate = 0; //look a tht slack for translation
@@ -60,10 +64,11 @@ import java.io.*;
             this.comments = null;
         }
         //------------------------------------------------------------//
-
+        */
 
         //------------------------------------------------------------//
         //constructor with every arguments
+
         public Service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments){
             this.currentDate = currentDate;
             this.currentTime = currentTime;
@@ -73,11 +78,13 @@ import java.io.*;
             this.serviceCode = serviceCode;
             this.fee = fee;
             this.comments = comments;
-            this.month;
-            this.day;
-            this.year;
+            this.month = 0;
+            this.day = 0;
+            this.year = 0;
         }
+
         //constructor with args without month, day, year
+        /*
         public Service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments){
             this.currentDate = currentDate;
             this.currentTime = currentTime;
@@ -88,6 +95,7 @@ import java.io.*;
             this.fee = fee;
             this.comments = comments;
         }
+        */
         //------------------------------------------------------------//
 
 
@@ -141,7 +149,7 @@ import java.io.*;
     //wrapper for constructor to be used in the manu
     public boolean createServiceRec(int month, int day, int year, int svcCode, String comment)
     {
-        new service(month, day, year, svcCode, comment);
+        new Service(month, day, year, svcCode, comment);
         return true;
     }
 
@@ -168,14 +176,13 @@ import java.io.*;
         {
             String[] data = new String[7];
 
-            data[0] = this.currentTime;
-            data[1] = this.serviceDate;
-            data[2] = this.serviceCode;
-            data[3] = this.mid;
-            data[5] = this.fee;
+            data[0] = Integer.toString(this.currentTime);
+            data[1] = Integer.toString(this.serviceDate);
+            data[2] = Integer.toString(this.serviceCode);
+            data[3] = Integer.toString(this.mid);
+            data[5] = Integer.toString(this.fee);
             data[6] = this.comments;
 
             return data;
         }
     }
-}

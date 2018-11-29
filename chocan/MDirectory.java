@@ -1,31 +1,31 @@
 package chocan;
 import java.util.*;
-import java.io*;
+import java.io.*;
 
 public class MDirectory
 {
     public Map<Integer, Member> MDir = new HashMap();
 
     public boolean verifyMember(int mid){
-        if (MDir.containsKey){
+        if (MDir.containsKey(mid)){
             return true;
         }
         else return false;
     }
 
     public int addMember(Member nMember){
-        MDir.put(nMember.number, nMember);
+        MDir.put(nMember.id, nMember);
         return 0;
     }
 
-    public int removeMember(Member int mid){
+    public int removeMember(int mid){
         MDir.remove(mid);
         return 0;
     }
 
     public void buildReports(){
         for (Member value: MDir.values()){
-            value.buildReport();
+            //value.buildReport();
         }
     }
 
@@ -50,7 +50,7 @@ public class MDirectory
     }
 
     public String buildReport(){
-        String strArray;
+        String[] strArray;
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
             strArray = entry.getValue().report();
@@ -64,10 +64,10 @@ public class MDirectory
 
             StringBuilder dataFile = new StringBuilder();
 
-            dataFile.append("./reports/member/" + tData[0]+tData[1] + ".txt");
+            dataFile.append("./reports/member/" + strArray[0]+strArray[1] + ".txt");
 
             File outFile = new File(dataFile.toString());
-            PrintWriter pw = new PrintWrite(outFile);
+            PrintWriter pw = new PrintWriter(outFile);
             pw.write(nString.toString());
             pw.close();
         }
@@ -79,28 +79,29 @@ public class MDirectory
         String line = "";
         String delim = "#";
 
-        try{
+        try {
             FileReader fileIn = new FileReader(dataFile);
             BufferedReader buffIn = new BufferedReader(fileIn);
+
+
+            while ((line = buffIn.readLine()) != null) {
+                String[] tData = line.split(delim);
+
+                Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], Integer.parseInt(tData[5]), Integer.parseInt(tData[6]));
+                this.addMember(nMember);
+            }
+
+            fileIn.close();
         }
-
-        while ((line = buffIn.readLine()) != null){
-            String[] tData = line.split(delim);
-
-            Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], tData[5], tData[6], tData[7]);
-            this.addMember(nMember);
-        }
-
-        fileIn.close();
-
-        catch (IOException e1)
-        {
-            System.out.println("Exception thrown:" + e1);
-        }
+        catch(IOException e1)
+            {
+                System.out.println("Exception thrown:" + e1);
+            }
     }
 
     public void saveFile()
     {
+        String dataFile = "./data/OutputTest2.txt";
         try
         {
             File outFile = new File(dataFile);
@@ -152,6 +153,4 @@ public class MDirectory
 
         return data;
     }
-
-
 }
