@@ -32,35 +32,9 @@ public class MDirectory
     }
 
     public void buildReport(){    //build member report
-        String[] strArray;
-
-
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
-            strArray = entry.getValue().report();
-            StringBuilder nString = new StringBuilder();
-            nString.append("Member Name: " + strArray[0] + " " + strArray[1] + "\n");
-            nString.append("Member Number: " + strArray[2] + "\n");
-            nString.append("Address: " + strArray[3] + "\n");
-            nString.append("City: " + strArray[4] + "\n");
-            nString.append("State: " + strArray[5] + "\n");
-            nString.append("Zip: " + strArray[6] + "\n");
-
-            StringBuilder dataFile = new StringBuilder();
-
-            dataFile.append("./reports/member/" + strArray[0]+strArray[1] + ".txt");
-
-            try {
-                File outFile = new File(dataFile.toString());
-                PrintWriter pw = new PrintWriter(outFile);
-                pw.write(nString.toString());
-                pw.close();
-            }
-            catch (FileNotFoundException e1)
-            {
-                System.out.println("Exception thrown:" + e1);
-            }
+            MDir.getValue.report();
         }
-
     }
 
     public void initialize(){   //read data from file to fill table

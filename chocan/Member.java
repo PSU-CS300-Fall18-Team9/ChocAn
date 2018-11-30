@@ -93,19 +93,37 @@ public class Member extends Data
         }
     }
 
-    public String[] report()
+    //build member report
+    public void report()
     {
-        String[] data = new String[7];
+        StringBuilder dataFile = new StringBuilder();
+        dataFile.append("./reports/member/" + this.lastName + this.firstName + ".txt");
+        StringBuilder nMember = new StringBuilder();    //string for member info
+        StringBuilder nServices = new StringBuilder();  //string for info for all services
 
-        // String data = null;
-        data[0] = this.lastName;
-        data[1] = this.firstName;
-        data[2] = Integer.toString(this.id);
-        data[3] = this.address;
-        data[4] = this.city;
-        data[5] = this.state;
-        data[6] = Integer.toString(this.zip);
+        //adds all member data to nMember
+        nString.append("Member Name: " + this.firstName + ", " + this.firstName + "\n");
+        nString.append("Member ID: " + this.id + "\n");
+        nString.append("Member Address: " + this.address + "\n");
+        nString.append("Member City: " + this.city + "\n");
+        nString.append("Member State: " + this.state + "\n");
+        nString.append("Member Zip: " + this.id + "\n");
 
-        return data;
+        //iterates through all services, adds all data to nServices
+        for (int i = 0; i < services.size(); i++){
+            nServices.append("Service Date: " + services.get(i).month + " " + services.get(i).day + " " + services.get(i).year + "\n");
+            nServices.append("Provider Name: " + providers.get(i) + "\n");
+            nServices.append("Service Name: " + services.get(i).serviceName + "\n");
+        }
+
+        //open datafile, write all data from nMember, then nServices to file
+        try {
+            File outFile = new File(dataFile);
+            PrintWriter pw = new PrintWriter(outFile);
+            pw.write(nMember);
+            pw.write(nServices);
+            pw.close();
+        }
+        catch (FileNotFoundException e1);
     }
 }
