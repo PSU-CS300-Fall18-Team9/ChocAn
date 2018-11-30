@@ -197,6 +197,7 @@ public class PDirectory
                     System.out.println(tData[4]);
                     System.out.println(tData[5]);
                     System.out.println(tData[6]);
+                    System.out.println(tData[7]);
                 }
 
                 StringBuilder nString = new StringBuilder();
@@ -207,7 +208,8 @@ public class PDirectory
                 nString.append(tData[3] + "#");
                 nString.append(tData[4] + "#");
                 nString.append(tData[5] + "#");
-                nString.append(tData[6] + "#\n");
+                nString.append(tData[6] + "#");
+                nString.append(tData[7] + "#\n");
 
                 pw.write(nString.toString());
             }

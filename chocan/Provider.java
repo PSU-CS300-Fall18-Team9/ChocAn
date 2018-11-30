@@ -233,8 +233,8 @@ public class Provider extends Data
         data[4] = this.city;
         data[5] = this.state;
         data[6] = Integer.toString(this.zip);
-        data[7] = Integer.toString(this.consult);
-        data[8] = Integer.toString(this.totalFees);
+//        data[7] = Integer.toString(this.consult);
+        data[7] = Boolean.toString(this.privilege);
         return data;
     }
 
