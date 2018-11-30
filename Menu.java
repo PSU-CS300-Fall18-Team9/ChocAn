@@ -392,12 +392,12 @@ public class Menu
                                 //if user chooses to create service record
                             else if (2 == svcChoice)
                             {
-                                boolean added = newSvcRec(MDir, PDir, svc, PID, SDir);
+                                newSvcRec(MDir, PDir, svc, PID, SDir);
 
-                                if (added)
-                                    System.out.print("\n***Service record created***");
-                                else
-                                    System.out.print("\n***Error creating service record");
+                                //if (added)
+                                //    System.out.print("\n***Service record created***");
+                                //else
+                                //    System.out.print("\n***Error creating service record");
                             }
                             svcChoice = svcMenu();
                         }
@@ -742,7 +742,7 @@ public class Menu
         }
     }
 
-    public static boolean newSvcRec(MDirectory MDir, PDirectory PDir, Service svc, int PID, SDirectory SDir)
+    public static void newSvcRec(MDirectory MDir, PDirectory PDir, Service svc, int PID, SDirectory SDir)
     {
         System.out.print("\nPlease enter the 9-digit Member ID: ");
         int MID = input.nextInt();
@@ -803,8 +803,7 @@ public class Menu
             String comments = new String();
             comments = input.nextLine();
 
-            boolean addSvc = svc.service(month, day, year, svcCode, comments);
-            return addSvc;
+            Service service = new service(month, day, year, svcCode, comments);
         }
         return false;
     }
