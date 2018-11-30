@@ -89,7 +89,7 @@ public class PDirectory
             StringBuilder dataFile = new StringBuilder();
             dataFile.append("./reports/provider/" + entry.getValue().firstName+entry.getValue().lastName + ".txt");
 
-            entry.getValue().buildReport(dataFile.toString(), true);
+            entry.getValue().buildReport(dataFile.toString(), false);
 //            entry.getValue().buildReport(entry.getValue().firstName, true);
 /*
             //If reporting handled by PDirctory:

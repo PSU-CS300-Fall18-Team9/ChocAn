@@ -121,12 +121,6 @@ public class Provider extends Data
         System.out.println(finalReport());
     }
 
-    /**  Checks if the list of services is empty
-     *
-     * @return true:  services is null, and the list is empty
-     * @return false: There's at least one item in the list of services
-     */
-    private boolean isEmpty() { return (services == null); }
 
     /** Returns the provider report to a string in the following format:
      *          Provider name:
@@ -171,6 +165,13 @@ public class Provider extends Data
         reportFormat.append(serviceTotal() + "\n\n");
         return reportFormat.toString();
     }
+
+    /**  Checks if the list of services is empty
+     *
+     * @return true:  services is null, and the list is empty
+     * @return false: There's at least one item in the list of services
+     */
+    private boolean isEmpty() { return (services == null); }
 
     /**  Format member and service data to the provider report.
      * Format Example:
