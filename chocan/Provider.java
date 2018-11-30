@@ -35,10 +35,10 @@ public class Provider  extends Data
      * @param id: provider's identification number
      * @param num: the number of consultations the provider provided to members
      */
-    public Provider(String fName, String lName, String address, String city, String state, int zip, int id, int num, boolean isManager)
+    public Provider(String fName, String lName, String address, String city, String state, int zip, int id, boolean isManager)
     {
         super(fName, lName, address, city, state, zip, id);
-        this.consult = num;
+        this.consult = 0;
         this.memberNames = null;
         this.memberId = null;
         this.totalFees = 0;

@@ -4,13 +4,12 @@ import chocan.*;
 
 public class Menu
 {
-//    protected Scanner input;
     protected static Scanner input;
 
     public static void main(String[] args)
     {
         System.out.println("Welcome to ChocAn Data Processing System");
-/*        input = new Scanner(System.in);
+        input = new Scanner(System.in);
         int PID = 0;
 
         //class objects
@@ -41,7 +40,7 @@ public class Menu
             //if user chooses management privileges
             if (1 == choice)
             {
-                boolean mgrAuth = PDir.verifyPrivilege(PID);
+                boolean mgrAuth = PDir.verifyProvider(PID);
                 if (!mgrAuth)
                     System.out.print("***You are not authorized to view the Management Menu***\n");
                 else
@@ -71,7 +70,7 @@ public class Menu
                                     boolean status = false;
 
                                     getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
-                                    Member nMember = new Member(lastName, firstName, id, address, city, state, zip, status);
+                                    Member nMember = new Member(firstName, lastName, address, city, state, zip, id);
 
                                     int added = MDir.addMember(nMember);
 //                                    int added = MDir.add(nMember);
@@ -158,7 +157,7 @@ public class Menu
                                     boolean status = false;
 
                                     getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
-                                    Provider nProvider = new Provider(lastName, firstName, id, address, city, state, zip, status);
+                                    Provider nProvider = new Provider(firstName, lastName, address, city, state, zip, id, status);
 
                                     int added = PDir.addProvider(nProvider);
                                     if (1 == added)
@@ -256,7 +255,7 @@ public class Menu
                             {
                                 //if user chooses to create member report
                                 if (1 == mgrReportsChoice)
-                                    MDir.buildReports();
+                                    MDir.buildReport();
 
                                     //if user chooses to create provider report
                                 else if (2 == mgrReportsChoice)
@@ -311,7 +310,7 @@ public class Menu
                                 boolean status = false;
 
                                 getInfo(pvdrChoice, lastName, firstName, id, address, city, state, zip, status);
-                                Member nMember = new Member(lastName, firstName, id, address, city, state, zip, status);
+                                Member nMember = new Member(lastName, firstName, address, city, state, zip, id);
 
                                 int added = MDir.addMember(nMember);
 //                                int added = MDir.add(nMember);
@@ -413,7 +412,7 @@ public class Menu
                         {
                             //if user chooses to create member report
                             if (1 == pvdrReportsChoice)
-                                MDir.buildReports();
+                                MDir.buildReport();
 
                                 //if user chooses to create provider report
                             else if (2 == pvdrReportsChoice)
@@ -778,14 +777,14 @@ public class Menu
                 svcCode = input.nextInt();
                 input.nextLine();
 
-                boolean found = svc.find(svcCode);
+                boolean found = SDir.verifyService(svcCode);
                 while (!found)
                 {
                     System.out.print("\n***Invalid service code***");
                     System.out.print("\nPlease enter the 6-digit service code: ");
                     svcCode = input.nextInt();
                     input.nextLine();
-                    found = svc.find(svcCode);
+                    found = SDir.verifyService(svcCode);
                 }
 
                 System.out.print("\nYou entered " + svcCode + ".  Is this correct? (Y/N): ");
@@ -804,7 +803,7 @@ public class Menu
             String comments = new String();
             comments = input.nextLine();
 
-            boolean addSvc = svc.createServiceRec(month, day, year, svcCode, comments, MID, PID);
+            boolean addSvc = svc.createServiceRec(month, day, year, svcCode, comments);
             return addSvc;
         }
         return false;
@@ -896,6 +895,5 @@ public class Menu
         boolean edited = pDir.editProvider(id, st, num, status, editOption);
 
         return edited;
-*/
     }
 }

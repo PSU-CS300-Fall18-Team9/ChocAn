@@ -53,19 +53,18 @@ public class PDirectory
         {
             System.out.println("PDirectory Default Constructor");
         }
-
         initialize();
     }
 
 //    public int addProvider(Data nProvider)
     public int addProvider(Provider nProvider)
     {
-        boolean debug = !true;
+        //boolean debug = !true;
 
-        if(debug == true)
-        {
-            System.out.println("PDirectory addProvider");
-        }
+        //if(debug == true)
+        //{
+        // System.out.println("PDirectory addProvider");
+        //}
 
         PDir.put(nProvider.id, nProvider);
 //        PDir.put(nProvider.number, nProvider);
@@ -135,8 +134,9 @@ public class PDirectory
         }
     };
 
-    public int editProvider(Provider nProvider)
+    public boolean editProvider(int id, String st, int num, boolean status, int choice)
     {
+        Provider toEdit = PDir.get(id);
         boolean debug = !true;
 
         if(debug == true)
@@ -144,9 +144,7 @@ public class PDirectory
             System.out.println("PDirectory editProvider");
         }
 
-        PDir.put(nProvider.id, nProvider);
-
-        return 0;
+        return toEdit.edit(st, num, choice);
     };
 
     protected void initialize() //throws IOException
@@ -189,7 +187,7 @@ public class PDirectory
                 }
 
 //                Data nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
-                Provider nProvider = new Provider(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]), Integer.parseInt(tData[7]), false);
+                Provider nProvider = new Provider(tData[0], tData[1], tData[2], tData[3], tData[4], Integer.parseInt(tData[5]), Integer.parseInt(tData[6]), false);
 //                Data nProvider = new Provider(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),0);
                 this.addProvider(nProvider);
             }
