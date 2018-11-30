@@ -47,12 +47,12 @@ public class PDirectory
 
     public PDirectory() //throws IOException
     {
-        boolean debug = true;
+        /*boolean debug = true;
 
         if(debug == true)
         {
             System.out.println("PDirectory Default Constructor");
-        }
+        }  */
         initialize();
     }
 
@@ -183,7 +183,7 @@ public class PDirectory
                     System.out.println(tData[4]);
                     System.out.println(tData[5]);
                     System.out.println(tData[6]);
-                    System.out.println(tData[7]);
+                    //System.out.println(tData[7]);
                 }
 
 //                Data nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
