@@ -16,9 +16,9 @@ public class MDirectory
 
     public Member verifyMember(int mid){    //verify member with id mid
         if (MDir.containsKey(mid)){
-            return MDir.get(mid);
+            return true;
         }
-        else return null;
+        else return false;
     }
 
     public int addMember(Member nMember){   //add member to hashtable
