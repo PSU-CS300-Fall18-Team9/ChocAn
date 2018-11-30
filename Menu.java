@@ -803,7 +803,7 @@ public class Menu
             String comments = new String();
             comments = input.nextLine();
 
-            boolean addSvc = svc.createServiceRec(month, day, year, svcCode, comments);
+            boolean addSvc = svc.service(month, day, year, svcCode, comments);
             return addSvc;
         }
         return false;
