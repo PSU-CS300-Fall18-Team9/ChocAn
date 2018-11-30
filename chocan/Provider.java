@@ -1,9 +1,7 @@
 package chocan;
 
 import java.util.*;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.FileOutputStream;
+import java.io.*;
 
 public class Provider extends Data
 {
@@ -13,8 +11,6 @@ public class Provider extends Data
     private ArrayList<Integer> memberId;
     private PrintWriter toFile;
     private int totalFees;
-
-
 
     public Provider()
     {
@@ -26,8 +22,6 @@ public class Provider extends Data
         toFile = null;
         totalFees = 0;
     }
-
-
 
     /**  Constructor:  Initialize provider's info from user's input
      *
@@ -56,8 +50,6 @@ public class Provider extends Data
             this.privilege = false;
         }
     }
-
-
 
     /** Inserts one service to a list of services. Appends new services to an existing list of services
      *
@@ -90,8 +82,6 @@ public class Provider extends Data
         }
         return false;
     }
-
-
 
     /** Writes provider's information, all the services the provider provided, the total number of consultations,
      * and the total service fees of the week
@@ -126,39 +116,10 @@ public class Provider extends Data
         return isOpen;
     }
 
-
-
-    // Returns provider's info as a string.  Able to display on screen or write to a file
-    public String toString()
-    {
-        String person;
-        String location;
-
-        person = "Provider Name: " + this.firstName + " " + this.lastName + "\nProvider number: " + this.id;
-        location = "Provider street address: " + this.address + "\nProvider city: " + this.city + "\nProvider state: " + this.state
-                    + "\nProvider zip code: " + this.zip;
-        return person + "\n" + location;
-    }
-
-
-
-    // Returns provider's service totals and consultations as a string.
-    public String serviceTotal()
-    {
-        String providerService = "Number of consultations with member: " + this.consult + "\n"
-                + "Total fee to be paid: " + this.totalFees;
-
-        return providerService;
-    }
-
-
-
     // Displays the provider's information, the member's that received service, and all the services the provider provided
     public void displayAll() {
         System.out.println(finalReport());
     }
-
-
 
     /**  Checks if the list of services is empty
      *
@@ -166,8 +127,6 @@ public class Provider extends Data
      * @return false: There's at least one item in the list of services
      */
     private boolean isEmpty() { return (services == null); }
-
-
 
     /** Returns the provider report to a string in the following format:
      *          Provider name:
@@ -213,8 +172,6 @@ public class Provider extends Data
         return reportFormat.toString();
     }
 
-
-
     /**  Format member and service data to the provider report.
      * Format Example:
      *          Date of service:
@@ -252,5 +209,43 @@ public class Provider extends Data
             }
         }
         return servReport;
+    }
+
+    // Returns provider's service totals and consultations as a string.
+    public String serviceTotal()
+    {
+        String providerService = "Number of consultations with member: " + this.consult + "\n"
+                + "Total fee to be paid: " + this.totalFees;
+
+        return providerService;
+    }
+
+    public String[] strArray()
+    {
+        String[] data = new String[9];
+
+//        String data = null;
+        data[0] = this.lastName;
+        data[1] = this.firstName;
+        data[2] = Integer.toString(this.id);
+        data[3] = this.address;
+        data[4] = this.city;
+        data[5] = this.state;
+        data[6] = Integer.toString(this.zip);
+        data[7] = Integer.toString(this.consult);
+        data[8] = Integer.toString(this.totalFees);
+        return data;
+    }
+
+  // Returns provider's info as a string.  Able to display on screen or write to a file
+    public String toString()
+    {
+        String person;
+        String location;
+
+        person = "Provider Name: " + this.firstName + " " + this.lastName + "\nProvider number: " + this.id;
+        location = "Provider street address: " + this.address + "\nProvider city: " + this.city + "\nProvider state: " + this.state
+                    + "\nProvider zip code: " + this.zip + "\n\n";
+        return person + "\n" + location;
     }
 }

@@ -96,7 +96,7 @@ public class Member extends Data
     //build member report
     public void report()
     {
-        StringBuilder dataFile = new StringBuilder();
+/*        StringBuilder dataFile = new StringBuilder();
         dataFile.append("./reports/member/" + this.lastName + this.firstName + ".txt");
         StringBuilder nMember = new StringBuilder();    //string for member info
         StringBuilder nServices = new StringBuilder();  //string for info for all services
@@ -124,6 +124,24 @@ public class Member extends Data
             pw.write(nServices);
             pw.close();
         }
-        catch (FileNotFoundException e1);
+        catch (FileNotFoundException e1){};
+*/    }
+
+    public String[] strArray()
+    {
+        String[] data = new String[9];
+/*
+//        String data = null;
+        data[0] = this.lastName;
+        data[1] = this.firstName;
+        data[2] = Integer.toString(this.id);
+        data[3] = this.address;
+        data[4] = this.city;
+        data[5] = this.state;
+        data[6] = Integer.toString(this.zip);
+        data[7] = Integer.toString(this.consult);
+        data[8] = Integer.toString(this.totalFees);
+*/        return data;
     }
+
 }

@@ -41,7 +41,7 @@ import java.io.*;
 
 public class PDirectory
 {
-    /*
+
 //    public Map<Integer, Data> PDir = new HashMap<>();
 //    public Map<Integer, Data> SDir = new HashMap<>();
     public Map<Integer, Provider> PDir = new HashMap<>();
@@ -86,8 +86,12 @@ public class PDirectory
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
             //If reporting handled by Provider class
-//            entry.getValue().buildReport(entry.getValue().getFirstName(), true);
+            StringBuilder dataFile = new StringBuilder();
+            dataFile.append("./reports/provider/" + entry.getValue().firstName+entry.getValue().lastName + ".txt");
 
+            entry.getValue().buildReport(dataFile.toString(), true);
+//            entry.getValue().buildReport(entry.getValue().firstName, true);
+/*
             //If reporting handled by PDirctory:
             FileOutputStream out = null;
 //            String dataFile = "./data/ProviderList.txt\"
@@ -132,7 +136,7 @@ public class PDirectory
             {
                 System.out.println("Exception thrown:" + e1);
             }
-        }
+*/        }
     };
 
     public boolean editProvider(int id, String st, int num, boolean status, int choice)
@@ -188,7 +192,7 @@ public class PDirectory
                 }
 
 //                Data nProvider = new Provider("John", "Smith", 100000000, "12345 SW Portland Ave", "Portland", "Oregon", 97223);
-                Provider nProvider = new Provider(tData[0], tData[1], tData[2], tData[3], tData[4], Integer.parseInt(tData[5]), Integer.parseInt(tData[6]), false);
+                Provider nProvider = new Provider(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),Boolean.parseBoolean((tData[7])));
 //                Data nProvider = new Provider(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),0);
                 this.addProvider(nProvider);
             }
@@ -237,7 +241,8 @@ public class PDirectory
 //            for (Map.Entry<Integer, Data> entry : PDir.entrySet())
             for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
             {
-                String[] tData = entry.getValue().report();
+                String[] tData = entry.getValue().strArray();
+//                String[] tData = entry.getValue().report();
 
                 if (debug == true)
                 {
@@ -306,5 +311,4 @@ public class PDirectory
 
         return PDir.containsKey(pid);
     };
-*/
 }

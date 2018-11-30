@@ -5,7 +5,6 @@ public abstract class Data
 {
     protected ArrayList<Service> services;
 
-
     protected String firstName;
     protected String lastName;
     protected String address;
@@ -13,8 +12,6 @@ public abstract class Data
     protected String state;
     protected int zip;
     protected int id;
-
-
 
     public Data()
     {
@@ -28,8 +25,6 @@ public abstract class Data
         id = 0;
     }
 
-
-
     public Data(String fName, String lName, String address, String city, String state, int zip, int id)
     {
         services = null;
@@ -42,8 +37,6 @@ public abstract class Data
         this.id = id;
     }
 
-
-
     // Outputs attributes to a screen or a file, depending on output stream
     public String toString()
     {
@@ -55,8 +48,6 @@ public abstract class Data
         return person + "\n" + location;
 
     }
-
-
 
     /** Edits provider or member's information
      *
@@ -109,12 +100,11 @@ public abstract class Data
        return flag;
     }
 
-
+    //Return an array of strings representation of the data, used for saveFile
+    public abstract String[] strArray();
 
     // Allow subclasses to add services to their own list of services
     public abstract boolean addService(Service aService, String name, int id);
-
-
 
     // Allow subclasses to output their data, and all of their services
     public abstract void displayAll();
