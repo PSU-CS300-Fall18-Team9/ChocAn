@@ -34,7 +34,7 @@ public class MDirectory
 
     public void buildReport(){    //build member report
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
-            MDir.getValue.report();
+            entry.getValue().report();
         }
     }
 
@@ -73,7 +73,7 @@ public class MDirectory
 
             for(Map.Entry<Integer, Member> entry: MDir.entrySet())
             {
-                String[] tData = entry.getValue().report();
+//                String[] tData = entry.getValue().report();
 
                 StringBuilder nString = new StringBuilder();
 
@@ -111,9 +111,6 @@ public class MDirectory
         return data;
     }
 
-    */
-
-
     public boolean editMember(int id, String st, int num, boolean status, int choice){ //edit member with id
         Member toEdit = MDir.get(id);
         if (toEdit != null) {
@@ -121,4 +118,4 @@ public class MDirectory
         }
         else return false;
     }
-}
+*/}

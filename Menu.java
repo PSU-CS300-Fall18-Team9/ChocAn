@@ -9,7 +9,7 @@ public class Menu
     public static void main(String[] args)
     {
         System.out.println("Welcome to ChocAn Data Processing System");
-        input = new Scanner(System.in);
+/*        input = new Scanner(System.in);
         int PID = 0;
 
         //class objects
@@ -803,9 +803,9 @@ public class Menu
             String comments = new String();
             comments = input.nextLine();
 
-            Service service = new service(month, day, year, svcCode, comments);
+            Service service = new Service(month, day, year, svcCode, comments);
         }
-        return false;
+//        return false;
     }
 
     public static boolean editMbr(int editOption, int choice, int id, MDirectory mDir)
@@ -894,5 +894,5 @@ public class Menu
         boolean edited = pDir.editProvider(id, st, num, status, editOption);
 
         return edited;
-    }
+*/    }
 }
