@@ -1,20 +1,20 @@
 package chocan;
         import java.util.*;
-        import java.io*;
+        import java.io.*;
 
 public class MDirectory
 {
     public Map<Integer, Member> MDir = new HashMap();
 
     public Member findMember(int mid){  //find and return member
-        if (MDir.containsKey){
+        if (MDir.containsKey(mid)){
             return MDir.get(mid);
         }
         else return null;
     }
 
     public Member verifyMember(int mid){    //verify member with id mid
-        if (MDir.containsKey){
+        if (MDir.containsKey(mid)){
             return MDir.get(mid);
         }
         else return null;
@@ -25,18 +25,18 @@ public class MDirectory
         return 0;
     }
 
-    public int removeMember(Member int mid){    //remove member from table
+    public int removeMember(int mid){    //remove member from table
         MDir.remove(mid);
         return 0;
     }
 
-    public String buildReport(){    //build member report
-        String strArray;
+    public void buildReport(){    //build member report
+        String[] strArray;
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
             strArray = entry.getValue().report();
             StringBuilder nString = new StringBuilder();
-            nString.append("Member Name: " + strArray[0] + " " strArray[1] + "\n");
+            nString.append("Member Name: " + strArray[0] + " " + strArray[1] + "\n");
             nString.append("Member Number: " + strArray[2] + "\n");
             nString.append("Address: " + strArray[3] + "\n");
             nString.append("City: " + strArray[4] + "\n");
@@ -45,12 +45,18 @@ public class MDirectory
 
             StringBuilder dataFile = new StringBuilder();
 
-            dataFile.append("./reports/member/" + tData[0]+tData[1] + ".txt");
+            dataFile.append("./reports/member/" + strArray[0]+strArray[1] + ".txt");
 
-            File outFile = new File(dataFile.toString());
-            PrintWriter pw = new PrintWrite(outFile);
-            pw.write(nString.toString());
-            pw.close();
+            try {
+                File outFile = new File(dataFile.toString());
+                PrintWriter pw = new PrintWriter(outFile);
+                pw.write(nString.toString());
+                pw.close();
+            }
+            catch (FileNotFoundException e1)
+            {
+                System.out.println("Exception thrown:" + e1);
+            }
         }
 
     }
@@ -60,24 +66,23 @@ public class MDirectory
         String line = "";
         String delim = "#";
 
-        try{
+        try {
             FileReader fileIn = new FileReader(dataFile);
             BufferedReader buffIn = new BufferedReader(fileIn);
+
+            while ((line = buffIn.readLine()) != null) {
+                String[] tData = line.split(delim);
+
+                Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], Integer.parseInt(tData[5]), Integer.parseInt(tData[6]));
+                this.addMember(nMember);
+            }
+
+            fileIn.close();
         }
-
-        while ((line = buffIn.readLine()) != null){
-            String[] tData = line.split(delim);
-
-            Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], tData[5], tData[6], tData[7]);
-            this.addMember(nMember);
-        }
-
-        fileIn.close();
-
-        catch (IOException e1)
-        {
-            System.out.println("Exception thrown:" + e1);
-        }
+        catch(IOException e1)
+            {
+                System.out.println("Exception thrown:" + e1);
+            }
     }
 
     public void saveFile()  //save current tree to file
@@ -129,13 +134,12 @@ public class MDirectory
         return data;
     }
 
-    public boolean editMember(id, st, num, status, choice){ //edit member with id
-        Member toEdit = MDir.get(id);
-        if (toEdit) {
-            return toEdit.edit(String st, num, choice);
+    public boolean editMember(int id, String st, int num, int status, int choice){ //edit member with id
+        Member toEdit = findMember(id);
+        if (toEdit != null) {
+            return toEdit.edit(st, num, choice);
         }
         else return false;
     }
-
 
 }
