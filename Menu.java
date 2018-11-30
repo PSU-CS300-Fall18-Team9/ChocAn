@@ -9,7 +9,7 @@ public class Menu
     public static void main(String[] args)
     {
         System.out.println("Welcome to ChocAn Data Processing System");
-/*        input = new Scanner(System.in);
+        input = new Scanner(System.in);
         int PID = 0;
 
         //class objects
@@ -254,12 +254,16 @@ public class Menu
                             while (4 != mgrReportsChoice)
                             {
                                 //if user chooses to create member report
-                                if (1 == mgrReportsChoice)
-                                    MDir.buildReport();
+                                if (1 == mgrReportsChoice) {
+                                    //MDir.buildReport();
+                                    System.out.println("THIS IS WHERE MEMBER REPORTS WILL PRINT\n");
+                                }
 
                                     //if user chooses to create provider report
-                                else if (2 == mgrReportsChoice)
-                                    PDir.buildReports();
+                                else if (2 == mgrReportsChoice) {
+                                    //PDir.buildReports();
+                                    System.out.println("THIS IS WHERE PROVIDER REPORTS WILL PRINT\n");
+                                }
 
                                     //if user chooses to create manager report
                                 else if (3 == mgrReportsChoice)
@@ -370,7 +374,7 @@ public class Menu
                             //if user chooses to display all members
                             else if (4 == mbrMgmtChoice)
                                 System.out.println(MDir);
-//                                MDir.displayAll();
+                                //MDir.toString();
 
                             mbrMgmtChoice = mbrMgmtMenu();
                         }
@@ -411,12 +415,16 @@ public class Menu
                         while (3 != pvdrReportsChoice)
                         {
                             //if user chooses to create member report
-                            if (1 == pvdrReportsChoice)
-                                MDir.buildReport();
+                            if (1 == pvdrReportsChoice) {
+                                //MDir.buildReport();
+                                System.out.println("MEM REPORTS\n");
+                            }
 
                                 //if user chooses to create provider report
-                            else if (2 == pvdrReportsChoice)
-                                PDir.buildReports();
+                            else if (2 == pvdrReportsChoice) {
+                                //PDir.buildReports();
+                                System.out.println("PROV REPORTS\n");
+                            }
 
                             pvdrReportsChoice = pvdrReportsMenu();
                         }
@@ -428,8 +436,8 @@ public class Menu
         }
 
         //save any alterations to data files
-        MDir.saveFile();
-        PDir.saveFile();
+        //MDir.saveFile();
+        //PDir.saveFile();
     }
 
     public static int topMenu()
@@ -805,7 +813,7 @@ public class Menu
 
             Service service = new Service(month, day, year, svcCode, comments);
         }
-//        return false;
+        //return false;
     }
 
     public static boolean editMbr(int editOption, int choice, int id, MDirectory mDir)
@@ -894,5 +902,5 @@ public class Menu
         boolean edited = pDir.editProvider(id, st, num, status, editOption);
 
         return edited;
-*/    }
+    }
 }
