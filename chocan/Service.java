@@ -7,8 +7,6 @@ import java.time.LocalDateTime;
 //Service is created as node of a LLL, where provider/member
 //are the head of a LLL of services
 
-
-
 //service is an obj of a LLL of services of a Provider or member
 public class Service
 {
@@ -198,4 +196,3 @@ public class Service
         System.out.printf("now: %s%n", LocalDateTime.now());
     }
 }
-
