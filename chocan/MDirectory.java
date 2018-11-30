@@ -1,56 +1,37 @@
 package chocan;
-import java.util.*;
-import java.io.*;
+        import java.util.*;
+        import java.io*;
 
 public class MDirectory
 {
     public Map<Integer, Member> MDir = new HashMap();
 
-    public boolean verifyMember(int mid){
-        if (MDir.containsKey(mid)){
-            return true;
+    public Member findMember(int mid){  //find and return member
+        if (MDir.containsKey){
+            return MDir.get(mid);
         }
-        else return false;
+        else return null;
     }
 
-    public int addMember(Member nMember){
+    public Member verifyMember(int mid){    //verify member with id mid
+        if (MDir.containsKey){
+            return MDir.get(mid);
+        }
+        else return null;
+    }
+
+    public int addMember(Member nMember){   //add member to hashtable
         MDir.put(nMember.id, nMember);
         return 0;
     }
 
-    public int removeMember(int mid){
+    public int removeMember(Member int mid){    //remove member from table
         MDir.remove(mid);
         return 0;
     }
 
-    public void buildReports(){
-        for (Member value: MDir.values()){
-            //value.buildReport();
-        }
-    }
-
-    public void readIn(){
-        String lastName;
-        String firstName;
-        int phone;
-        String address;
-        String city;
-        String state;
-        int zip;
-
-        Scanner members = new Scanner("ChocAn/data/MemberList.txt").useDelimiter("#");
-
-        lastName = members.next();
-        firstName = members.next();
-        phone = members.nextInt();
-        address = members.next();
-        city = members.next();
-        state = members.next();
-        zip = members.nextInt();
-    }
-
-    public String buildReport(){
-        String[] strArray;
+    public String buildReport(){    //build member report
+        String strArray;
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
             strArray = entry.getValue().report();
@@ -64,44 +45,45 @@ public class MDirectory
 
             StringBuilder dataFile = new StringBuilder();
 
-            dataFile.append("./reports/member/" + strArray[0]+strArray[1] + ".txt");
+            dataFile.append("./reports/member/" + tData[0]+tData[1] + ".txt");
 
             File outFile = new File(dataFile.toString());
-            PrintWriter pw = new PrintWriter(outFile);
+            PrintWriter pw = new PrintWrite(outFile);
             pw.write(nString.toString());
             pw.close();
         }
 
     }
 
-    public void initialize(){
+    public void initialize(){   //read data from file to fill table
         String dataFile = "./data/MemberList.txt";
         String line = "";
         String delim = "#";
 
-        try {
+        try{
             FileReader fileIn = new FileReader(dataFile);
             BufferedReader buffIn = new BufferedReader(fileIn);
-
-
-            while ((line = buffIn.readLine()) != null) {
-                String[] tData = line.split(delim);
-
-                Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], Integer.parseInt(tData[5]), Integer.parseInt(tData[6]));
-                this.addMember(nMember);
-            }
-
-            fileIn.close();
         }
-        catch(IOException e1)
-            {
-                System.out.println("Exception thrown:" + e1);
-            }
+
+        while ((line = buffIn.readLine()) != null){
+            String[] tData = line.split(delim);
+
+            Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], tData[5], tData[6], tData[7]);
+            this.addMember(nMember);
+        }
+
+        fileIn.close();
+
+        catch (IOException e1)
+        {
+            System.out.println("Exception thrown:" + e1);
+        }
     }
 
-    public void saveFile()
+    public void saveFile()  //save current tree to file
     {
-        String dataFile = "./data/OutputTest2.txt";
+        String dataFile = "./data/MemberList.txt";
+
         try
         {
             File outFile = new File(dataFile);
@@ -132,15 +114,8 @@ public class MDirectory
         }
     }
 
-    public String toString()
+    public String toString()    //return array of strings for member
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("MDirectory toString");
-        }
-
         String data = null;
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet())
@@ -153,4 +128,14 @@ public class MDirectory
 
         return data;
     }
+
+    public boolean editMember(id, st, num, status, choice){ //edit member with id
+        Member toEdit = MDir.get(id);
+        if (toEdit) {
+            return toEdit.edit(String st, num, choice);
+        }
+        else return false;
+    }
+
+
 }
