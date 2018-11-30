@@ -9,6 +9,9 @@ public class Provider  extends Data
     protected ArrayList <String> memberNames; // stores the name of member for each service provided
     protected ArrayList<Integer> memberId;
     private int totalFees;
+
+
+
     public Provider()
     {
         super();
@@ -35,11 +38,19 @@ public class Provider  extends Data
     public Provider(String fName, String lName, String address, String city, String state, int zip, int id, int num, boolean isManager)
     {
         super(fName, lName, address, city, state, zip, id);
-        consult = num;
-        memberNames = null;
-        memberId = null;
-        privilege = isManager;
-        totalFees = 0;
+        this.consult = num;
+        this.memberNames = null;
+        this.memberId = null;
+        this.totalFees = 0;
+        try
+        {
+            this.privilege = isManager;
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println("This provider will not have manager privileges.");
+            this.privilege = false;
+        }
     }
 
 
@@ -62,7 +73,7 @@ public class Provider  extends Data
     {
         if (toAdd != null) {
             // if services is null, create a new list of services
-            if (isEmpty() == true) {
+            if (isEmpty()) {
                 services = new ArrayList<>();
                 memberNames = new ArrayList<>();
                 memberId = new ArrayList<>();
@@ -95,12 +106,12 @@ public class Provider  extends Data
     public void displayAll() {
         int size;
 
-        if (isEmpty() == false) {
+        if (!isEmpty()) {
             size = services.size();
             // display provider
             System.out.println(this);
             for (int i = 0; i < size; ++i) {
-                // display all member's who recieve service from provider
+                // display all member's who received service from provider
                 System.out.println("Member name: " + memberNames.get(i));
                 // display each of the member's id
                 System.out.println("Member number: " + memberId.get(i));
@@ -118,7 +129,7 @@ public class Provider  extends Data
 
     /**  Checks if the list of services is empty
      *
-     * @return true:  sevices is null, and the list is empty
+     * @return true:  services is null, and the list is empty
      * @return false: There's at least one item in the list of services
      */
     private boolean isEmpty() { return (services == null); }
@@ -133,7 +144,6 @@ public class Provider  extends Data
     {
         String[] data = new String[9];
 
-//        String data = null;
         data[0] = this.lastName;
         data[1] = this.firstName;
         data[2] = Integer.toString(this.id);
@@ -161,12 +171,12 @@ public class Provider  extends Data
      */
     public String[] serviceReport()
     {
-        int arraySize = 0;
+        int arraySize;
         int count = 0; // keep track of the number of services and members in a list
         int serviceCategories = 4; // The number of fields in services that will be in the report
         String [] servReport = null;
 
-      if (isEmpty() == false)
+      if (!isEmpty())
        {
             arraySize = (services.size() * serviceCategories) + memberNames.size() + memberId.size();
             servReport = new String[arraySize];

@@ -1,4 +1,5 @@
 package chocan;
+
         import java.util.*;
         import java.io.*;
 
@@ -32,6 +33,7 @@ public class MDirectory
 
     public void buildReport(){    //build member report
         String[] strArray;
+
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
             strArray = entry.getValue().report();
@@ -134,12 +136,12 @@ public class MDirectory
         return data;
     }
 
-    public boolean editMember(int id, String st, int num, int status, int choice){ //edit member with id
-        Member toEdit = findMember(id);
-        if (toEdit != null) {
-            return toEdit.edit(st, num, choice);
+
+    public boolean editMember(id, st, num, status, choice){ //edit member with id
+        Member toEdit = MDir.get(id);
+        if (toEdit) {
+            return toEdit.edit(String st, num, choice);
         }
         else return false;
     }
-
 }
