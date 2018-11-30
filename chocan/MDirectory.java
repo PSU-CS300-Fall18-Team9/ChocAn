@@ -5,6 +5,7 @@ package chocan;
 
 public class MDirectory
 {
+/*
     public Map<Integer, Member> MDir = new HashMap();
 
     public Member findMember(int mid){  //find and return member
@@ -109,6 +110,8 @@ public class MDirectory
 
         return data;
     }
+
+    */
 
 
     public boolean editMember(int id, String st, int num, boolean status, int choice){ //edit member with id
