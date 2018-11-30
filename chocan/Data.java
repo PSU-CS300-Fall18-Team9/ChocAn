@@ -1,8 +1,6 @@
 package chocan;
-import java.io.IOException;
 import java.util.*;
 
-//public class Data
 public abstract class Data
 {
     protected ArrayList<Service> services;
@@ -110,11 +108,6 @@ public abstract class Data
         }
        return flag;
     }
-
-
-
-    //  Allow subclasses to write and append their data to a file
-    public abstract String[] report();
 
 
 
