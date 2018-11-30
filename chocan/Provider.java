@@ -147,7 +147,7 @@ public class Provider extends Data
 
         records = serviceReport();
         // append provider's info
-        reportFormat.append(toString() + "\n\n" + "--- Service provided ---\n");
+        reportFormat.append(toString() + "--- Service provided ---\n");
         // if services is not null, append all services
         if (records != null)
         {
@@ -159,10 +159,10 @@ public class Provider extends Data
         }
         else
         {
-            reportFormat.append("No services on record.\n");
+            reportFormat.append("No services on record.\n\n");
         }
         // append fee total and number of consultants
-        reportFormat.append(serviceTotal() + "\n\n");
+        reportFormat.append(serviceTotal());
         return reportFormat.toString();
     }
 
