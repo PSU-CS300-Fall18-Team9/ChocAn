@@ -4,6 +4,7 @@ import java.io.*;
 
 public class MDirectory
 {
+/*
     public Map<Integer, Member> MDir = new HashMap();
 
     public boolean verifyMember(int mid){
@@ -152,6 +153,8 @@ public class MDirectory
 
         return data;
     }
+
+    */
 
 
 }

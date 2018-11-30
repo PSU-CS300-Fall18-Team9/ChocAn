@@ -1,8 +1,6 @@
 package chocan;
-import java.text.SimpleDateFormat;
+
 import java.util.*;
-import java.io.*;
-import java.time.LocalDateTime;
 
 //Service is created as node of a LLL, where provider/member
 //are the head of a LLL of services
@@ -12,7 +10,7 @@ import java.time.LocalDateTime;
 //service is an obj of a LLL of services of a Provider or member
 public class Service
 {
-
+    protected String serviceName;
     protected int currentDate;
     protected int currentTime;
     protected int serviceDate;
@@ -40,6 +38,7 @@ public class Service
     //default constructor with every arguments
     public Service()
     {
+        this.serviceName = null; //added field as requested by Carter
         this.currentDate = 0; //look a tht slack for translation
         this.currentTime = 0;
         this.serviceDate = 0;
@@ -72,8 +71,9 @@ public class Service
 
     //------------------------------------------------------------//
     //constructor with every arguments
-    public Service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments, int month, int day, int year)
+    public Service(String serviceName, int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments, int month, int day, int year)
     {
+        this.serviceName = serviceName;
         this.currentDate = currentDate;
         this.currentTime = currentTime;
         this.serviceDate = serviceDate;
@@ -101,7 +101,7 @@ public class Service
     //------------------------------------------------------------//
 
 
-    //constructor with limited args to support the menu functionality
+    //constructor for record report called in main
     public Service(int month, int day, int year, int serviceCode, String comments)
     {
         this.month = month;
@@ -139,63 +139,45 @@ public class Service
                 "\nFee: " + this.fee +
                 "\nComment: " + this.comments;
 
-        return info;
+        return dateOfService() + "\n" + info; //this to String return the current date as date TO CHECK with menu functionalityj
     }
 
     //compare svcCode to Service code, used in menu
-    protected boolean find(int svcCode)
+    public boolean find(int svcCode)
     {
         if(serviceCode == svcCode) return true;
 
         return false;
     }
 
-    //wrapper for constructor to be used in the manu
-    public boolean createServiceRec(int month, int day, int year, int svcCode, String comment)
+    public String dateOfService()
     {
-        new Service(month, day, year, svcCode, comment);
-        return true;
+        Calendar calendar = Calendar.getInstance();
+
+        String date;
+
+        date = calendar.get(Calendar.MONTH) + "-"
+                + calendar.get(Calendar.DAY_OF_MONTH) + "-"
+                + calendar.get(Calendar.YEAR);
+
+        return date ;
     }
 
-    /*
-       //this is handle in the provider class we don't need it anymode.
-       //I left it here just in case we will figure out we need it when puttin all code togheter
-       //make provider report
-       public String[] makeProReport()
-       {
-           String[] data = new String[7];
-
-           data[0] = this.currentTime;
-           data[1] = this.serviceDate;
-           data[2] = this.serviceCode;
-           data[3] = this.pid;
-           data[5] = this.fee;
-           data[6] = this.comments;
-
-           return data;
-       }
-    */
-    /*
-    //make member report
-    public String[] makeMemReport()
+    //Date and time data were received by the computer
+    public String dateTime()
     {
-        String[] data = new String[7];
+        Calendar calendar = Calendar.getInstance();
 
-        data[0] = this.currentTime;
-        data[1] = this.serviceDate;
-        data[2] = this.serviceCode;
-        data[3] = this.mid;
-        data[5] = this.fee;
-        data[6] = this.comments;
+        String time;
 
-        return data;
-    }
-    */
+        time = calendar.get(Calendar.MONTH) + "-"
+                + calendar.get(Calendar.DAY_OF_MONTH) + "-"
+                + calendar.get(Calendar.YEAR) + " "
+                + calendar.get(Calendar.HOUR) + ":"
+                + calendar.get(Calendar.MINUTE) + ":"
+                + calendar.get(Calendar.SECOND);
 
-    //sorting date/time
-    public void timeForm()
-    {
-        System.out.printf("now: %s%n", LocalDateTime.now());
+        return time;
     }
 }
 

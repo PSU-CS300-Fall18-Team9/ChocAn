@@ -41,6 +41,7 @@ import java.io.*;
 
 public class PDirectory
 {
+    /*
 //    public Map<Integer, Data> PDir = new HashMap<>();
 //    public Map<Integer, Data> SDir = new HashMap<>();
     public Map<Integer, Provider> PDir = new HashMap<>();
@@ -306,4 +307,5 @@ public class PDirectory
 
         return PDir.containsKey(pid);
     };
+*/
 }
