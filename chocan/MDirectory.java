@@ -6,50 +6,31 @@ public class MDirectory
 {
     public Map<Integer, Member> MDir = new HashMap();
 
-    public boolean verifyMember(int mid){
+    public Member findMember(int mid){  //find and return member
         if (MDir.containsKey){
-            return true;
+            return MDir.get(mid);
         }
-        else return false;
+        else return NULL;
     }
 
-    public int addMember(Member nMember){
+    public Member verifyMember(int mid){    //verify member with id mid
+        if (MDir.containsKey){
+            return MDir.get(mid);
+        }
+        else return NULL;
+    }
+
+    public int addMember(Member nMember){   //add member to hashtable
         MDir.put(nMember.number, nMember);
         return 0;
     }
 
-    public int removeMember(Member int mid){
+    public int removeMember(Member int mid){    //remove member from table
         MDir.remove(mid);
         return 0;
     }
 
-    public void buildReports(){
-        for (Member value: MDir.values()){
-            value.buildReport();
-        }
-    }
-
-    public void readIn(){
-        String lastName;
-        String firstName;
-        int phone;
-        String address;
-        String city;
-        String state;
-        int zip;
-
-        Scanner members = new Scanner("ChocAn/data/MemberList.txt").useDelimiter("#");
-
-        lastName = members.next();
-        firstName = members.next();
-        phone = members.nextInt();
-        address = members.next();
-        city = members.next();
-        state = members.next();
-        zip = members.nextInt();
-    }
-
-    public String buildReport(){
+    public String buildReport(){    //build member report
         String strArray;
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
@@ -74,7 +55,7 @@ public class MDirectory
 
     }
 
-    public void initialize(){
+    public void initialize(){   //read data from file to fill table
         String dataFile = "./data/MemberList.txt";
         String line = "";
         String delim = "#";
@@ -99,8 +80,10 @@ public class MDirectory
         }
     }
 
-    public void saveFile()
+    public void saveFile()  //save current tree to file
     {
+        String dataFile = "./data/MemberList.txt";
+
         try
         {
             File outFile = new File(dataFile);
@@ -131,15 +114,8 @@ public class MDirectory
         }
     }
 
-    public String toString()
+    public String toString()    //return array of strings for member
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("MDirectory toString");
-        }
-
         String data = null;
 
         for(Map.Entry<Integer, Member> entry: MDir.entrySet())
@@ -151,6 +127,14 @@ public class MDirectory
         }
 
         return data;
+    }
+
+    public boolean editMember(id, st, num, status, choice){ //edit member with id
+        Member toEdit = MDir.get(id);
+        if (toEdit) {
+            return toEdit.edit(String st, num, choice);
+        }
+        else return false;
     }
 
 
