@@ -14,11 +14,11 @@ public class MDirectory
         else return null;
     }
 
-    public Member verifyMember(int mid){    //verify member with id mid
+    public boolean verifyMember(int mid){    //verify member with id mid
         if (MDir.containsKey(mid)){
-            return MDir.get(mid);
+            return true;
         }
-        else return null;
+        else return false;
     }
 
     public int addMember(Member nMember){   //add member to hashtable
@@ -137,10 +137,10 @@ public class MDirectory
     }
 
 
-    public boolean editMember(id, st, num, status, choice){ //edit member with id
+    public boolean editMember(int id, String st, int num, boolean status, int choice){ //edit member with id
         Member toEdit = MDir.get(id);
-        if (toEdit) {
-            return toEdit.edit(String st, num, choice);
+        if (toEdit != null) {
+            return toEdit.edit(st, num, choice);
         }
         else return false;
     }

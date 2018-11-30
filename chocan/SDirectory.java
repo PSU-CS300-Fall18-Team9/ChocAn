@@ -3,11 +3,11 @@ package chocan;
 import java.io.*;
 import java.util.*;
 
-public class SDirectory {
+public class SDirectory{
 
     public Map<Integer, Service> SDir = new HashMap<>();
 
-    SDirectory()
+    public SDirectory()
     {
         boolean debug = true;
 
