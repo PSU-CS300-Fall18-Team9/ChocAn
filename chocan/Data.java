@@ -37,18 +37,6 @@ public abstract class Data
         this.id = id;
     }
 
-    // Outputs attributes to a screen or a file, depending on output stream
-    public String toString()
-    {
-        String person;
-        String location;
-
-        person = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
-        location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
-        return person + "\n" + location;
-
-    }
-
     /** Edits provider or member's information
      *
      * @param info - all string type data: first name, last name, address, city, and state
@@ -98,6 +86,18 @@ public abstract class Data
             }
         }
        return flag;
+    }
+
+    // Outputs attributes to a screen or a file, depending on output stream
+    public String toString()
+    {
+        String person;
+        String location;
+
+        person = "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nID Number: " + this.id;
+        location = "Address: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip;
+        return person + "\n" + location;
+
     }
 
     //Return an array of strings representation of the data, used for saveFile
