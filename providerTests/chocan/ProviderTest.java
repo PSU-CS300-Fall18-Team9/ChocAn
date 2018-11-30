@@ -1,3 +1,4 @@
+/*
 package chocan;
 
 import org.junit.jupiter.api.Test;
@@ -60,5 +61,6 @@ public class ProviderTest {
         for (int i = 0; i < output.length; ++i) {
             assertEquals(expected[i], output[i]);
         }
-    }*/
+    }
 }
+*/

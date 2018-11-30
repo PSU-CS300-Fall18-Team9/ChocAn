@@ -1,5 +1,8 @@
 package chocan;
 import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
 
 public class Member extends Data
 {
@@ -24,7 +27,7 @@ public class Member extends Data
      * @param zip;
      * @param id;
       -------------------------------------*/
-    public Member(String fName, String lName, String address, String city, String state, int zip, int id)
+    public Member(String fName, String lName, String address, String city, String state, int id, int zip)
     {
         super(fName, lName, address, city, state, zip, id);
         providers = null;
@@ -94,29 +97,42 @@ public class Member extends Data
     }
 
     //build member report
-    public void report()
+    public void buildReport()
     {
-/*        StringBuilder dataFile = new StringBuilder();
-        dataFile.append("./reports/member/" + this.lastName + this.firstName + ".txt");
+        //StringBuilder dataFile = new StringBuilder();
+        //dataFile.append("./reports/member/" + this.lastName + this.firstName + ".txt");
+        String fileName = "./reports/member/" + this.lastName + this.firstName + ".txt";
+        boolean isOpen = true;
+        PrintWriter toFile = null;
+        try {
+            toFile = new PrintWriter(new FileOutputStream(fileName));
+        }
+        catch(FileNotFoundException e){
+            isOpen = false;
+        }
         StringBuilder nMember = new StringBuilder();    //string for member info
         StringBuilder nServices = new StringBuilder();  //string for info for all services
 
         //adds all member data to nMember
-        nString.append("Member Name: " + this.firstName + ", " + this.firstName + "\n");
-        nString.append("Member ID: " + this.id + "\n");
-        nString.append("Member Address: " + this.address + "\n");
-        nString.append("Member City: " + this.city + "\n");
-        nString.append("Member State: " + this.state + "\n");
-        nString.append("Member Zip: " + this.id + "\n");
+        nMember.append("Member Name: " + this.firstName + ", " + this.firstName + "\n");
+        nMember.append("Member ID: " + this.id + "\n");
+        nMember.append("Member Address: " + this.address + "\n");
+        nMember.append("Member City: " + this.city + "\n");
+        nMember.append("Member State: " + this.state + "\n");
+        nMember.append("Member Zip: " + this.id + "\n");
 
         //iterates through all services, adds all data to nServices
         for (int i = 0; i < services.size(); i++){
-            nServices.append("Service Date: " + services.get(i).month + " " + services.get(i).day + " " + services.get(i).year + "\n");
+            nServices.append("Service Date: " + services.get(i).month + " / " + services.get(i).day + " / " + services.get(i).year + "\n");
             nServices.append("Provider Name: " + providers.get(i) + "\n");
             nServices.append("Service Name: " + services.get(i).serviceName + "\n");
         }
 
         //open datafile, write all data from nMember, then nServices to file
+        if(isOpen) {
+            toFile.close();
+        }
+        /*
         try {
             File outFile = new File(dataFile);
             PrintWriter pw = new PrintWriter(outFile);
@@ -124,13 +140,15 @@ public class Member extends Data
             pw.write(nServices);
             pw.close();
         }
-        catch (FileNotFoundException e1){};
-*/    }
-
+        catch(FileNotFoundException e1){
+            System.out.println("File Not Found\n");
+        }
+        */
+    }
     public String[] strArray()
     {
-        String[] data = new String[9];
-/*
+        String[] data = new String[7];
+
 //        String data = null;
         data[0] = this.lastName;
         data[1] = this.firstName;
@@ -139,9 +157,16 @@ public class Member extends Data
         data[4] = this.city;
         data[5] = this.state;
         data[6] = Integer.toString(this.zip);
-        data[7] = Integer.toString(this.consult);
-        data[8] = Integer.toString(this.totalFees);
-*/        return data;
+        return data;
     }
+    public String toString()
+    {
+        String person;
+        String location;
 
+        person = "Member Name: " + this.firstName + " " + this.lastName + "\nMember number: " + this.id;
+        location = "Member street address: " + this.address + "\nMember city: " + this.city + "\nMember state: " + this.state
+                    + "\nMember zip code: " + this.zip;
+        return person + "\n" + location + "\n";
+    }
 }
