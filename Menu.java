@@ -235,12 +235,12 @@ public class Menu
                                     //if user chooses to create service record
                                 else if (2 == svcChoice)
                                 {
-                                    boolean added = newSvcRec(MDir, PDir, svc, PID, SDir);  //utility function
+                                    newSvcRec(MDir, PDir, svc, PID, SDir);  //utility function
 
-                                    if (added)
-                                        System.out.print("\n***Service record created***");
-                                    else
-                                        System.out.print("\n***Error creating service record");
+                                    //if (added)
+                                     //   System.out.print("\n***Service record created***");
+                                    //else
+                                     //   System.out.print("\n***Error creating service record");
                                 }
                                 svcChoice = svcMenu();
                             }
