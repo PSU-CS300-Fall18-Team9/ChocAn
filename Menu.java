@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.*;
 import chocan.*;
 
@@ -73,11 +72,13 @@ public class Menu
                                     int zip = 0;
                                     boolean status = false;
 
-                                    getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
-                                    Member nMember = new Member(firstName, lastName, address, city, state, zip, id);
+                                    String[] tData = getInfo(mgrChoice);
+                                    Member nMember = new Member(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]), Boolean.parseBoolean(tData[7]));
+//                                    getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
+//                                    Member nMember = new Member(firstName, lastName, address, city, state, zip, id, status);
 
                                     int added = MDir.addMember(nMember);
-                                    if (1 == added)
+                                    if (0 == added)
                                         System.out.print("\n***Member added***\n");
                                     else
                                         System.out.print("\n***Error adding member***\n");
@@ -156,11 +157,11 @@ public class Menu
                                     int zip = 0;
                                     boolean status = false;
 
-                                    getInfo(mgrChoice, lastName, firstName, id, address, city, state, zip, status);
-                                    Provider nProvider = new Provider(firstName, lastName, address, city, state, zip, id, status);
+                                    String[] tData = getInfo(mgrChoice);
+                                    Provider nProvider = new Provider(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]), Boolean.parseBoolean(tData[7]));
 
                                     int added = PDir.addProvider(nProvider);
-                                    if (1 == added)
+                                    if (0 == added)
                                         System.out.print("\n***Provider added***\n");
                                     else
                                         System.out.print("\n***Error adding provider***\n");
@@ -228,9 +229,8 @@ public class Menu
                             {
                                 //if user chooses to display service codes
                                 if (1 == svcChoice)
-                                    System.out.println(svc);
-                                    //System.out.println(SDir);  // Print each entry in SDirectory?
-//                                    svc.displayAll();
+                                    //System.out.println(svc);
+                                    System.out.println(SDir);  // Print each entry in SDirectory?
                                     //if user chooses to create service record
                                 else if (2 == svcChoice)
                                 {
@@ -249,7 +249,7 @@ public class Menu
                             {
                                 //if user chooses to create member report
                                 if (1 == mgrReportsChoice) {
-                                    MDir.buildReport();
+                                    MDir.buildReports();
                                 }
 
                                 //if user chooses to create provider report
@@ -308,11 +308,12 @@ public class Menu
                                 int zip = 0;
                                 boolean status = false;
 
-                                getInfo(pvdrChoice, lastName, firstName, id, address, city, state, zip, status);
-                                Member nMember = new Member(lastName, firstName, address, city, state, zip, id);
+                                String[] tData = getInfo(pvdrChoice);
+                                Member nMember = new Member(tData[1], tData[0], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]), Boolean.parseBoolean(tData[7]));
 
                                 int added = MDir.addMember(nMember);
-                                if (1 == added)
+
+                                if (0 == added)
                                     System.out.print("\n***Member added***\n");
                                 else
                                     System.out.print("\n***Error adding member***\n");
@@ -382,17 +383,11 @@ public class Menu
                             if (1 == svcChoice)
                             {
                                   System.out.println(SDir);
-//                                svc.displayAll();
                             }
                             //if user chooses to create service record
                             else if (2 == svcChoice)
                             {
                                 newSvcRec(MDir, PDir, svc, PID, SDir);
-
-                                /*if (added)
-                                    System.out.print("\n***Service record created***");
-                                else
-                                    System.out.print("\n***Error creating service record");  */
                             }
                             svcChoice = svcMenu();
                         }
@@ -408,7 +403,7 @@ public class Menu
                             //if user chooses to create member report
                             if (1 == pvdrReportsChoice)
                                 //System.out.println("");
-                                MDir.buildReport();
+                                MDir.buildReports();
 
                                 //if user chooses to create provider report
                             else if (2 == pvdrReportsChoice)
@@ -424,7 +419,7 @@ public class Menu
         }
 
         //save any alterations to data files
-//        MDir.saveFile();
+        MDir.saveFile();
         PDir.saveFile();
     }
 
@@ -669,7 +664,8 @@ public class Menu
         return menuOption;
     }
 
-    public static void getInfo(int choice, String lastName, String firstName, int id, String address, String city, String state, int zip, boolean status) {
+    public static String[] getInfo(int choice) {
+//        public static void getInfo(int choice, String lastName, String firstName, int id, String address, String city, String state, int zip, boolean status) {
         if (1 == choice)
             System.out.print("\n***Add new member***\n");
         else if (2 == choice)
@@ -677,30 +673,30 @@ public class Menu
         else
             System.out.print("\n***Invalid entry***\n");
 
+        String[] data = new String[8];
+
         System.out.print("\nPlease enter the following information:\n");
 
         System.out.print("\nLast name: ");
-        lastName = input.nextLine();
+        data[0] = input.nextLine();
 
         System.out.print("\nFirst name: ");
-        firstName = input.nextLine();
+        data[1] = input.nextLine();
 
         System.out.print("\n9-digit ID: ");
-        id = input.nextInt();
-        input.nextLine();
+        data[2] = input.nextLine();
 
         System.out.print("\nStreet address: ");
-        address = input.nextLine();
+        data[3] = input.nextLine();
 
         System.out.print("\nCity: ");
-        city = input.nextLine();
+        data[4] = input.nextLine();
 
         System.out.print("\nState: ");
-        state = input.nextLine();
+        data[5] = input.nextLine();
 
         System.out.print("\nZip code: ");
-        zip = input.nextInt();
-        input.nextLine();
+        data[6] = input.nextLine();
 
         if (1 == choice)
         {
@@ -715,9 +711,9 @@ public class Menu
             }
 
             if (('Y' == current) || ('y' == current))
-                status = true;
+                data[7] = "true";
             else
-                status = false;
+                data[7] = "false";
         }
         else if (2 == choice)
         {
@@ -732,17 +728,19 @@ public class Menu
             }
 
             if (('Y' == mgr) || ('y' == mgr))
-                status = true;
+                data[7] = "true";
             else
-                status = false;
+                data[7] = "false";
         }
+
+        return data;
     }
 
     public static void newSvcRec(MDirectory MDir, PDirectory PDir, Service svc, int PID, SDirectory SDir)
     {
         System.out.print("\nPlease enter the 9-digit Member ID: ");
         int MID = input.nextInt();
-        input.nextLine();
+//        input.nextLine();
 
         boolean valid = MDir.verifyMember(MID);  //should we make this an int so we can print "invalid, suspended, validated?"
         if (valid)
@@ -800,14 +798,15 @@ public class Menu
             comments = input.nextLine();
             comments = input.nextLine(); // Temp fix for comments
 
-//            Service Service(String serviceName, int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments, int month, int day, int year)
-            Service service = new Service(month, day, year, svcCode, comments);
-//            Service service = new Service(month, day, year, svcCode, comments);
-//            Member tMember = new Member();
+            int nFee = SDir.getFee(svcCode);
+
+            Service nService = new Service(month, day, year, svcCode, nFee, comments);
+
             Provider tProvider = PDir.findProvider(PID);
             Member tMember = MDir.findMember(MID);
-            tMember.addService(service, tProvider.getName(), 0);
-            tProvider.addService(service, tMember.getName(), 0);
+
+            tMember.addService(nService, tProvider.getName(), 0);
+            tProvider.addService(nService, tMember.getName(), tMember.getID());
         }
     }
 

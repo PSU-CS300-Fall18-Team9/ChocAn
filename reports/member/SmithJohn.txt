@@ -1,0 +1,12 @@
+Member Name: Smith John
+Member number: 654123987
+Member street address: 12345 SW Portland Ave
+Member city: Portland
+Member state: Oregon
+Member zip code: 97223
+
+--- Service provided ---
+Date of service: 10-30-2018
+Provider name: Smelly McGee
+Service code: 755601
+

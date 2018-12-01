@@ -1,0 +1,12 @@
+Provider Name: Chris Gilmore
+Provider number: 123456789
+Provider street address: 229 SE 50th Ave.
+Provider city: Portland
+Provider state: OR
+Provider zip code: 97215
+
+--- Service provided ---
+No services on record.
+
+Number of consultations with member: 0
+Total fee to be paid: 0

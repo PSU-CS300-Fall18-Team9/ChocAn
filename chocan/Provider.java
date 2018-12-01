@@ -23,16 +23,6 @@ public class Provider extends Data
         totalFees = 0;
     }
 
-    /**  Constructor:  Initialize provider's info from user's input
-     *
-     * @param fName: provider's first name
-     * @param lName: provider's last name
-     * @param address: provider's street address
-     * @param city
-     * @param state
-     * @param zip
-     * @param id: provider's identification number
-     */
     public Provider(String lName, String fName, String address, String city, String state, int zip, int id, boolean isManager)
     {
         super(lName, fName, address, city, state, zip, id);
@@ -51,19 +41,6 @@ public class Provider extends Data
         }
     }
 
-    /** Inserts one service to a list of services. Appends new services to an existing list of services
-     *
-     * @precondition:
-     *              Case 1: The list is empty, and the service is the first item on the list
-     *              Case 2: There are services in the list, and inserting a new service
-     * @postcondition:  If the list is empty, then a new list is created and the new service becomes the first item on
-     *                  the list.  If the list is not empty, the new service is added at the end of a list
-     * @param name: holds the name of a member
-     * @param id: holds the member's ID number
-     * @param toAdd: An object containing service information
-     * @return true:  Inserting new service is successful
-     * @return false: Inserting new service failed, toAdd may be null
-     */
     public boolean addService(Service toAdd, String name, int id)
     {
         if (toAdd != null) {
@@ -83,17 +60,6 @@ public class Provider extends Data
         return false;
     }
 
-    /** Writes provider's information, all the services the provider provided, the total number of consultations,
-     * and the total service fees of the week
-     * @param fileName: holds the name of a text file
-     * @param append:   If append holds a true value and the text file already exist, this method will append to the
-     *                  exiting file.
-     *                  If append is false and the text file already exist, this method will overwrite the existing file.
-     * @precondition:  If a file does not exist, this method creates a new file and writes to the file regardless of
-     *                 the value of append.
-     * @postcondition:  A new file exist or a new member's info is appended to an existing file
-     * @return true: writing to file is successful, otherwise returns false
-     */
     public boolean buildReport(String fileName, boolean append)
     {
         boolean isOpen = true;
@@ -116,29 +82,10 @@ public class Provider extends Data
         return isOpen;
     }
 
-    // Displays the provider's information, the member's that received service, and all the services the provider provided
     public void displayAll() {
         System.out.println(finalReport());
     }
 
-
-    /** Returns the provider report to a string in the following format:
-     *          Provider name:
-     *          Provider number:
-     *          Provider street address:
-     *          Provider city:
-     *          Provider state:
-     *          Provider zip code:
-     *
-     *          --- Services provided ---
-     *          Date of service:
-     *          Current data and time:
-     *          Member name:
-     *          Service code:
-     *          Fee to be paid:
-     *
-     * @return reportFormat:  The provider report stored in a string object
-     */
     public String finalReport()
     {
         StringBuilder reportFormat = new StringBuilder();
@@ -166,34 +113,8 @@ public class Provider extends Data
         return reportFormat.toString();
     }
 
-/*    public String getName()
-    {
-        StringBuilder data = new StringBuilder();
-
-        data.append(firstName+ " " + lastName);
-
-        return  data.toString();
-
-    }
-*/
-    /**  Checks if the list of services is empty
-     *
-     * @return true:  services is null, and the list is empty
-     * @return false: There's at least one item in the list of services
-     */
     private boolean isEmpty() { return (services == null); }
 
-    /**  Format member and service data to the provider report.
-     * Format Example:
-     *          Date of service:
-     *          Current data and time:
-     *          Member name:
-     *          Service code:
-     *          Fee to be paid:
-     * @precondition: if the provider does not provide any services, this method will return a null string
-     * @postcondition: creates the service portion of the provider report if the list of services in not empty
-     * @return servReport: An array of string objects
-     */
     private String[] serviceReport()
     {
         int arraySize;
@@ -222,7 +143,6 @@ public class Provider extends Data
         return servReport;
     }
 
-    // Returns provider's service totals and consultations as a string.
     public String serviceTotal()
     {
         String providerService = "Number of consultations with member: " + this.consult + "\n"
@@ -235,7 +155,6 @@ public class Provider extends Data
     {
         String[] data = new String[9];
 
-//        String data = null;
         data[0] = this.lastName;
         data[1] = this.firstName;
         data[2] = Integer.toString(this.id);
@@ -243,12 +162,10 @@ public class Provider extends Data
         data[4] = this.city;
         data[5] = this.state;
         data[6] = Integer.toString(this.zip);
-//        data[7] = Integer.toString(this.consult);
         data[7] = Boolean.toString(this.privilege);
         return data;
     }
 
-  // Returns provider's info as a string.  Able to display on screen or write to a file
     public String toString()
     {
         String person;

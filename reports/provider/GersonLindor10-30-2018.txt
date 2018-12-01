@@ -1,0 +1,12 @@
+Provider Name: Gerson Lindor
+Provider number: 975312468
+Provider street address: 964 Westwood Dr.
+Provider city: Portland
+Provider state: OR
+Provider zip code: 97239
+
+--- Service provided ---
+No services on record.
+
+Number of consultations with member: 0
+Total fee to be paid: 0

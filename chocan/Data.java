@@ -37,13 +37,6 @@ public abstract class Data
         this.id = id;
     }
 
-    /** Edits provider or member's information
-     *
-     * @param info - all string type data: first name, last name, address, city, and state
-     * @param number - all integer type data:  id and zip code
-     * @param choice - selects the data to edit
-     * @return true - editing desired field is successful otherwise returns false
-     */
     public boolean edit (String info, int number, int choice)
     {
         boolean flag = true;

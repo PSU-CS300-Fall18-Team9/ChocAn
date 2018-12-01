@@ -45,24 +45,11 @@ public class PDirectory
 
     public PDirectory() //throws IOException
     {
-        /*boolean debug = true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory Default Constructor");
-        }  */
         initialize();
     }
 
     public int addProvider(Provider nProvider)
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory addProvider");
-        }
-
         PDir.put(nProvider.id, nProvider);
 
         return 0;
@@ -70,13 +57,6 @@ public class PDirectory
 
     public void buildReports()
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory buildReports");
-        }
-
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
             //If reporting handled by Provider class
@@ -93,17 +73,12 @@ public class PDirectory
     public boolean editProvider(int id, String st, int num, boolean status, int choice)
     {
         Provider toEdit = PDir.get(id);
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory editProvider");
-        }
 
         return toEdit.edit(st, num, choice);
     };
 
-    public Provider  findProvider(int pid){  //find and return member
+    public Provider findProvider(int pid)
+    {
         if (PDir.containsKey(pid)){
             return PDir.get(pid);
         }
@@ -112,13 +87,6 @@ public class PDirectory
 
     protected void initialize() //throws IOException
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory initialize");
-        }
-
         String dataFile = "./data/ProviderList.txt";
         String line = "";
         String sepChar = "#";
@@ -130,24 +98,7 @@ public class PDirectory
 
             while((line = buffIn.readLine()) != null)
             {
-                if(debug == true)
-                {
-                    System.out.println(line);
-                }
-
                 String[] tData = line.split(sepChar);
-
-                if(debug == true)
-                {
-                    System.out.println(tData[0]);
-                    System.out.println(tData[1]);
-                    System.out.println(tData[2]);
-                    System.out.println(tData[3]);
-                    System.out.println(tData[4]);
-                    System.out.println(tData[5]);
-                    System.out.println(tData[6]);
-                    //System.out.println(tData[7]);
-                }
 
                 Provider nProvider = new Provider(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),Boolean.parseBoolean((tData[7])));
                 this.addProvider(nProvider);
@@ -163,14 +114,6 @@ public class PDirectory
 
     public int removeProvider(int pid)
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory removeProvider");
-            System.out.println("pId = " + pid);
-        }
-
         PDir.remove(pid);
 
         return 0;
@@ -178,15 +121,8 @@ public class PDirectory
 
     public void saveFile()
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory saveFile");
-        }
-
         FileOutputStream out = null;
-        String dataFile = "./data/OutputTest.txt";
+        String dataFile = "./data/ProviderListOut.txt";
 
         try
         {
@@ -196,18 +132,6 @@ public class PDirectory
             for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
             {
                 String[] tData = entry.getValue().strArray();
-
-                if (debug == true)
-                {
-                    System.out.println(tData[0]);
-                    System.out.println(tData[1]);
-                    System.out.println(tData[2]);
-                    System.out.println(tData[3]);
-                    System.out.println(tData[4]);
-                    System.out.println(tData[5]);
-                    System.out.println(tData[6]);
-                    System.out.println(tData[7]);
-                }
 
                 StringBuilder nString = new StringBuilder();
 
@@ -233,13 +157,6 @@ public class PDirectory
 
     public String toString()
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory toString");
-        }
-
         String data = null;
 
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
@@ -255,27 +172,11 @@ public class PDirectory
 
     public boolean verifyProvider(int pid)
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory verifyProvider");
-            System.out.println("pId = " + pid);
-        }
-
         return PDir.containsKey(pid);
     };
 
     public boolean verifyPrivilege(int pid)
     {
-        boolean debug = !true;
-
-        if(debug == true)
-        {
-            System.out.println("PDirectory verifyProvider");
-            System.out.println("pId = " + pid);
-        }
-
         return PDir.get(pid).privilege;
     };
 }
