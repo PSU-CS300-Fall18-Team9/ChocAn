@@ -8,7 +8,29 @@ public class Menu
 
     public static void main(String[] args)
     {
+        String file1 = "temp.txt";
+        String file2 = "temp2.txt";
         System.out.println("Welcome to ChocAn Data Processing System");
+
+        Member person = new Member("James", "Bond", "NE Spy st", "LON", "ENG", 142314232, 97221);
+        Service aService = new Service(112318, 1400, 113019, 1241231, "hello world");
+        person.addService(aService, "Provider1", 0);
+        Service bService = new Service(112318, 1400, 113019, 1241231, "goodbye world");
+        person.addService(bService, "Provider2", 0);
+        if(person.buildReport(file1)){
+            System.out.println("File writing...");
+        }
+        person = new Member("Jenny", "Blond", "NE Spy st", "LON", "ENG", 142314232, 97221);
+        aService = new Service(112318, 1400, 113019, 1241231, "hello world");
+        person.addService(aService, "Provider1", 0);
+        bService = new Service(112318, 1400, 113019, 1241231, "goodbye world");
+        person.addService(bService, "Provider2", 0);
+        if(person.buildReport(file2)){
+            System.out.println("File writing...");
+        }
+
+
+
         input = new Scanner(System.in);
         int PID = 0;
 
@@ -246,13 +268,13 @@ public class Menu
                             {
                                 //if user chooses to create member report
                                 if (1 == mgrReportsChoice)
-                                    System.out.println("");
-//                                    MDir.buildReport();
+                                    //System.out.println("");
+                                    MDir.buildReport();
 
                                 //if user chooses to create provider report
                                 else if (2 == mgrReportsChoice) {
-                                    //PDir.buildReports();
-                                    System.out.println("THIS IS WHERE PROVIDER REPORTS WILL PRINT\n");
+                                    PDir.buildReports();
+                                    //System.out.println("THIS IS WHERE PROVIDER REPORTS WILL PRINT\n");
                                 }
 
                                 //if user chooses to create manager report
@@ -402,8 +424,8 @@ public class Menu
                         {
                             //if user chooses to create member report
                             if (1 == pvdrReportsChoice)
-                                System.out.println("");
-//                                MDir.buildReport();
+                                //System.out.println("");
+                                MDir.buildReport();
 
                                 //if user chooses to create provider report
                             else if (2 == pvdrReportsChoice)

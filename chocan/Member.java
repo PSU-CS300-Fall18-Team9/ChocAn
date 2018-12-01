@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 public class Member extends Data
 {
     private ArrayList<String> providers; //Holds Providers of services
+    private PrintWriter toFile;
 
     /*--------------------------------
      * Calls Default Constructor
@@ -96,7 +97,10 @@ public class Member extends Data
         }
     }
 
-    //build member report
+    /*---------------------------------
+    * Build member report
+    ---------------------------------*/
+    /*
     public void buildReport()
     {
         //StringBuilder dataFile = new StringBuilder();
@@ -105,7 +109,7 @@ public class Member extends Data
         boolean isOpen = true;
         PrintWriter toFile = null;
         try {
-            toFile = new PrintWriter(new FileOutputStream(fileName));
+            toFile = new PrintWriter(new FileOutputStream(fileName, true));
         }
         catch(FileNotFoundException e){
             isOpen = false;
@@ -114,6 +118,7 @@ public class Member extends Data
         StringBuilder nServices = new StringBuilder();  //string for info for all services
 
         //adds all member data to nMember
+        System.out.println("Mem: " + this.firstName);
         nMember.append("Member Name: " + this.firstName + ", " + this.firstName + "\n");
         nMember.append("Member ID: " + this.id + "\n");
         nMember.append("Member Address: " + this.address + "\n");
@@ -122,29 +127,95 @@ public class Member extends Data
         nMember.append("Member Zip: " + this.id + "\n");
 
         //iterates through all services, adds all data to nServices
-        for (int i = 0; i < services.size(); i++){
-            nServices.append("Service Date: " + services.get(i).month + " / " + services.get(i).day + " / " + services.get(i).year + "\n");
-            nServices.append("Provider Name: " + providers.get(i) + "\n");
-            nServices.append("Service Name: " + services.get(i).serviceName + "\n");
+        if(services != null) {
+            for (int i = 0; i < services.size(); i++) {
+                System.out.println("Serv: " + services.get(i).serviceName);
+                nServices.append("Service Date: " + services.get(i).month + " / " + services.get(i).day + " / " + services.get(i).year + "\n");
+                nServices.append("Provider Name: " + providers.get(i) + "\n");
+                nServices.append("Service Name: " + services.get(i).serviceName + "\n");
+            }
         }
 
         //open datafile, write all data from nMember, then nServices to file
         if(isOpen) {
             toFile.close();
         }
-        /*
-        try {
-            File outFile = new File(dataFile);
-            PrintWriter pw = new PrintWriter(outFile);
-            pw.write(nMember);
-            pw.write(nServices);
-            pw.close();
-        }
-        catch(FileNotFoundException e1){
-            System.out.println("File Not Found\n");
-        }
-        */
     }
+    */
+
+    public boolean buildReport(String fileName)
+    {
+        boolean isOpen = true;
+
+        // open file
+        try
+        {
+            toFile = new PrintWriter(fileName); //new FileOutputStream(fileName));
+        }
+        catch (FileNotFoundException e)
+        {
+            isOpen = false;
+        }
+        if (isOpen)
+        {
+            toFile.println(finalReport());  // write the provider report to file
+            // close file
+            toFile.close();
+        }
+        return isOpen;
+    }
+
+    public String finalReport()
+    {
+        StringBuilder reportFormat = new StringBuilder();
+        String [] records;
+        int size;
+
+        records = serviceReport();
+        // append provider's info
+        reportFormat.append(toString() + "--- Service provided ---\n");
+        // if services is not null, append all services
+        if (records != null)
+        {
+            size = records.length;
+            for (int i = 0; i < size; ++i)
+            {
+                reportFormat.append(records[i] + "\n");
+            }
+        }
+        else
+        {
+            reportFormat.append("No services on record.\n\n");
+        }
+        return reportFormat.toString();
+    }
+
+    private String[] serviceReport()
+    {
+        int arraySize;
+        int count = 0; // keep track of the number of services and members in a list
+        int serviceCategories = 2; // The number of fields in services that will be in the report
+        String [] servReport = null;
+
+      if (services != null)
+       {
+            arraySize = (services.size() * serviceCategories) + providers.size();
+            servReport = new String[arraySize];
+            // load all service and member information that belongs to a provider report
+            for (int i = 0; i < arraySize; ++i)
+            {
+                // date of service need update: call services.get(count).dateOfService();
+                servReport[i++] = "Date of service: " + (services.get(count).dateOfService());
+                // Need to change to: services.get(count).dataTime()
+                //servReport[i++] = "Current date and time: " + (services.get(count).dateTime());
+                servReport[i++] = "Provider name: " + providers.get(count);
+                servReport[i] = "Service code: " + Integer.toString(services.get(count).serviceCode);
+                ++count;  // move to the next service and member
+            }
+        }
+        return servReport;
+    }
+
     public String[] strArray()
     {
         String[] data = new String[7];
