@@ -246,7 +246,8 @@ public class Menu
                             {
                                 //if user chooses to create member report
                                 if (1 == mgrReportsChoice)
-                                    MDir.buildReport();
+                                    System.out.println("");
+//                                    MDir.buildReport();
 
                                 //if user chooses to create provider report
                                 else if (2 == mgrReportsChoice) {
@@ -401,7 +402,8 @@ public class Menu
                         {
                             //if user chooses to create member report
                             if (1 == pvdrReportsChoice)
-                                MDir.buildReport();
+                                System.out.println("");
+//                                MDir.buildReport();
 
                                 //if user chooses to create provider report
                             else if (2 == pvdrReportsChoice)
@@ -417,7 +419,7 @@ public class Menu
         }
 
         //save any alterations to data files
-        MDir.saveFile();
+//        MDir.saveFile();
         PDir.saveFile();
     }
 
