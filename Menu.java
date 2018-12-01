@@ -93,7 +93,7 @@ public class Menu
                                     else
                                     {
                                         int deleted = MDir.removeMember(MID);
-                                        if (0 == deleted)
+                                        if (1 == deleted)
                                             System.out.print("\n***Member deleted***\n");
                                         else
                                             System.out.print("\n***Error deleting member***\n");
@@ -244,10 +244,8 @@ public class Menu
                             while (4 != mgrReportsChoice)
                             {
                                 //if user chooses to create member report
-                                if (1 == mgrReportsChoice) {
-                                    //MDir.buildReport();
-                                    System.out.println("THIS IS WHERE MEMBER REPORTS WILL PRINT\n");
-                                }
+                                if (1 == mgrReportsChoice)
+                                    MDir.buildReport();
 
                                 //if user chooses to create provider report
                                 else if (2 == mgrReportsChoice) {
@@ -383,6 +381,11 @@ public class Menu
                             else if (2 == svcChoice)
                             {
                                 newSvcRec(MDir, PDir, svc, PID, SDir);
+
+                                /*if (added)
+                                    System.out.print("\n***Service record created***");
+                                else
+                                    System.out.print("\n***Error creating service record");  */
                             }
                             svcChoice = svcMenu();
                         }
@@ -396,16 +399,12 @@ public class Menu
                         while (3 != pvdrReportsChoice)
                         {
                             //if user chooses to create member report
-                            if (1 == pvdrReportsChoice) {
-                                //MDir.buildReport();
-                                System.out.println("MEM REPORTS\n");
-                            }
+                            if (1 == pvdrReportsChoice)
+                                MDir.buildReport();
 
                                 //if user chooses to create provider report
-                            else if (2 == pvdrReportsChoice) {
-                                //PDir.buildReports();
-                                System.out.println("PROV REPORTS\n");
-                            }
+                            else if (2 == pvdrReportsChoice)
+                                PDir.buildReports();
 
                             pvdrReportsChoice = pvdrReportsMenu();
                         }
@@ -417,8 +416,8 @@ public class Menu
         }
 
         //save any alterations to data files
-        //MDir.saveFile();
-        //PDir.saveFile();
+        MDir.saveFile();
+        PDir.saveFile();
     }
 
     public static int topMenu()
@@ -794,7 +793,6 @@ public class Menu
 
             Service service = new Service(month, day, year, svcCode, comments);
         }
-        //return false;
     }
 
     public static boolean editMbr(int editOption, int choice, int id, MDirectory mDir)

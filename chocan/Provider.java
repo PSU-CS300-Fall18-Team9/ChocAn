@@ -1,16 +1,16 @@
 package chocan;
 
 import java.util.*;
+import java.io.*;
 
-public class Provider  extends Data
+public class Provider extends Data
 {
-    protected int consult; // number of consultations with members
-    protected boolean privilege;  // the value is true if provider has manager privileges
-    protected ArrayList <String> memberNames; // stores the name of member for each service provided
-    protected ArrayList<Integer> memberId;
+    private int consult; // number of consultations with members
+    private boolean privilege;  // the value is true if provider has manager privileges
+    private ArrayList <String> memberNames; // stores the name of member for each service provided
+    private ArrayList<Integer> memberId;
+    private PrintWriter toFile;
     private int totalFees;
-
-
 
     public Provider()
     {
@@ -19,10 +19,9 @@ public class Provider  extends Data
         memberNames = null;
         memberId = null;
         privilege = false;
+        toFile = null;
         totalFees = 0;
     }
-
-
 
     /**  Constructor:  Initialize provider's info from user's input
      *
@@ -33,7 +32,6 @@ public class Provider  extends Data
      * @param state
      * @param zip
      * @param id: provider's identification number
-     * @param num: the number of consultations the provider provided to members
      */
     public Provider(String fName, String lName, String address, String city, String state, int zip, int id, boolean isManager)
     {
@@ -53,10 +51,7 @@ public class Provider  extends Data
         }
     }
 
-
-
-    /** Inserts one service to a list of services. Does not allow duplicates, and appends new services to an existing
-     * list of services
+    /** Inserts one service to a list of services. Appends new services to an existing list of services
      *
      * @precondition:
      *              Case 1: The list is empty, and the service is the first item on the list
@@ -64,7 +59,7 @@ public class Provider  extends Data
      * @postcondition:  If the list is empty, then a new list is created and the new service becomes the first item on
      *                  the list.  If the list is not empty, the new service is added at the end of a list
      * @param name: holds the name of a member
-     * @param id: holds the member's member number
+     * @param id: holds the member's ID number
      * @param toAdd: An object containing service information
      * @return true:  Inserting new service is successful
      * @return false: Inserting new service failed, toAdd may be null
@@ -88,44 +83,88 @@ public class Provider  extends Data
         return false;
     }
 
-
-
-    /** Represent provider's info as a string.  Able to dislay on screen or write to a file
-     *
-     * @return data: Returns the super class' fields and the consult field as strings.
+    /** Writes provider's information, all the services the provider provided, the total number of consultations,
+     * and the total service fees of the week
+     * @param fileName: holds the name of a text file
+     * @param append:   If append holds a true value and the text file already exist, this method will append to the
+     *                  exiting file.
+     *                  If append is false and the text file already exist, this method will overwrite the existing file.
+     * @precondition:  If a file does not exist, this method creates a new file and writes to the file regardless of
+     *                 the value of append.
+     * @postcondition:  A new file exist or a new member's info is appended to an existing file
+     * @return true: writing to file is successful, otherwise returns false
      */
-    public String toString()
+    public boolean buildReport(String fileName, boolean append)
     {
-        String data = super.toString() + "\n" + "Number of consultations with members: " + this.consult;
-        return data;
+        boolean isOpen = true;
+
+        // open file
+        try
+        {
+            toFile = new PrintWriter(new FileOutputStream(fileName, append));
+        }
+        catch (FileNotFoundException e)
+        {
+            isOpen = false;
+        }
+        if (isOpen)
+        {
+            toFile.println(finalReport());  // write the provider report to file
+            // close file
+            toFile.close();
+        }
+        return isOpen;
+    }
+
+    // Displays the provider's information, the member's that received service, and all the services the provider provided
+    public void displayAll() {
+        System.out.println(finalReport());
     }
 
 
-
-    // Displays the provider's information, the member's that recieved service, and all the services the provider provided
-    public void displayAll() {
+    /** Returns the provider report to a string in the following format:
+     *          Provider name:
+     *          Provider number:
+     *          Provider street address:
+     *          Provider city:
+     *          Provider state:
+     *          Provider zip code:
+     *
+     *          --- Services provided ---
+     *          Date of service:
+     *          Current data and time:
+     *          Member name:
+     *          Service code:
+     *          Fee to be paid:
+     *
+     * @return reportFormat:  The provider report stored in a string object
+     */
+    public String finalReport()
+    {
+        StringBuilder reportFormat = new StringBuilder();
+        String [] records;
         int size;
 
-        if (!isEmpty()) {
-            size = services.size();
-            // display provider
-            System.out.println(this);
-            for (int i = 0; i < size; ++i) {
-                // display all member's who received service from provider
-                System.out.println("Member name: " + memberNames.get(i));
-                // display each of the member's id
-                System.out.println("Member number: " + memberId.get(i));
-                // display all services
-                System.out.println(services.get(i));
+        records = serviceReport();
+        // append provider's info
+        reportFormat.append(toString() + "--- Service provided ---\n");
+        // if services is not null, append all services
+        if (records != null)
+        {
+            size = records.length;
+            for (int i = 0; i < size; ++i)
+            {
+                reportFormat.append(records[i] + "\n");
             }
         }
         else
         {
-            System.out.println("No services on record");
+            reportFormat.append("No services on record.\n\n");
         }
+        // append fee total and number of consultants
+        reportFormat.append(serviceTotal());
+        return reportFormat.toString();
     }
-
-
 
     /**  Checks if the list of services is empty
      *
@@ -134,31 +173,7 @@ public class Provider  extends Data
      */
     private boolean isEmpty() { return (services == null); }
 
-
-
-    /** Formats all fields of Provider to a string array.
-     *
-     * @return data:  The string array containing provider's data
-     */
-    public String[] report()
-    {
-        String[] data = new String[9];
-
-        data[0] = this.lastName;
-        data[1] = this.firstName;
-        data[2] = Integer.toString(this.id);
-        data[3] = this.address;
-        data[4] = this.city;
-        data[5] = this.state;
-        data[6] = Integer.toString(this.zip);
-        data[7] = Integer.toString(this.consult);
-        data[8] = Integer.toString(this.totalFees);
-        return data;
-    }
-
-
-
-    /**  Format member and service data to form a provider report.  The method can output to a screen or a file
+    /**  Format member and service data to the provider report.
      * Format Example:
      *          Date of service:
      *          Current data and time:
@@ -167,9 +182,9 @@ public class Provider  extends Data
      *          Fee to be paid:
      * @precondition: if the provider does not provide any services, this method will return a null string
      * @postcondition: creates the service portion of the provider report if the list of services in not empty
-     * @return servReport: A string array
+     * @return servReport: An array of string objects
      */
-    public String[] serviceReport()
+    private String[] serviceReport()
     {
         int arraySize;
         int count = 0; // keep track of the number of services and members in a list
@@ -183,9 +198,10 @@ public class Provider  extends Data
             // load all service and member information that belongs to a provider report
             for (int i = 0; i < arraySize; ++i)
             {
-                servReport[i++] = "Date of service: " + Integer.toString(services.get(count).currentDate);
-                servReport[i++] = "Current date and time: " + Integer.toString(services.get(count).currentDate) +
-                                    " " + services.get(count).currentTime;
+                // date of service need update: call services.get(count).dateOfService();
+                servReport[i++] = "Date of service: " + (services.get(count).dateOfService());
+                // Need to change to: services.get(count).dataTime()
+                servReport[i++] = "Current date and time: " + (services.get(count).dateTime());
                 servReport[i++] = "Member name: " + memberNames.get(count);
                 servReport[i++] = "Member number: " + memberId.get(count);
                 servReport[i++] = "Service code: " + Integer.toString(services.get(count).serviceCode);
@@ -194,5 +210,43 @@ public class Provider  extends Data
             }
         }
         return servReport;
+    }
+
+    // Returns provider's service totals and consultations as a string.
+    public String serviceTotal()
+    {
+        String providerService = "Number of consultations with member: " + this.consult + "\n"
+                + "Total fee to be paid: " + this.totalFees;
+
+        return providerService;
+    }
+
+    public String[] strArray()
+    {
+        String[] data = new String[9];
+
+//        String data = null;
+        data[0] = this.lastName;
+        data[1] = this.firstName;
+        data[2] = Integer.toString(this.id);
+        data[3] = this.address;
+        data[4] = this.city;
+        data[5] = this.state;
+        data[6] = Integer.toString(this.zip);
+//        data[7] = Integer.toString(this.consult);
+        data[7] = Boolean.toString(this.privilege);
+        return data;
+    }
+
+  // Returns provider's info as a string.  Able to display on screen or write to a file
+    public String toString()
+    {
+        String person;
+        String location;
+
+        person = "Provider Name: " + this.firstName + " " + this.lastName + "\nProvider number: " + this.id;
+        location = "Provider street address: " + this.address + "\nProvider city: " + this.city + "\nProvider state: " + this.state
+                    + "\nProvider zip code: " + this.zip + "\n\n";
+        return person + "\n" + location;
     }
 }
