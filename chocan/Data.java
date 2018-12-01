@@ -25,11 +25,11 @@ public abstract class Data
         id = 0;
     }
 
-    public Data(String fName, String lName, String address, String city, String state, int zip, int id)
+    public Data(String lName, String fName, String address, String city, String state, int zip, int id)
     {
         services = null;
-        this.firstName = fName;
         this.lastName = lName;
+        this.firstName = fName;
         this.address = address;
         this.city = city;
         this.state = state;

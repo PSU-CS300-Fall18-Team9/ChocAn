@@ -6,7 +6,7 @@ import java.io.*;
 public class Provider extends Data
 {
     private int consult; // number of consultations with members
-    private boolean privilege;  // the value is true if provider has manager privileges
+    protected boolean privilege;  // the value is true if provider has manager privileges
     private ArrayList <String> memberNames; // stores the name of member for each service provided
     private ArrayList<Integer> memberId;
     private PrintWriter toFile;
@@ -33,9 +33,9 @@ public class Provider extends Data
      * @param zip
      * @param id: provider's identification number
      */
-    public Provider(String fName, String lName, String address, String city, String state, int zip, int id, boolean isManager)
+    public Provider(String lName, String fName, String address, String city, String state, int zip, int id, boolean isManager)
     {
-        super(fName, lName, address, city, state, zip, id);
+        super(lName, fName, address, city, state, zip, id);
         this.consult = 0;
         this.memberNames = null;
         this.memberId = null;

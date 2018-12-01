@@ -40,7 +40,8 @@ public class Menu
             //if user chooses management privileges
             if (1 == choice)
             {
-                boolean mgrAuth = PDir.verifyProvider(PID);
+                boolean mgrAuth = PDir.verifyPrivilege(PID);
+
                 if (!mgrAuth)
                     System.out.print("***You are not authorized to view the Management Menu***\n");
                 else
