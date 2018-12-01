@@ -7,6 +7,11 @@ public class MDirectory
 {
     public Map<Integer, Member> MDir = new HashMap();
 
+    public MDirectory()
+    {
+        initialize();
+    }
+
     public Member findMember(int mid){  //find and return member
         if (MDir.containsKey(mid)){
             return MDir.get(mid);
@@ -30,13 +35,13 @@ public class MDirectory
         MDir.remove(mid);
         return 0;
     }
-
+/*
     public void buildReport(){    //build member report
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
-            MDir.getValue.report();
+            entry.getValue().report();
         }
     }
-
+*/
     public void initialize(){   //read data from file to fill table
         String dataFile = "./data/MemberList.txt";
         String line = "";
@@ -49,7 +54,7 @@ public class MDirectory
             while ((line = buffIn.readLine()) != null) {
                 String[] tData = line.split(delim);
 
-                Member nMember = new Member(tData[0], tData[1], tData[2], tData[3], tData[4], Integer.parseInt(tData[5]), Integer.parseInt(tData[6]));
+                Member nMember = new Member(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[2]), Integer.parseInt(tData[6]));
                 this.addMember(nMember);
             }
 
@@ -60,7 +65,7 @@ public class MDirectory
                 System.out.println("Exception thrown:" + e1);
             }
     }
-
+/*
     public void saveFile()  //save current tree to file
     {
         String dataFile = "./data/MemberList.txt";
@@ -72,7 +77,7 @@ public class MDirectory
 
             for(Map.Entry<Integer, Member> entry: MDir.entrySet())
             {
-                String[] tData = entry.getValue().report();
+//                String[] tData = entry.getValue().report();
 
                 StringBuilder nString = new StringBuilder();
 
@@ -94,7 +99,7 @@ public class MDirectory
             System.out.println("Exception thrown:" + e1);
         }
     }
-
+*/
     public String toString()    //return array of strings for member
     {
         String data = null;
@@ -109,7 +114,6 @@ public class MDirectory
 
         return data;
     }
-
 
     public boolean editMember(int id, String st, int num, boolean status, int choice){ //edit member with id
         Member toEdit = MDir.get(id);

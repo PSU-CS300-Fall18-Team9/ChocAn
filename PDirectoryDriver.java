@@ -1,3 +1,4 @@
+/*
 //import java.io.PrintStream;
 import java.io.IOException;
 import java.util.*;
@@ -16,7 +17,7 @@ public class PDirectoryDriver
 
         // Test data class' instantiation
 //        Data nProvider = new Provider("John", "Smith", "12345 SW Portland Ave", "Portland", "Oregon", 97223, 100000000, 0);
-//        Provider nProvider = new Provider("John", "Smith", "12345 SW Portland Ave", "Portland", "Oregon", 97223, 100000000, 0);
+        Provider nProvider = new Provider("John", "Smith", "12345 SW Portland Ave", "Portland", "Oregon", 97223, 100000000,false);
 //        Provider nProvider = new Provider();
 
         // Test data class' fields
@@ -25,12 +26,13 @@ public class PDirectoryDriver
         nProvider.id = 100000000;
 */
 
+/*
         // Test data class' toString
         System.out.println("\nPrinting new provider information:");
-//        System.out.println(nProvider);
+        System.out.println(nProvider);
 
         // Test directory class' methods
-//        nPDir.addProvider(nProvider);
+        nPDir.addProvider(nProvider);
         System.out.println("\nPrinting Provider Directory after addition of new provider:");
         System.out.println(nPDir);
         if(nPDir.verifyProvider(100000000))
@@ -45,3 +47,4 @@ public class PDirectoryDriver
         nPDir.saveFile();
     }
 }
+*/
