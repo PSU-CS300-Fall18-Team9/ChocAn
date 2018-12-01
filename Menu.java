@@ -793,6 +793,7 @@ public class Menu
             System.out.print("\nPlease add comments regarding the service provided: ");
             String comments = new String();
             comments = input.nextLine();
+            comments = input.nextLine(); // Temp fix for comments
 
             Service service = new Service(month, day, year, svcCode, comments);
         }
