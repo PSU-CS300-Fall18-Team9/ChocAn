@@ -88,6 +88,15 @@ public abstract class Data
        return flag;
     }
 
+    public String getName()
+    {
+        StringBuilder data = new StringBuilder();
+
+        data.append(firstName+ " " + lastName);
+
+        return  data.toString();
+
+    }
     // Outputs attributes to a screen or a file, depending on output stream
     public String toString()
     {

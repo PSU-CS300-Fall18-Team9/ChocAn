@@ -798,8 +798,16 @@ public class Menu
             System.out.print("\nPlease add comments regarding the service provided: ");
             String comments = new String();
             comments = input.nextLine();
+            comments = input.nextLine(); // Temp fix for comments
 
+//            Service Service(String serviceName, int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments, int month, int day, int year)
             Service service = new Service(month, day, year, svcCode, comments);
+//            Service service = new Service(month, day, year, svcCode, comments);
+//            Member tMember = new Member();
+            Provider tProvider = PDir.findProvider(PID);
+            Member tMember = MDir.findMember(MID);
+            tMember.addService(service, tProvider.getName(), 0);
+            tProvider.addService(service, tMember.getName(), 0);
         }
     }
 
