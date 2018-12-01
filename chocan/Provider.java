@@ -7,7 +7,7 @@ public class Provider extends Data
 {
     private int consult; // number of consultations with members
     protected boolean privilege;  // the value is true if provider has manager privileges
-    private ArrayList <String> memberNames; // stores the name of member for each service provided
+    protected ArrayList <String> memberNames; // stores the name of member for each service provided
     private ArrayList<Integer> memberId;
     private PrintWriter toFile;
     private int totalFees;
@@ -166,6 +166,16 @@ public class Provider extends Data
         return reportFormat.toString();
     }
 
+/*    public String getName()
+    {
+        StringBuilder data = new StringBuilder();
+
+        data.append(firstName+ " " + lastName);
+
+        return  data.toString();
+
+    }
+*/
     /**  Checks if the list of services is empty
      *
      * @return true:  services is null, and the list is empty

@@ -103,6 +103,13 @@ public class PDirectory
         return toEdit.edit(st, num, choice);
     };
 
+    public Provider  findProvider(int pid){  //find and return member
+        if (PDir.containsKey(pid)){
+            return PDir.get(pid);
+        }
+        else return null;
+    }
+
     protected void initialize() //throws IOException
     {
         boolean debug = !true;
