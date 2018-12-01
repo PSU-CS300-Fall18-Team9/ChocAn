@@ -3,7 +3,8 @@ package chocan;
 import java.io.*;
 import java.util.*;
 
-public class SDirectory{
+public class SDirectory
+{
 
     public Map<Integer, Service> SDir = new HashMap<>();
 
@@ -53,9 +54,11 @@ public class SDirectory{
                     System.out.println(tData[2]);
                 }
 
-                Service nService = new Service(); // Temp fix for error below
+//                Service nService = new Service(); // Temp fix for error below
+                Service nService = new Service(tData[1], 0, 0, 0, 0, 0, Integer.parseInt(tData[0]), Integer.parseInt(tData[2]), null, 0, 0, 0);
+//                public Service(String serviceName, int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments, int month, int day, int year)
 //                Service nService = new Service(Integer.parseInt(tData[1]), tData[0], Integer.parseInt(tData[2])); // Not built yet
-                SDir.put(0, nService); // Temp fix for error below
+                SDir.put(nService.serviceCode, nService); // Temp fix for error below
 //                SDir.put(nService.number, nService); // Not built
             }
 
@@ -89,14 +92,17 @@ public class SDirectory{
             System.out.println("SDirectory toString");
         }
 
-        String data = null;
+//        String data = null;
+
+        StringBuilder data = new StringBuilder();
 
         for(Map.Entry<Integer, Service> entry: SDir.entrySet())
 //        for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
-            data = entry.getValue().toString();
+
+            data.append(entry.getValue().serviceCode + " " + entry.getValue().serviceName + " " + entry.getValue().fee + "\n");
         }
 
-        return data;
+        return data.toString();
     }
 }
