@@ -237,10 +237,10 @@ public class Menu
                                 {
                                     newSvcRec(MDir, PDir, svc, PID, SDir);  //utility function
 
-                                    //if (added)
-                                     //   System.out.print("\n***Service record created***");
-                                    //else
-                                     //   System.out.print("\n***Error creating service record");
+                                   /* if (added)
+                                        System.out.print("\n***Service record created***");
+                                    else
+                                        System.out.print("\n***Error creating service record");  */
                                 }
                                 svcChoice = svcMenu();
                             }
@@ -398,10 +398,10 @@ public class Menu
                             {
                                 newSvcRec(MDir, PDir, svc, PID, SDir);
 
-                                //if (added)
-                                //    System.out.print("\n***Service record created***");
-                                //else
-                                //    System.out.print("\n***Error creating service record");
+                                /*if (added)
+                                    System.out.print("\n***Service record created***");
+                                else
+                                    System.out.print("\n***Error creating service record");  */
                             }
                             svcChoice = svcMenu();
                         }
@@ -813,7 +813,6 @@ public class Menu
 
             Service service = new Service(month, day, year, svcCode, comments);
         }
-        //return false;
     }
 
     public static boolean editMbr(int editOption, int choice, int id, MDirectory mDir)

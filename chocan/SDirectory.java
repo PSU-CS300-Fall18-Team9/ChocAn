@@ -9,7 +9,7 @@ public class SDirectory{
 
     public SDirectory()
     {
-        boolean debug = true;
+        boolean debug = false;
 
         if(debug == true)
         {
@@ -69,7 +69,7 @@ public class SDirectory{
 
     public boolean verifyService(int sid)
     {
-        boolean debug = true;
+        boolean debug = false;
 
         if(debug == true)
         {
@@ -82,7 +82,7 @@ public class SDirectory{
 
     public String toString()
     {
-        boolean debug = true;
+        boolean debug = false;
 
         if(debug == true)
         {

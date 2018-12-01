@@ -45,12 +45,12 @@ public class PDirectory
 
     public PDirectory() //throws IOException
     {
-        boolean debug = true;
+        /*boolean debug = true;
 
         if(debug == true)
         {
             System.out.println("PDirectory Default Constructor");
-        }
+        }  */
         initialize();
     }
 
@@ -137,7 +137,7 @@ public class PDirectory
                     System.out.println(tData[4]);
                     System.out.println(tData[5]);
                     System.out.println(tData[6]);
-                    System.out.println(tData[7]);
+                    //System.out.println(tData[7]);
                 }
 
                 Provider nProvider = new Provider(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[6]), Integer.parseInt(tData[2]),Boolean.parseBoolean((tData[7])));
