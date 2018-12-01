@@ -80,10 +80,12 @@ public class PDirectory
         for(Map.Entry<Integer, Provider> entry: PDir.entrySet())
         {
             //If reporting handled by Provider class
+            Service nService = new Service();
             StringBuilder dataFile = new StringBuilder();
-            dataFile.append("./reports/provider/" + entry.getValue().firstName+entry.getValue().lastName + ".txt");
+            dataFile.append("./reports/provider/" + entry.getValue().firstName+entry.getValue().lastName+nService.dateOfService() + ".txt");
 
-            entry.getValue().buildReport(dataFile.toString(), false);
+            entry.getValue().buildReport(dataFile.toString(), true);
+//            entry.getValue().buildReport(dataFile.toString(), false);
 
         }
     };
@@ -255,5 +257,18 @@ public class PDirectory
         }
 
         return PDir.containsKey(pid);
+    };
+
+    public boolean verifyPrivilege(int pid)
+    {
+        boolean debug = !true;
+
+        if(debug == true)
+        {
+            System.out.println("PDirectory verifyProvider");
+            System.out.println("pId = " + pid);
+        }
+
+        return PDir.get(pid).privilege;
     };
 }
