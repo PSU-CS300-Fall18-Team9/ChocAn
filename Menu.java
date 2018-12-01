@@ -8,28 +8,7 @@ public class Menu
 
     public static void main(String[] args)
     {
-        String file1 = "temp.txt";
-        String file2 = "temp2.txt";
         System.out.println("Welcome to ChocAn Data Processing System");
-
-        Member person = new Member("James", "Bond", "NE Spy st", "LON", "ENG", 142314232, 97221);
-        Service aService = new Service(112318, 1400, 113019, 1241231, "hello world");
-        person.addService(aService, "Provider1", 0);
-        Service bService = new Service(112318, 1400, 113019, 1241231, "goodbye world");
-        person.addService(bService, "Provider2", 0);
-        if(person.buildReport(file1)){
-            System.out.println("File writing...");
-        }
-        person = new Member("Jenny", "Blond", "NE Spy st", "LON", "ENG", 142314232, 97221);
-        aService = new Service(112318, 1400, 113019, 1241231, "hello world");
-        person.addService(aService, "Provider1", 0);
-        bService = new Service(112318, 1400, 113019, 1241231, "goodbye world");
-        person.addService(bService, "Provider2", 0);
-        if(person.buildReport(file2)){
-            System.out.println("File writing...");
-        }
-
-
 
         input = new Scanner(System.in);
         int PID = 0;
@@ -64,8 +43,10 @@ public class Menu
             {
                 boolean mgrAuth = PDir.verifyPrivilege(PID);
 
-                if (!mgrAuth)
+                if (!mgrAuth) {
                     System.out.print("***You are not authorized to view the Management Menu***\n");
+                    System.out.println("EXITING\n");
+                }
                 else
                 {
                     System.out.print("***Authorized***\n");
@@ -267,9 +248,9 @@ public class Menu
                             while (4 != mgrReportsChoice)
                             {
                                 //if user chooses to create member report
-                                if (1 == mgrReportsChoice)
-                                    //System.out.println("");
+                                if (1 == mgrReportsChoice) {
                                     MDir.buildReport();
+                                }
 
                                 //if user chooses to create provider report
                                 else if (2 == mgrReportsChoice) {
@@ -278,10 +259,10 @@ public class Menu
                                 }
 
                                 //if user chooses to create manager report
-                                else if (3 == mgrReportsChoice)
-                                    //create manager report
-
-                                    mgrReportsChoice = mgrReportsMenu();
+                                else if (3 == mgrReportsChoice) {
+                                    System.out.println("NEED TO IMPLEMENT\n");
+                                }
+                                mgrReportsChoice = mgrReportsMenu();
                             }
                             mgrChoice = mgrMainMenu();
                         }
@@ -296,8 +277,10 @@ public class Menu
                 boolean pvdrAuth = true;
                 int pvdrChoice = 0;
 
-                if (!pvdrAuth)
+                if (!pvdrAuth) {
                     System.out.print("\n***You are not authorized to view the Provider Menu***\n");
+                    System.out.println("EXITING");
+                }
                 else
                 {
                     System.out.print("***Authorized***\n");

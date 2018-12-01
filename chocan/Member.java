@@ -150,7 +150,8 @@ public class Member extends Data
         // open file
         try
         {
-            toFile = new PrintWriter(fileName); //new FileOutputStream(fileName));
+            toFile = new PrintWriter(fileName);
+            //toFile = new PrintWriter(new FileOutputStream(fileName, true));
         }
         catch (FileNotFoundException e)
         {
