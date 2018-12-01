@@ -1,4 +1,3 @@
-/*
 import org.junit.jupiter.api.Test;
 import java.util.*;
 
@@ -6,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ServiceTest {
 
-    @Test
+/*    @Test
     void findGood(){
 
         chocan.Service test0 = new chocan.Service(01, 01, 2040, 123456, "hello");
@@ -24,6 +23,7 @@ class ServiceTest {
 
 
     }
+*/
     @Test
     void dateTime() {
 
@@ -64,4 +64,3 @@ class ServiceTest {
         assertEquals(time, test3.dateOfService());
     }
 }
-*/

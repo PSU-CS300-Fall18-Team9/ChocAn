@@ -1,0 +1,17 @@
+Provider Name: McGee Smelly
+Provider number: 100000000
+Provider street address: 12345 SW Portland Ave
+Provider city: Portland
+Provider state: Oregon
+Provider zip code: 97223
+
+--- Service provided ---
+Date of service: 10-30-2018
+Current date and time: 10-30-2018 11:58:21
+Member name: John Smith
+Member number: 100000000
+Service code: 755601
+Fee to be paid: 100
+
+Number of consultations with member: 1
+Total fee to be paid: 100

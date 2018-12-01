@@ -1,0 +1,12 @@
+Provider Name: Scott Rubey
+Provider number: 102938475
+Provider street address: 7024 Belmont Way
+Provider city: Portland
+Provider state: OR
+Provider zip code: 97213
+
+--- Service provided ---
+No services on record.
+
+Number of consultations with member: 0
+Total fee to be paid: 0

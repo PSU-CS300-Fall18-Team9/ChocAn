@@ -2,10 +2,6 @@ package chocan;
 
 import java.util.*;
 
-//Service is created as node of a LLL, where provider/member
-//are the head of a LLL of services
-
-//service is an obj of a LLL of services of a Provider or member
 public class Service
 {
     protected String serviceName;
@@ -17,23 +13,10 @@ public class Service
     protected int serviceCode;
     protected int fee;
     protected String comments;
-
-    //TODO check on this, used to support main
-    //if not needed nedd to be deleted
     protected int month;
     protected int day;
     protected int year;
 
-
-    //------------------------------------------------------------//
-    //Below there are different types of contructurs. THese are
-    //provided to fulfill the needs of of the other classes. The
-    //constructors and and methods that are not used can be dleted
-    //------------------------------------------------------------//
-
-
-    //------------------------------------------------------------//
-    //default constructor with every arguments
     public Service()
     {
         this.serviceName = null; //added field as requested by Carter
@@ -45,30 +28,11 @@ public class Service
         this.serviceCode = 0;
         this.fee = 0;
         this.comments = null;
-        //check on this, used to support main
         this.month = 0;
         this.day = 0;
         this.year = 0;
     }
-    /*
-    //default constructor without month, day, year
-    public Service()
-    {
-        this.currentDate = 0; //look a tht slack for translation
-        this.currentTime = 0;
-        this.serviceDate = 0;
-        this.pid = 0;
-        this.mid = 0;
-        this.serviceCode = 0;
-        this.fee = 0;
-        this.comments = null;
-    }
-    */
-    //------------------------------------------------------------//
 
-
-    //------------------------------------------------------------//
-    //constructor with every arguments
     public Service(String serviceName, int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments, int month, int day, int year)
     {
         this.serviceName = serviceName;
@@ -84,6 +48,7 @@ public class Service
         this.day = day;
         this.year = year;
     }
+
     //constructor with args without month, day, year
     public Service(int currentDate, int currentTime, int serviceDate, int pid, int mid, int serviceCode, int fee, String comments)
     {
@@ -96,20 +61,17 @@ public class Service
         this.fee = fee;
         this.comments = comments;
     }
-    //------------------------------------------------------------//
 
-
-    //constructor for record report called in main
-    public Service(int month, int day, int year, int serviceCode, String comments)
+    public Service(int month, int day, int year, int serviceCode, int fee, String comments)
     {
         this.month = month;
         this.day = day;
         this.year = year;
         this.serviceCode = serviceCode;
+        this.fee = fee;
         this.comments = comments;
     }
 
-    //used as copy constructor passing in an obj
     public Service(Service toAdd)
     {
         this.currentDate = toAdd.currentDate;
@@ -122,8 +84,6 @@ public class Service
         this.comments = toAdd.comments;
     }
 
-    //display is implemented using toString with System.out.println(srv);
-    //anytime we want to display a service fields
     public String toString()
     {
         String info;
@@ -140,7 +100,6 @@ public class Service
         return dateOfService() + "\n" + info; //this to String return the current date as date TO CHECK with menu functionalityj
     }
 
-    //compare svcCode to Service code, used in menu
     public boolean find(int svcCode)
     {
         if(serviceCode == svcCode) return true;
@@ -161,7 +120,6 @@ public class Service
         return date ;
     }
 
-    //Date and time data were received by the computer
     public String dateTime()
     {
         Calendar calendar = Calendar.getInstance();

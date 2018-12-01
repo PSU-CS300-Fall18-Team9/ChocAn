@@ -36,9 +36,8 @@ public class MDirectory
         return 0;
     }
 
-    public void buildReport(){    //build member report
+    public void buildReports(){    //build member report
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
-            System.out.println("Mem test loop");
             StringBuilder dataFile = new StringBuilder();
             dataFile.append("./reports/member/" + entry.getValue().firstName+entry.getValue().lastName + ".txt");
             entry.getValue().buildReport(dataFile.toString());
@@ -57,7 +56,7 @@ public class MDirectory
             while ((line = buffIn.readLine()) != null) {
                 String[] tData = line.split(delim);
 
-                Member nMember = new Member(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[2]), Integer.parseInt(tData[6]));
+                Member nMember = new Member(tData[0], tData[1], tData[3], tData[4], tData[5], Integer.parseInt(tData[2]), Integer.parseInt(tData[6]), Boolean.parseBoolean(tData[7]));
                 this.addMember(nMember);
             }
 
@@ -68,10 +67,10 @@ public class MDirectory
                 System.out.println("Exception thrown:" + e1);
             }
     }
-/*
+
     public void saveFile()  //save current tree to file
     {
-        String dataFile = "./data/MemberList.txt";
+        String dataFile = "./data/MemberListOut.txt";
 
         try
         {
@@ -80,7 +79,7 @@ public class MDirectory
 
             for(Map.Entry<Integer, Member> entry: MDir.entrySet())
             {
-//                String[] tData = entry.getValue().report();
+                String[] tData = entry.getValue().strArray();
 
                 StringBuilder nString = new StringBuilder();
 
@@ -90,7 +89,8 @@ public class MDirectory
                 nString.append(tData[3] + "#");
                 nString.append(tData[4] + "#");
                 nString.append(tData[5] + "#");
-                nString.append(tData[6] + "#\n");
+                nString.append(tData[6] + "#");
+                nString.append(tData[7] + "#\n");
 
                 pw.write(nString.toString());
             }
@@ -102,7 +102,7 @@ public class MDirectory
             System.out.println("Exception thrown:" + e1);
         }
     }
-*/
+
     public String toString()    //return array of strings for member
     {
         String data = null;
