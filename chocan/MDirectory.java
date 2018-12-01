@@ -35,13 +35,16 @@ public class MDirectory
         MDir.remove(mid);
         return 0;
     }
-/*
+
     public void buildReport(){    //build member report
         for(Map.Entry<Integer, Member> entry: MDir.entrySet()){
-            entry.getValue().report();
+            System.out.println("Mem test loop");
+            StringBuilder dataFile = new StringBuilder();
+            dataFile.append("./reports/member/" + entry.getValue().firstName+entry.getValue().lastName + ".txt");
+            entry.getValue().buildReport(dataFile.toString());
         }
     }
-*/
+
     public void initialize(){   //read data from file to fill table
         String dataFile = "./data/MemberList.txt";
         String line = "";
