@@ -1,0 +1,12 @@
+Provider Name: Carter Wilson
+Provider number: 589230956
+Provider street address: 3526 NE 24th Ave.
+Provider city: Portland
+Provider state: OR
+Provider zip code: 97212
+
+--- Service provided ---
+No services on record.
+
+Number of consultations with member: 0
+Total fee to be paid: 0

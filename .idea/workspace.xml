@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="79b6d4de-7407-4b2d-b1a7-79f48c37a1b4" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-377555377">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.51" value="2" />
+          <entry key="project.open.time.52" value="1" />
+          <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.54" value="2" />
+          <entry key="project.open.time.57" value="1" />
+          <entry key="project.open.time.59" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.64" value="1" />
+          <entry key="project.open.time.71" value="1" />
+          <entry key="project.opened" value="19" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="69" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="69" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="96162" />
+          <entry key="menu-main-util" value="1" />
+          <entry key="txt" value="2334" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="96162" />
+          <entry key="PLAIN_TEXT" value="2335" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
+          <entry key="git.branch.merge" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1799759388">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.167" value="1" />
+          <entry key="project.open.time.226" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.77" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="10907" />
+          <entry key="txt" value="138" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="10907" />
+          <entry key="PLAIN_TEXT" value="138" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="11" />
+          <entry key="menu-main-util" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="11" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Menu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="805" column="14" selection-start-line="805" selection-start-column="14" selection-end-line="805" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>data</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="asdf" />
+        <option value="faf" />
+        <option value="Jaime" />
+        <option value="jland13" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/menu-main-util" />
+        <option value="$PROJECT_DIR$/menu-main-util.java" />
+        <option value="$PROJECT_DIR$/TestMenu.java" />
+        <option value="$PROJECT_DIR$/PDirectoryTest.java" />
+        <option value="$PROJECT_DIR$/chocan/PDirectoryTest.java" />
+        <option value="$PROJECT_DIR$/test/PDirectory_addProvider_Test.java" />
+        <option value="$PROJECT_DIR$/test/chocan/PDirectory_addProvider_Test.java" />
+        <option value="$PROJECT_DIR$/test/chocan/PDirectoryTest.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/SDirectoryDriver.java" />
+        <option value="$PROJECT_DIR$/unitTest/chocan/PDirectoryTest.java" />
+        <option value="$PROJECT_DIR$/PDirectoryDriver.java" />
+        <option value="$PROJECT_DIR$/IntegrationTest.java" />
+        <option value="$PROJECT_DIR$/Menu.java" />
+        <option value="$PROJECT_DIR$/chocan/Data.java" />
+        <option value="$PROJECT_DIR$/chocan/MDirectory.java" />
+        <option value="$PROJECT_DIR$/chocan/Member.java" />
+        <option value="$PROJECT_DIR$/chocan/PDirectory.java" />
+        <option value="$PROJECT_DIR$/chocan/Provider.java" />
+        <option value="$PROJECT_DIR$/chocan/SDirectory.java" />
+        <option value="$PROJECT_DIR$/chocan/Service.java" />
+        <option value="$PROJECT_DIR$/intTest/IntegrationTest.java" />
+        <option value="$PROJECT_DIR$/unitTest/chocan/ProviderTest.java" />
+        <option value="$PROJECT_DIR$/unitTest/ServiceTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ChocAn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChocAn Data Processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChocAn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChocAn Data Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="chocan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChocAn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChocAn Data Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="unitTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543652076087" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="chocan" />
+      <recent name="test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.IntegrationTest">
+    <configuration name="IntegrationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IntegrationTest" />
+      <module name="ChocAn Data Processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Menu" />
+      <module name="ChocAn Data Processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SDirectoryDriver" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SDirectoryDriver" />
+      <module name="ChocAn Data Processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChocAn Data Processing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chocan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="chocan" />
+      <option name="MAIN_CLASS_NAME" value="chocan.ProviderTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChocAn Data Processing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ServiceTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.createServiceRec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChocAn Data Processing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ServiceTest" />
+      <option name="METHOD_NAME" value="createServiceRec" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.toString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChocAn Data Processing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ServiceTest" />
+      <option name="METHOD_NAME" value="toString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.SDirectoryDriver" />
+      <item itemvalue="Application.Menu" />
+      <item itemvalue="Application.IntegrationTest" />
+      <item itemvalue="JUnit.ServiceTest.toString" />
+      <item itemvalue="JUnit.ServiceTest.createServiceRec" />
+      <item itemvalue="JUnit.ServiceTest" />
+      <item itemvalue="JUnit.ProviderTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.IntegrationTest" />
+        <item itemvalue="JUnit.ProviderTest" />
+        <item itemvalue="JUnit.ServiceTest" />
+        <item itemvalue="JUnit.ServiceTest.createServiceRec" />
+        <item itemvalue="JUnit.ServiceTest.toString" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79b6d4de-7407-4b2d-b1a7-79f48c37a1b4" name="Default Changelist" comment="" />
+      <created>1541742156770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541742156770</updated>
+      <workItem from="1541742166748" duration="1752000" />
+      <workItem from="1541743986561" duration="299000" />
+      <workItem from="1541744392357" duration="1246000" />
+      <workItem from="1541789223666" duration="457000" />
+      <workItem from="1541789701625" duration="16607000" />
+      <workItem from="1541883421691" duration="606000" />
+      <workItem from="1541961102559" duration="16215000" />
+      <workItem from="1542771412356" duration="439000" />
+      <workItem from="1543000148928" duration="22532000" />
+      <workItem from="1543092843484" duration="16926000" />
+      <workItem from="1543177334911" duration="3891000" />
+      <workItem from="1543272457156" duration="3123000" />
+      <workItem from="1543280987642" duration="635000" />
+      <workItem from="1543361129219" duration="93000" />
+      <workItem from="1543361240274" duration="788000" />
+      <workItem from="1543436871644" duration="10448000" />
+      <workItem from="1543459167744" duration="50000" />
+      <workItem from="1543459271961" duration="10000" />
+      <workItem from="1543459305269" duration="7198000" />
+      <workItem from="1543605871757" duration="7122000" />
+      <workItem from="1543620806886" duration="14588000" />
+      <workItem from="1543638798247" duration="13464000" />
+      <workItem from="1546467320931" duration="645000" />
+      <workItem from="1547007167496" duration="48000" />
+    </task>
+    <task id="LOCAL-00001" summary="Test First Commit">
+      <created>1541743169240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541743169240</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First Commit">
+      <created>1541743509552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541743509552</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First Commit">
+      <created>1541744126233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541744126233</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Work on PDirectory, test commit after delete .class on remote.">
+      <created>1541791798061</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541791798061</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Work on PDirectory - add provider, remove provider, start print provider directory">
+      <created>1541796746830</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541796746830</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Work on PDirectory - Verify provider, test PDirectory branch">
+      <created>1541814694406</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1541814694406</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Work on PDirectory - Fix print provider directory, clean up code">
+      <created>1541816841741</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541816841741</updated>
+    </task>
+    <task id="LOCAL-00008" summary="TestMenu - Clean up code, add testing for member class and directory; PDirectory - Work on initializing directory">
+      <created>1541820475618</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541820475618</updated>
+    </task>
+    <task id="LOCAL-00009" summary="PDirectory - Changed return from boolean to int on verify provider">
+      <created>1541962183652</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541962183652</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Data - Provide parameterized constructor; Add Menu">
+      <created>1541968992678</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1541968992678</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Data/Provider - Fix parameterized constructor and toString output">
+      <created>1541970889892</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1541970889892</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Work on menu, fix input errors">
+      <created>1541977126907</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1541977126907</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fix debug ouput for data classes for default constructor">
+      <created>1541980319766</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1541980319766</updated>
+    </task>
+    <task id="LOCAL-00014" summary="PDirectory - Work on initializePDir; Menu - Refactor code">
+      <created>1543008949750</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1543008949750</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Menu - Refactor code, { on newline after declarations for readability">
+      <created>1543010194527</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1543010194527</updated>
+    </task>
+    <task id="LOCAL-00016" summary="PDirectory - Work on saveFile and fixed entry to map in initializeDirectory; Data - Add report function">
+      <created>1543015684830</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1543015684830</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add SDirectory to ChocAn library">
+      <created>1543017366952</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1543017366952</updated>
+    </task>
+    <task id="LOCAL-00018" summary="PDirectory - Work on buildReports, refactor some code">
+      <created>1543019685167</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1543019685167</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add reports folder to project">
+      <created>1543019774692</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1543019774692</updated>
+    </task>
+    <task id="LOCAL-00020" summary="PDirectory - Fix buildReport using number for all report fields">
+      <created>1543019867065</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1543019867065</updated>
+    </task>
+    <task id="LOCAL-00021" summary="PDirectory - Add state and fix zip in reports for buildReport">
+      <created>1543021125773</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543021125773</updated>
+    </task>
+    <task id="LOCAL-00022" summary=" PDirectory - Work on integration with Provider class">
+      <created>1543095744678</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543095744678</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fix Data, Provider and PDirectory toString output">
+      <created>1543102377049</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543102377049</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Data - Fix id on newline in toString">
+      <created>1543103239214</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1543103239214</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Change name of PDirectoryTest to PDirectoryDriver to fix JUnit conflict">
+      <created>1543105800863</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1543105800863</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Work on buildReport for Provider, PDirectory, Member classes">
+      <created>1543180487342</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1543180487342</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Merge branch 'Service' of https://github.com/PSU-CS300-Fall18-Team9/ChocAn into PDirectory&#10;&#10;# Conflicts:&#10;#&#9;src/com/company/Main.java">
+      <created>1543437137795</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1543437137795</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Merge with master, fix conflicts">
+      <created>1543438762720</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1543438762720</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Integrate Provider/Data changes to PDirectory, fix initialize, buildReports">
+      <created>1543609784162</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1543609784162</updated>
+    </task>
+    <task id="LOCAL-00030" summary="PDirectory - Fix append in buildReports; Provider - Fix isEmpty position">
+      <created>1543610123439</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1543610123439</updated>
+    </task>
+    <task id="LOCAL-00031" summary="PDirectory - Clean up and remove unused code">
+      <created>1543610436132</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1543610436132</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Data - Rearrange methods alphabetically">
+      <created>1543610583914</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1543610583914</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Provider/PDirectory - Fix saveFile not saving privilege">
+      <created>1543610933550</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1543610933550</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Provider - Fix extra whitespace on reports">
+      <created>1543612227322</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1543612227322</updated>
+    </task>
+    <task id="LOCAL-00035" summary="PDirectory/Menu- Add verifyPrivilege">
+      <created>1543627211395</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1543627211395</updated>
+    </task>
+    <task id="LOCAL-00036" summary="PDirectory - Fix append on buildReport">
+      <created>1543627522648</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1543627522648</updated>
+    </task>
+    <task id="LOCAL-00037" summary="SDirectory - Fix initialize, toString">
+      <created>1543630583997</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1543630583997</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Menu - Fix comments">
+      <created>1543632197487</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1543632197487</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Fix add members providers and services, clean up code for final submission">
+      <created>1543651421111</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1543651421111</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="PDirectoryTest - 2018.11.24 at 21h 01m 30s.xml">
+      <configuration name="PDirectoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PDirectoryTest - 2018.11.24 at 21h 01m 54s.xml">
+      <configuration name="PDirectoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PDirectoryTest - 2018.11.24 at 21h 03m 12s.xml">
+      <configuration name="PDirectoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PDirectoryTest - 2018.11.25 at 12h 53m 32s.xml">
+      <configuration name="PDirectoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServiceTest_createServiceRec - 2018.11.28 at 21h 19m 59s.xml">
+      <configuration name="ServiceTest.createServiceRec" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServiceTest_createServiceRec - 2018.11.28 at 21h 20m 16s.xml">
+      <configuration name="ServiceTest.createServiceRec" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServiceTest_createServiceRec - 2018.11.30 at 12h 00m 18s.xml">
+      <configuration name="ServiceTest.createServiceRec" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServiceTest - 2018.11.30 at 23h 56m 45s.xml">
+      <configuration name="ServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServiceTest - 2018.11.30 at 23h 56m 52s.xml">
+      <configuration name="ServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest - 2018.11.30 at 23h 57m 02s.xml">
+      <configuration name="ProviderTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="139182000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19256018" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30227518" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39801544" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.46608314" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.17853232" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.33044422" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.54957354" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32194045" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39804772" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.18112798" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32855567" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="PDirectory - Work on saveFile and fixed entry to map in initializeDirectory; Data - Add report function" />
+    <MESSAGE value="Add SDirectory to ChocAn library" />
+    <MESSAGE value="PDirectory - Work on buildReports, update TODO" />
+    <MESSAGE value="PDirectory - Work on buildReports, refactor some code" />
+    <MESSAGE value="Add reports folder to project" />
+    <MESSAGE value="PDirectory - Fix buildReport using number for all report fields" />
+    <MESSAGE value="PDirectory - Add state and fix zip in reports for buildReport" />
+    <MESSAGE value=" PDirectory - Work on integration with Provider class" />
+    <MESSAGE value="Fix Data, Provider and PDirectory toString output" />
+    <MESSAGE value="Data - Fix id on newline in toString" />
+    <MESSAGE value="Change name of PDirectoryTest to PDirectoryDriver to fix JUnit conflict" />
+    <MESSAGE value="Work on buildReport for Provider, PDirectory, Member classes" />
+    <MESSAGE value="Merge branch 'Service' of https://github.com/PSU-CS300-Fall18-Team9/ChocAn into PDirectory&#10;&#10;# Conflicts:&#10;#&#9;src/com/company/Main.java" />
+    <MESSAGE value="Merge with master, fix conflicts" />
+    <MESSAGE value="Integrate Provider/Data changes to PDirectory, fix initialize, buildReports" />
+    <MESSAGE value="PDirectory - Fix append in buildReports; Provider - Fix isEmpty position" />
+    <MESSAGE value="PDirectory - Clean up and remove unused code" />
+    <MESSAGE value="Data - Rearrange methods alphabetically" />
+    <MESSAGE value="Provider/PDirectory - Fix saveFile not saving privilege" />
+    <MESSAGE value="Provider - Fix extra whitespace on reports" />
+    <MESSAGE value="PDirectory/Menu- Add verifyPrivilege" />
+    <MESSAGE value="PDirectory - Fix append on buildReport" />
+    <MESSAGE value="SDirectory - Fix initialize, toString" />
+    <MESSAGE value="Menu - Fix comments" />
+    <MESSAGE value="Fix add members providers and services, clean up code for final submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix add members providers and services, clean up code for final submission" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Menu.java</url>
+          <line>738</line>
+          <properties class="Menu">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Menu.java</url>
+          <line>666</line>
+          <properties class="Menu">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/PDirectory_addProvider_Test.java" />
+    <entry file="file://$PROJECT_DIR$/chocan/PDirectoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/test/chocan/PDirectory_addProvider_Test.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="244" column="18" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java" />
+    <entry file="file://$PROJECT_DIR$/out/test/ChocAn Data Processing/chocan/PDirectoryTest.class" />
+    <entry file="file://$PROJECT_DIR$/test/chocan/PDirectoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/unitTest/chocan/PDirectoryTest.java" />
+    <entry file="file://$PROJECT_DIR$/SDirectoryDriver.java" />
+    <entry file="file://$PROJECT_DIR$/IntegrationTest.java" />
+    <entry file="file://$PROJECT_DIR$/chocan/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chocan/MDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chocan/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="155" column="4" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2709#2710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chocan/PDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2288">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4775#4776#0" expanded="true" />
+            <element signature="e#4873#4874#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chocan/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2816">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chocan/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="107" column="4" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chocan/SDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unitTest/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unitTest/chocan/ProviderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intTest/IntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="805" column="14" selection-start-line="805" selection-start-column="14" selection-end-line="805" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ChocAn Data Processing</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

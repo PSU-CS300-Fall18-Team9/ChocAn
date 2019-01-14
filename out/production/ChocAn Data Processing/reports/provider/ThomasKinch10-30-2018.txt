@@ -1,0 +1,12 @@
+Provider Name: Thomas Kinch
+Provider number: 246809753
+Provider street address: 465 N Montana Ave.
+Provider city: Portland
+Provider state: OR
+Provider zip code: 97227
+
+--- Service provided ---
+No services on record.
+
+Number of consultations with member: 0
+Total fee to be paid: 0

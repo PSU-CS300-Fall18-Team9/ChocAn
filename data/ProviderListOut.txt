@@ -1,0 +1,8 @@
+Wilson#Carter#589230956#3526 NE 24th Ave.#Portland#OR#97212#false#
+Smelly#McGee#100000000#12345 SW Portland Ave#Portland#Oregon#97223#false#
+Lindor#Gerson#975312468#964 Westwood Dr.#Portland#OR#97239#false#
+Gonnelli#Cosimo#178462309#3851 SE 14th Ave.#Portland#OR#97202#false#
+Landers#Jaime#135790864#421 SW 42nd Pl.#Portland#OR#97221#false#
+Rubey#Scott#102938475#7024 Belmont Way#Portland#OR#97213#false#
+Gilmore#Chris#123456789#229 SE 50th Ave.#Portland#OR#97215#true#
+Kinch#Thomas#246809753#465 N Montana Ave.#Portland#OR#97227#false#
